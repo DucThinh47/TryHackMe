@@ -1,4 +1,4 @@
-# HTTP in Details
+# HTTP in Detail
 
 1. On the mock webpage on the right there is an issue, once you've found it, click on it. What is the challenge flag? 
 

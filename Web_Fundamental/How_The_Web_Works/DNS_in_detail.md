@@ -1,4 +1,4 @@
-# DNS in details
+# DNS in detail
 
 1. Gía trị bản ghi **CNAME** của domain **shop.website.thm** là gì?
 
