@@ -4,7 +4,7 @@ Thực hành các bài tập trên TryHackMe.
 
 # Content
 
-- [Web Fundamental]()
+- [Web Fundamental](https://github.com/DucThinh47/TryHackMe#web-fundamental)
 
 - []()
 
