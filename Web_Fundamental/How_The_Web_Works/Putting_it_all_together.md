@@ -4,7 +4,7 @@
 
 ***CDN*** (Content Deliver Networks): lưu trữ file tĩnh, tăng tốc độ truy cập từ client đến server.
 
-***Databases**: nơi website sử dụng để lưu trữ thông tin.
+***Databases***: nơi website sử dụng để lưu trữ thông tin.
 
 ***WAF*** (Web Application Firewall): nằm giữa client và server, bảo vệ web server khỏi bị hack và tấn công DoS.
 
