@@ -10,9 +10,9 @@ Thực hành các bài tập trên TryHackMe.
 
 ## Web fundamental
 
-- [How The Web Works?]()
+- [How The Web Works?](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/How_The_Web_Works)
 
-    - [DNS in details]()
+    - [DNS in details](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/DNS_in_details.md)
 
     - [HTTP in details]()
 
