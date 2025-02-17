@@ -12,7 +12,7 @@ Sử dụng câu lệnh ***nslookup --type=CNAME shop.website.thm***, trong đó
 
 - ***shop.website.thm***: domain name cần truy vấn: 
 
-![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/images/image.png?raw=true)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image.png?raw=true)
 
 Phân tích kết quả trả về: 
 
@@ -30,7 +30,7 @@ Phân tích kết quả trả về:
 
 Sử cụng câu lệnh tương tự như trên, chỉ thay --type thành bản ghi TXT, ***nslookup --type=TXT website.thm***:
 
-![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/images/image1.png?raw=true)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image1.png?raw=true)
 
 Kết quả trả về giống với bản ghi CNAME, chỉ thay thành giá trị bản ghi TXT.
 
@@ -40,7 +40,7 @@ Tương tự như trên, chỉ thay --type thành bản ghi MX, ***nslookup --ty
 
 *(Bản ghi MX **phân giải theo địa chỉ Mail Server** cho domain name đang truy vấn. Những bản ghi này đi kèm với **cờ ưu tiên**, cho cline-side biết thứ tự thử server nếu server chính gặp sự cố và email cần gửi đến 1 server dự phòng)*
 
-![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/images/image2.png?raw=true)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image2.png?raw=true)
 
 Phân tích kết quả trả về:
 
@@ -56,7 +56,7 @@ Phân tích kết quả trả về:
 
 Sử dụng lệnh tương tự, thay --type thành bản ghi A, ***nslookup --type=A website.thm***: 
 
-![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/images/image3.png?raw=true)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image3.png?raw=true)
 
 Phân tích kết quả trả về: 
 
