@@ -2,17 +2,17 @@
 
 1. On the mock webpage on the right there is an issue, once you've found it, click on it. What is the challenge flag? 
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image4.png?raw=true)
 
 => Website đang sử dụng **HTTP** chứ không phải **HTTPs**, click vào icon tượng trưng cho việc không sử dụng **HTTPs** trên thanh URL: 
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image5.png?raw=true)
 
 **HTTPs** (HyperText Transfer Protocol Secure), phiên bản bảo mật hơn của **HTTP**. Dữ liệu của **HTTPs** được **mã hóa**, giúp bảo vệ dữ liệu khi đang truyền hoặc đang nhận, đồng thời đảm bảo việc **giao tiếp với đúng web server**, chứ không phải với một server mạo danh. 
 
 2. Make a GET request to /room
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image6.png?raw=true)
 
 Phân tích request:
 
@@ -26,7 +26,7 @@ Phân tích request:
 
 => Response được trả về: 
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image7.png?raw=true)
 
 Phân tích response: 
 
@@ -48,7 +48,7 @@ Phân tích response:
 
 Request: 
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image8.png?raw=true)
 
 Lúc này request trở thành ***GET /blog?id=1 HTTP/1.1***, việc thêm tham số id giúp yêu cầu dữ liệu cụ thể từ server (trong trường hợp này là blog có id=1).
 
@@ -56,7 +56,7 @@ Lúc này request trở thành ***GET /blog?id=1 HTTP/1.1***, việc thêm tham 
 
 => Response: 
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image9.png?raw=true)
 
 Server trả về nội dung của blog có id là 1.
 
@@ -66,36 +66,36 @@ Request:
 
 Sử dụng **DELETE** method để yêu cầu server xóa một tài nguyên cụ thể, trong trường hợp này là **/user**, endpoint để quản lý user, **/1**, ID user cần xóa.
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image10.png?raw=true)
 
 => Response: 
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image11.png?raw=true)
 
 5. Make a PUT request to /user/2 with the username parameter set to admin:
 
 Request: 
 
-![img](12)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image12.png?raw=true)
 
 
 Sử dụng **PUT** method để yêu cầu server chỉnh sửa một tài nguyên, cụ thể tài nguyên ở đây nằm ở endpoint **/user**, **/2**, ID của user là 2 và tài nguyên là **username** với giá trị mới là **admin**.
 
 => Response: 
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image13.png?raw=true)
 
 6. POST the username of thm and a password of letmein to /login:
 
 Request: 
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image14.png?raw=true)
 
 Sử dụng **POST** method để gửi dữ liệu đến server yêu cầu tạo mới tài nguyên, cụ thể tài nguyên ở đây là **username** có giá trị là **thm** và **password** có giá trị alf **letmein**.
 
 => Response: 
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/images/image15.png?raw=true)
 
 
 
