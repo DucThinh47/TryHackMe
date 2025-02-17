@@ -18,7 +18,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [How Websites Work](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/How_Websites_Work.md)
 
-    - [Putting it all together]()
+    - [Putting it all together](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/Putting_it_all_together.md)
 
 - [Introduction to Web Hacking]()
 
