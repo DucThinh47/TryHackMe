@@ -14,7 +14,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [DNS in details](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/DNS_in_details.md)
 
-    - [HTTP in details]()
+    - [HTTP in details](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/HTTP_in_Details.md)
 
     - [How Websites Work]()
 
