@@ -16,7 +16,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [HTTP in details](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/HTTP_in_Details.md)
 
-    - [How Websites Work]()
+    - [How Websites Work](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/How_Websites_Work.md)
 
     - [Putting it all together]()
 
