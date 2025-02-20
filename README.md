@@ -24,7 +24,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Walking An Application](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Walking_An_Application.md)
 
-    - [Content Discovery]()
+    - [Content Discovery](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Content_Discovery.md)
 
     - [Subdomain Enumeration]()
 

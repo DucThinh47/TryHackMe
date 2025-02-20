@@ -8,7 +8,7 @@ Tệp ***robots.txt*** là tài liệu quan trọng được dùng để hướn
 
 Ví dụ về tệp ***robots.txt*** trên website Acme IT Support: 
 
-![img](22)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image22.png?raw=true)
 
 => Thư mục không được phép xem bởi crawlers (như Google) là: ***/staff-portal***
 
@@ -16,22 +16,22 @@ Ví dụ về tệp ***robots.txt*** trên website Acme IT Support:
 
 Favicon là 1 icon nhỏ hiển thị trên thanh địa chỉ hoặc tab của browser, được sử dụng để xây dựng thương hiệu cho 1 website:
 
-![img](23)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image23.png?raw=true)
 
 Đôi khi, khi frameworks được dùng để build 1 website, Favicon nằm trong quá trình cài đặt vẫn còn sót lại và nếu web developer không thay thế framework này bằng 1 framework tùy chỉnh, điều này có thể để lại manh mối về framework nào đang được sử dụng. OWASP lưu trữ 1 db gồm các Favicon phổ biến có thể dùng để kiểm tra Favicon mục tiêu https://wiki.owasp.org/index.php/OWASP_favicon_database. Sau khi biết về framework stack, có thể sử dụng các tài nguyên bên ngoài để khám phá thêm. 
 
 Ví dụ, truy cập vào 1 website có sử dụng ***favicon***:
 
-![img](24)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image24.png?raw=true)
 
 Trên Kali Linux, sử dụng câu lệnh: ***curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum***
 Câu lệnh này sẽ download Favicon và lấy giá trị ***md5 hash*** của nó: 
 
-![img](25)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image25.png?raw=true)
 
-=> Tra cứu mã hash này trên OWASP_favicon_database để tìm framework mà Favicon này thuộc về: 
+=> Tra cứu mã hash này trên ***OWASP_favicon_database*** để tìm framework mà Favicon này thuộc về: 
 
-![img](26)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image26.png?raw=true)
 
 => Framework mà Favicon này thuộc về là ***cgiirc (0.5.9)***. 
 
@@ -43,7 +43,7 @@ Trong một số trường hợp, tệp ***sitemap.xml*** có thể liệt kê c
 
 Thử xem file ***sitemap.xml*** trên web Acme IT Support:
 
-![img](27)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image27.png?raw=true)
 
 ***HTTP Headers***
 
@@ -91,7 +91,7 @@ Và còn nhiều ứng dụng khác...
 
 Thử chạy lệnh ***curl*** với web server này, trong đó tùy chọn ***-v*** được bật để xem chi tiết, tùy chọn này sẽ xuất ra headers!
 
-![img](28)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image28.png?raw=true)
 
 ***Framework Stack***
 
@@ -99,15 +99,15 @@ Sau khi thiết lập 1 framework cho website, từ ví dụ về Favicon hoặc
 
 Xem Source Page của website Acme IT Support, sẽ thấy comments ở cuối page, kèm theo thời gian tải trang và link đến website của framework:
 
-![img](29)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image29.png?raw=true)
 
 => Truy cập website Framework: 
 
-![img](30)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image30.png?raw=true)
 
 => Thử truy cập endpoint ***/thm-framework-login*** và log in với tài khoản admin được cung cấp: 
 
-![img](31)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image31.png?raw=true)
 
 Ngoài ra còn có các tài nguyên bên ngoài giúp khám phá thông tin về website; những tài nguyên này thường được gọi là ***OSINT*** hoặc (Open-Source Intelligence) vì chúng là các tools có sẵn miễn phí để thu thập thông tin.
 
@@ -115,7 +115,7 @@ Ngoài ra còn có các tài nguyên bên ngoài giúp khám phá thông tin v�
 
 Google Hacking / Dorking sử dụng các tính năng công cụ tìm kiếm nâng cao của Google, cho phép chọn content tùy chỉnh. Ví dụ, chọn ra kết quả từ 1 domain name nhất định bằng cách sử dụng ***site: filter***, ví dụ ***site:tryhackme.com***, sau đó có thể kết hợp kết quả này với các cụm từ tìm kiếm nhất định như ***“admin”***: ***site:tryhackme.com admin***, điều này sẽ chỉ trả về kết quả từ website tryhackme có chứa từ “admin” trong nội dung. Đồng thời cũng có thể kết hợp nhiều filter. Dưới đây là filters: 
 
-![img](32)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image32.png?raw=true)
 
 ***OSINT - Wappalyzer***
 
@@ -147,13 +147,13 @@ Mặc dù có sẵn nhiều tools khám phá nội dung khác nhau, tất cả �
 
 ***ffluf***:
 
-![img](33)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image33.png?raw=true)
 
 => Kết quả: 
 
-![img](34)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image34.png?raw=true)
 
-=> Tìm được các file hoặc directory ẩn trên web server tại địa chỉ http://10.10.75.206
+=> Tìm được các file, directory ẩn trên web server tại địa chỉ http://10.10.75.206
 
 Tùy chọn ***-w /usr/share/wordlist/SecLists/Discovery/Web-Content/common.txt*** để chỉ định wordlist được sử dụng là ***common.txt*** (chứa list path hoặc tên file phổ biến).
 
@@ -161,11 +161,11 @@ Tùy chọn ***-u http://10.10.75.206/FUZZ*** chỉ định URL mục tiêu. ***
 
 ***Sử dụng dirb***:
 
-![img](35)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image35.png?raw=true)
 
 => Kết quả: 
 
-![img](36)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image36.png?raw=true)
 
 => Công cụ ***dirb*** sẽ:
 
@@ -182,11 +182,11 @@ Tùy chọn ***-u http://10.10.75.206/FUZZ*** chỉ định URL mục tiêu. ***
 
 ***Sử dụng Gobuster:***
 
-![img](37)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image37.png?raw=true)
 
 => Kết quả: 
 
-![img](38)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image38.png?raw=true)
 
 - Tùy chọn ***-dir***: chế độ dò tìm directory
 
