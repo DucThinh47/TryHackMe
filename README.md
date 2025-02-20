@@ -30,7 +30,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Authentication Bypass](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Authentication_Bypass.md)
 
-    - [IDOR]()
+    - [IDOR](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/IDOR.md)
 
     - [File Inclusion]()
 

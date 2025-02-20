@@ -11,7 +11,7 @@ Khi cần thay đổi hồ sơ, truy cập ***http://online-service.thm/profile?
 
 ***Encoded IDs:***
 
-![img](60)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image60.png?raw=true)
 
 ***Finding IDORs in Hashed IDs***
 
@@ -33,7 +33,7 @@ Nếu không thể phát hiện ID bằng các phương pháp trên thì phươn
 
 Thử tạo 1 account và login account trong Acme IT Support website: 
 
-![img](61)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image61.png?raw=true)
 
 Để ý thấy khi click tab Your Account, thông tin trong field ***username*** và ***email*** đã được fill trước. 
 
@@ -41,17 +41,17 @@ Thử tạo 1 account và login account trong Acme IT Support website:
 
 => Điều này có thể liên quan đến session-cookie, thử Inspect page và click tab Network, refresh lại page, sẽ thấy 1 lệnh call tới endpoint ***/api/v1/customer?id={user_id}***:
 
-![img](62)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image62.png?raw=true)
 
 => Mở Burp Suite và Intercept request khi refresh lại page và thay đổi ***user_id*** thành 1: : 
 
-![img](63)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image63.png?raw=true)
 
 => Thấy được username của user khác là ***adam84*** và email: ***adam-84@fakemail.thm***.
 
 => Thử thay đổi user_id thành 3:
 
-![img](64)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image64.png?raw=true)
 
 => Thấy được username của user khác là ***john911*** và email: ***j@fakemail.thm***
 
