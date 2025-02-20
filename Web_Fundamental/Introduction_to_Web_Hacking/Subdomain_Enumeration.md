@@ -8,7 +8,7 @@ Mục đích của Certificate Transparency là ngăn việc sử dụng các ch
 
 Ví dụ: truy cập ***crt.sh*** và tìm domain ***tryhackme.com** và tìm domain name đã được truy cập vào 2020-12-26:
 
-![img](39)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image39.png?raw=true)
 
 => Domain name được truy cập vào 2020-12-26: ***store.tryhackme.com***
 
@@ -22,7 +22,7 @@ Việc sử dụng các phương pháp tìm kiếm nâng cao trên website như 
 
 Ví dụ: 
 
-![img](40)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image40.png?raw=true)
 
 Câu lệnh ***dnsrecon -t brt -d acmeitsupport.thm*** được dùng để dò tìm các bản ghi DNS thông qua phương pháp brute-force.
 
@@ -36,9 +36,9 @@ Câu lệnh ***dnsrecon -t brt -d acmeitsupport.thm*** được dùng để dò 
 
 Tự động hóa bằng ***Sublist3r*** để tăng tốc quá trình OSINT khám phá subdomain, có thể tự động hóa phương pháp này với sự trợ giúp của tool như ***Sublist3r***:
 
-![img](41)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image41.png?raw=true)
 
-![img](42)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image42.png?raw=true)
 
 ***Virtual Hosts***
 
@@ -48,7 +48,7 @@ Thử lệnh sau để khám phá subdomain mới của website Acme IT Support:
 
 => Kết quả: 
 
-![img](43)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image43.png?raw=true)
 
 Lệnh này sử dụng tùy chọn ***-w*** để chỉ định wordlist sẽ sử dụng (trong TH này là namelists.txt). Tùy chọn ***-H*** để adds /edits 1 header (trong TH này là Host header), có từ khóa ***FUZZ*** trong khoảng trống nơi subdomain thường xuất hiện và đây là nơi sẽ thử tất cả tùy chọn từ wordlist.
 
@@ -62,7 +62,7 @@ Bởi vì lệnh trên sẽ luôn cho ra kết quả hợp lệ nên cần lọc
 
 ***ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.92.70 -fs 2395***
 
-![img](44)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image44.png?raw=true)
 
 => Lọc ra được 2 subdomain: 
 - ***delta***  

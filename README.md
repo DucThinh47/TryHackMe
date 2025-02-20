@@ -26,7 +26,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Content Discovery](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Content_Discovery.md)
 
-    - [Subdomain Enumeration]()
+    - [Subdomain Enumeration](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Subdomain_Enumeration.md)
 
     - [Authentication Bypass]()
 
