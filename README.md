@@ -28,7 +28,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Subdomain Enumeration](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Subdomain_Enumeration.md)
 
-    - [Authentication Bypass]()
+    - [Authentication Bypass](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Authentication_Bypass.md)
 
     - [IDOR]()
 

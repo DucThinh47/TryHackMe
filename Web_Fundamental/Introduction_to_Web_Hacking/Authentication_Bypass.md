@@ -4,11 +4,11 @@
 
 Thông báo lỗi website là nguồn tài nguyên hữu ích, giúp đối chiếu thông tin, nhằm xây dựng danh sách username hợp lệ. Đây là form tạo account của website Acme IT Support:
 
-![img](45)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image45.png?raw=true)
 
 Nếu thử nhập username là ***admin*** và điền các field khác là các thông tin giả mạo, sẽ có 1 thông báo là ***An account with this username already exists***.
 
-![img](46)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image46.png?raw=true)
 
 => Sử dụng ***ffuf***: 
 
@@ -100,15 +100,15 @@ Phân tích lệnh:
 
 => Kết quả: 
 
-![img](47)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image47.png?raw=true)
 
 ***Logic Flaw***
 
 Logic Flaw Example:
 
-Mã mô phỏng bên dưới sẽ check xem liệu điểm bắt đầu của path mà customer đang truy cập có bắt đầu bằng ***/admin*** không, nếu có thì các bước kiểm tra tiếp theo sẽ được thực hiện để xem liệu thực tế, customer có phải admin hay không. Nếu page không bắt đầu bằng ***/admin***, page sẽ được hiển thị cho client:
+Mã bên dưới mô phỏng việc kiểm tra liệu điểm bắt đầu của path mà customer đang truy cập có bắt đầu bằng ***/admin*** không, nếu có thì các bước kiểm tra tiếp theo sẽ được thực hiện để xem liệu thực tế, customer có phải admin hay không. Nếu page không bắt đầu bằng ***/admin***, page sẽ được hiển thị cho client:
 
-![img](48)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image48.png?raw=true)
 
 Vì mã PHP trên sử dụng dấu ***“===”*** nên nó đang tìm kiếm 1 kết quả khớp chính xác chuỗi ***“admin”***, bao gồm cả cách viết hoa giống nhau. Code này có 1 logic flaw (lỗ hổng logic) vì nếu request path của user chưa được xác thực là ***/adMin*** thì sẽ họ sẽ không được kiểm tra đặc quyền và page sẽ được show cho họ, hoàn toàn bỏ qua việc xác thực.
 
@@ -116,15 +116,15 @@ Logic Flaw Practical:
 
 Kiểm tra chức năng ***Reset Password*** của website Acme IT  Support (http://10.10.87.147/customers/reset). 1 form yêu cầu email được liên kết với account muốn reset password. Nếu 1 email không hợp lệ được nhập, sẽ nhận được error message ***“Account not found from supplied email address”***:
 
-![img](49)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image49.png?raw=true)
 
 Sử dụng email ***robert@acmeitsupport.thm*** hợp lệ, sau đó form tiếp theo được hiển thị, yêu cầu điền username được liên kết với email này. Nếu nhập ***robert*** làm username và click ***Check Username*** button, sẽ nhận được thông báo xác nhận 1 email xác nhận reset password đã được gửi đến ***robert@acmeitsupport.thm***:
 
-![img](50)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image50.png?raw=true)
 
-![img](51)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image51.png?raw=true)
 
-![img](52)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image52.png?raw=true)
 
 Lúc này, câu hỏi là ***lỗ hổng có thể xảy ra trong web application này là gì?***, vì cần phải biết cả email và username, sau đó liên kết reset password mới được gửi đến email của chủ sở hữu account. 
 
@@ -134,7 +134,7 @@ Thử sử dụng **curl** để thực hiện request tới server để minh h
 
 ***curl 'http://10.10.87.147/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'***
 
-![img](53)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image53.png?raw=true)
 
 Trong web app này, thông tin tài khoản người dùng được lấy thông qua ***query string*** (dữ liệu truyền qua URL). Tuy nhiên, ở phần logic xử lý tiếp theo, email reset password lại được gửi dựa trên dữ liệu từ biến ***PHP $_REQUEST***.
 
@@ -152,11 +152,11 @@ Tạo 1 account có email là ***thinh1@customer.acmeitsupport.thm***
 
 Truy cập account có email là ***thinh1@customer.acmeitsupport.thm*** để xem email reset password có được gửi đến không: 
 
-![img](54)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image54.png?raw=true)
 
 => Truy cập link: 
 
-![img](55)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image55.png?raw=true)
 
 ***Cookie Tampering***
 
@@ -178,7 +178,7 @@ Có 1 cookie ***logged_in***, xuất hiện để kiểm soát xem user hiện c
 
 ***curl http://10.10.41.189/cookie_test***
 
-![img](56)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image56.png?raw=true)
 
 => Lúc này returned message sẽ là ***Not Logged In***
 
@@ -186,7 +186,7 @@ Thử gửi 1 request khác với cookie ***logged_in*** được set thành ***
 
 ***curl -H "Cookie: logged_in=true; admin=false" http://10.10.41.189/cookie-test***
 
-![img](57)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image57.png?raw=true)
 
 => Nhận được message: ***Logged In As A User***
 
@@ -194,7 +194,7 @@ Thử gửi 1 request khác với cookie ***logged_in*** được set thành ***
 
 ***curl -H "Cookie: logged_in=true; admin=true" http://10.10.41.189/cookie-test***
 
-![img](58)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image58.png?raw=true)
 
 => Return message sẽ là ***Logged In As An Admin***.
 
@@ -202,7 +202,7 @@ Thử gửi 1 request khác với cookie ***logged_in*** được set thành ***
 
 Đôi khi, ***cookie value*** có thể trông giống như 1 chuỗi dài các ký tự random, chúng được gọi là ***hashes*** (giá trị băm); là 1 cách biểu diễn ***không thể đảo ngược*** của văn bản gốc. Dưới đây là 1 số ví dụ:
 
-![img](59)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image59.png?raw=true)
 
 Từ bảng trên, có thể thấy hash output từ cùng 1 input string có thể khác nhau đáng kể tùy thuộc vào hash method được sử dụng.
 
