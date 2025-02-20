@@ -16,29 +16,29 @@ Trình duyệt hiện đại cung cấp nhiều công cụ tích hợp giúp ki�
 
 **View some page source!**
 
-![img](0)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image.png?raw=true)
 
 Thử xem source page của trang chủ website Acme IT Support và chọn ra những thông tin quan trọng.
 
 => Source page của trang chủ website Acme IT Support:
 
-![img](1)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image1.png?raw=true)
 
 Ở đầu page, thấy một số mã bắt đầu bằng **< !--** và kết thúc bằng **-->** , đây là comments. Comments là những thông điệp do website developer để lại, thường dùng để giải thích gì đó trong code cho programmers khác, hoặc thậm chí là ghi chú nhắc nhở cho chính mình. Những comments này không được hiển thị trên webpage thực tế. 
 
-![img](2)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image2.png?raw=true)
 
 => Comment này có đề cập đến một endpoint: ***"/new-home-beta"***. 
 
 Truy cập ***/new-home-beta***:
 
-![img](3)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image3.png?raw=true)
 
 Liên kết đến các trang khác nhau trong HTML được viết bằng thẻ liên kết ( đây là các phần tử HTML bắt đầu bằng ***<a*** ) và liên kết được chuyển hướng đến được lưu trữ trong thuộc tính ***href***.
 
 Nếu xem kỹ hơn Source Page, có 1 liên kết ẩn đến 1 trang bắt đầu bằng ***“secr”***. Trong thực tế, có thể phát hiện ra một số khu vực riêng tư được doanh nghiệp sử dụng để lưu trữ thông tin công ty / nhân viên / khách hàng:
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image4.png?raw=true)
 
 => Ngoài ***/secret-page*** còn tìm ra endpont ***/assets***.
 
@@ -46,45 +46,45 @@ Các tệp như CSS, JavaScript và Hình ảnh có thể sử dụng trong HTML
 
 Truy cập ***/assets***:
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image5.png?raw=true)
 
 => Tìm thấy file ***flag.txt***. Truy cập file: 
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image6.png?raw=true)
 
 Nhiều website ngày nay không tạo từ đầu và sử dụng cái được gọi là **framework**. 1 framework là 1 tập hợp mã tạo sẵn, dễ dàng cho phép developer đưa vào các tính năng phổ biến mà website yêu cầu, như blog, quản lý user, xử lý form,... giúp developer tiết kiệm thời gian.
 
 Viewing page source thường có thể cung cấp manh mối về 1 framework có đang được dùng hay không, nếu có thì framework nào và phiên bản nào. Việc biết framework và phiên bản có thể hữu ích vì có thể có lỗ hổng công khai trong framework và website có thể không sử dụng phiên bản framework mới nhất. Ở cuối page, tìm thấy comment về framework và version được dùng, cũng như liên kết tới website của framework:
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image7.png?raw=true)
 
 => Download file ***tmp.zip***:
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image8.png?raw=true)
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image9.png?raw=true)
 
 => Giải nén file và tìm được: 
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image10.png?raw=true)
 
 Ngoài việc xem Source Page trực tiếp, có thể sử dụng Inspector để chỉnh sửa và tương tác với các thành phần trên page, điều này rất hữu ích với web developer trong việc debug. Trên website Acme IT Support, trong phần news có 3 bài viết. 2 bài viết đầu tiên có thể đọc được, nhưng bài thứ 3 bị chặn với 1 thông báo cho biết phải là khách hàng cao cấp mới có thể xem bài viết. Floating boxes chặn nội dung page thường được gọi là paywalls vì chúng có nghĩa là sẽ chặn nội dung hiển thị cho đến khi trả phí:
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image11.png?raw=true)
 
 Click chuột phải vào paywall và sẽ thấy tùy chọn Inspect từ menu, tùy chọn này sẽ mở developer tools ở phía dưới hoặc bên phải website, tùy thuộc vào browser hoặc tùy chọn. Bây giờ sẽ thấy các thành phần /HTML tạo nên website:
 
 Click vào thẻ ***< div>*** có class là ***premium-customer-blocker***. Sẽ thấy CSS style được áp dụng cho thẻ, ví dụ: margin-top: 60px và text-align: center. Style cần quan tâm ở đây là ***display: block***. Sử dụng Inspector và có thể thay đổi bất kỳ thông tin nào trên website, bao gồm cả nội dung. Nhưng điều này chỉ được chỉnh sửa trên browser từ phía client và khi refresh, mọi thứ sẽ trở lại bình thường. 
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image13.png?raw=true)
 
 => Thử xóa ***display: block;*** trong Inspector: 
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image14.png?raw=true)
 
 => Sau khi xóa, tìm thấy nội dung bị ẩn phía sau paywall: 
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image15.png?raw=true)
 
 Trên website Acme IT Support, click vào contact page, mỗi khi page được tải, có thể thấy screen nhấp nháy nhanh màu đỏ. Sử dụng Debugger để tìm hiểu xem flash màu đỏ này là gì và liệu có gì đằng sau nó không. 
 
@@ -100,30 +100,30 @@ Nếu click vào số dòng chứa mã trên, sẽ thấy nó chuyển sang màu
 
 File ***flash.min.js***: 
 
-![img](16)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image16.png?raw=true)
 
 => Đặt ***breakpoint***:
 
-![img](17)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image17.png?raw=true)
 
 Click vào mục Contact và page sẽ dừng ở breakpoint này: 
 
-![img](18)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image18.png?raw=true)
 
 Tab ***Network*** trên developer tool có thể dùng để theo dõi mọi request bên ngoài mà webpage đưa ra. Nếu click vào tab Network rồi refresh page, sẽ thấy tất cả file mà page yêu cầu:
 
-![img](19)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image19.png?raw=true)
 
 Khi tab Network đang mở, ở mục Contact, hãy điền thử vào contact form và nhấn nút Send Message. Sẽ nhận thấy 1 event trên tab Network, đây là form đang được gửi ở chế độ nền bằng method có tên là ***AJAX***. AJAX là 1 method gửi và nhận dữ liệu mạng trong nền web application mà không can thiệp bằng cách thay đổi web page hiện tại. 
 
 Kiểm tra page mà form được gửi đến…
 Sau khi điền thông tin vào Form và gửi, truy cập thử Request URL:
 
-![img](20)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image20.png?raw=true)
 
 => Truy cập ***/contact-msg***:
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image21.png?raw=true)
 
 
 
