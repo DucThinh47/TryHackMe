@@ -48,7 +48,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Burp Suite: Repeater](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Repeater.md)
 
-    - [Burp Suite: Intruder]()
+    - [Burp Suite: Intruder](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Intruder.md)
 
     - [Burp Suite: Other Modules]()
 

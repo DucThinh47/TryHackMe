@@ -10,7 +10,7 @@ Intruder phục vụ nhiều mục đích khác nhau, ví dụ như ***brute-for
 
 Có thể nói Intruder có thể so sánh với các tool như ***Wfuzz*** hoặc **ffuf***.
 
-![img](23)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image23.png?raw=true)
 
 Có 4 ***sub-tabs*** trong Intruder:
 
@@ -26,7 +26,7 @@ Có 4 ***sub-tabs*** trong Intruder:
 
 Khi sử dụng Burp Suite Intruder để thực hiện 1 cuộc tấn công, bước đầu tiên là kiểm tra các ***vị trí trong request*** muốn chèn payload.
 
-![img](24)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image24.png?raw=true)
 
 ***Lưu ý***, Burp Suite Intruder tự động cố gắng xác định các vị trí có khả năng xảy ra nhất nơi payload có thể được chèn vào. Các vị trí này được đánh dấu bằng màu xanh lá cây và được bao quanh bởi các dấu ***(§)***.
 
@@ -38,7 +38,7 @@ Khi sử dụng Burp Suite Intruder để thực hiện 1 cuộc tấn công, b�
 
 Trong tab ***Payloads*** của Burp Suite Intruder, có thể tạo, chỉ định và định cấu hình payload cho cuộc tấn công:
 
-![img](25)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image25.png?raw=true)
 
 - ***Payload Sets***: 
 
@@ -56,7 +56,7 @@ Trong tab ***Payloads*** của Burp Suite Intruder, có thể tạo, chỉ đị
 
     - Mỗi payload type sẽ có bộ tùy chọn và chức năng riêng
 
-![img](26)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image26.png?raw=true)
 
 - ***Payload Processing***:
 
@@ -190,17 +190,17 @@ Trong vd này, giả sử  ***không biết pass nào thuộc về user nào***.
 
 Tải xuống wordlist: 
 
-![img](27)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image27.png?raw=true)
 
 Intercept request: 
 
-![img](28)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image28.png?raw=true)
 
-![img](29)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image29.png?raw=true)
 
 Chuyển sang tab Payload: 
 
-![img](30)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image30.png?raw=true)
 
 Với payload set tương ứng thì load wordlist tương ứng:
 
@@ -209,21 +209,21 @@ Với payload set tương ứng thì load wordlist tương ứng:
 
 Click Start attack: 
 
-![img](31)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image31.png?raw=true)
 
 => Vì Burp đã gửi 100 request, cần xác định request nào thành công.
 
 => Vì tất cả Response status code không phân biệt các lần thử thành công hay thất bại (đều là 302), cần sử dụng ***Length*** để phân biệt.
 
-![img](32)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image32.png?raw=true)
 
 => Nhấp vào Length để sắp kết quả theo Length, tìm request có response length ngắn hơn, cho biết nỗ lực đăng nhập thành công
 
-![img](33)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image33.png?raw=true)
 
 => Thử đăng nhập với username: ***m.rivera*** và pass là ***letmein1***.
 
-![img](34)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image34.png?raw=true)
 
 => Login thành công
 
@@ -242,19 +242,19 @@ http://10.10.159.252/support/ticket/NUMBER
 
 => Điều chỉnh position chỉ test ID vé:
 
-![img](35)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image35.png?raw=true)
 
 Điều chỉnh payload type thành ***numbers*** trong khoảng ***1 - 100***, step là 1:
 
-![img](36)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image36.png?raw=true)
 
 => Start attack:
 
-![img](37)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image37.png?raw=true)
 
 => Tìm các request có status code là 200 và xem response…
 
-![img](38)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image38.png?raw=true)
 
 ***Extra Mile Challenge***
 
@@ -262,17 +262,17 @@ Thử intercept và send request http://10.10.159.252/admin/login/
 
 => Response như sau:
 
-![img](39)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image39.png?raw=true)
 
 Trong response, nhận thấy bên cạnh các trường username và password, hiện có 1 bộ Session cookie cũng như CSRF (Cross-Site Request Forgery) token ở dạng field ẩn. Refresh page và thấy cả session cookie và loginToken thay đổi theo từng lần refresh.
 
 => Mỗi lần login, cần trích xuất giá trị hợp lệ cho cả session cookie và loginToken.
 
-![img](40)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image40.png?raw=true)
 
 Để làm, sử dụng ***Burp Macros*** để xác định 1 tập hợp hành động (macro) lặp lại sẽ được thực thi trước mỗi request. Macro này sẽ trích xuất các giá trị duy nhất cho session cookie và loginToken, thay thế chúng trong mọi request tiếp theo.
 
-![img](41)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image41.png?raw=true)
 
 => Chọn 2 position là username và password
 
