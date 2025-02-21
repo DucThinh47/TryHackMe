@@ -5,7 +5,7 @@
 => Về bản chất, Repeater cho phép ***sửa đổi*** và ***gửi lại*** các request bị chặn đến mục tiêu. Cho phép nhận các request được ghi lại trong Burp Proxy và thao tác chúng, gửi chúng nhiều lần nếu cần. Ngoài ra, có thể tạo các request từ đầu theo cách thủ công, tương tự như sử dụng công cụ dòng lệnh .
 ***curl***.
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image7.png?raw=true)
 
 1. ***Request List***: Nằm ở phía bên trái của tab, hiển thị danh sách các request Repeater.
 
@@ -23,15 +23,15 @@
 
 Mặc dù việc tạo request thủ công là 1 tùy chọn, nhưng cách phổ biến hơn là ghi lại request bằng Proxy module và sau đó truyền request đó đến Repeater để chỉnh sửa thêm và ghi lại.
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image8.png?raw=true)
 
 Cả 2 phần ***Target*** và ***Inspector*** hiện đều hiển thị thông tin liên quan, mặc dù chưa có response. Khi nhấp vào nút ***Send***, Response sẽ xuất hiện: 
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image9.png?raw=true)
 
 Khi muốn sửa đổi request, ví dụ, thay đổi ***Connection header*** hành ***“open”*** thay vì ***“close”*** sẽ mang lại response với header ***Connection: keep-alive***.
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image10.png?raw=true)
 
 => Repeater module cũng có thể xem được History. 
 
@@ -39,7 +39,7 @@ Khi muốn sửa đổi request, ví dụ, thay đổi ***Connection header*** h
 
 Repeater cung cấp nhiều tùy chọn trình bày request và response khác nhau, từ output thập lục phân đến trang được hiển thị đầy đủ.
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image11.png?raw=true)
 
 1. ***Pretty***:  tùy chọn mặc định, nhận response thô và áp dụng các cải tiến nhỏ về định dạng để cải thiện khả năng đọc
 
@@ -57,11 +57,11 @@ Inspector là tính năng bổ sung cho chế độ xem Request và Response tro
 
 Inspector có thể được sử dụng trong cả Proxy module và Repeater module.
 
-![img](12)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image12.png?raw=true)
 
 Trong số các thành phần này, các phần liên quan đến Request thường có thể được sửa đổi, cho phép thêm, chỉnh sửa và xóa các mục. Ví dụ, trong phần ***Request attributes***, ta có thể thay đổi các thành phần liên quan đến location, method và protocol của request. 
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image13.png?raw=true)
 
 Các thành phần có thể chỉnh sửa khác: 
 
@@ -79,25 +79,25 @@ Các thành phần có thể chỉnh sửa khác:
 
 Repeater đặc biệt phù hợp với các tác vụ request gửi lặp đi lặp lại các request tương tự, thường có những sửa đổi nhỏ. 
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image14.png?raw=true)
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image15.png?raw=true)
 
 => Thay id product thành một giá trị không hợp lệ như ***-1***:
 
-![img](16)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image16.png?raw=true)
 
 ***Extra-mile Challenge***
 
-![img](17)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image17.png?raw=true)
 
 => Thử gửi Request đến ***/about/2'***:
 
-![img](18)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image18.png?raw=true)
 
 => Response chứa dòng sau: 
 
-![img](19)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image19.png?raw=true)
 
 => Vì đã biết tên bảng và số cột, có thể sử dụng truy vấn ***UNION*** để chọn tên column cho bảng people trong Database mặc định ***information_schema***. Sử dụng request: 
 
@@ -125,7 +125,7 @@ Repeater đặc biệt phù hợp với các tác vụ request gửi lặp đi l
 
 Truy vấn này sẽ tìm tên các cột trong bảng ***people***. Sử dụng truy vấn ***UNION*** để kết hợp kết quả từ truy vấn gốc và truy vấn chèn. Sử dụng ID không hợp lệ để đảm bảo kết quả từ truy vấn chèn xuất hiện đầu tiên. Thêm các giá trị ***null*** để phù hợp với số lượng cột trong truy vấn gốc.
 
-![img](20)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image20.png?raw=true)
 
 => Thành công lấy tên cột đầu tiên là ***id***.
 
@@ -133,7 +133,7 @@ Truy vấn này sẽ tìm tên các cột trong bảng ***people***. Sử dụng
 
 ***/about/0 UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="people"***
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image21.png?raw=true)
 
 => Đã có thông tin về: 
 
@@ -147,7 +147,7 @@ Truy vấn này sẽ tìm tên các cột trong bảng ***people***. Sử dụng
 
 ***0 UNION ALL SELECT notes,null,null,null,null FROM people WHERE id = 1***
 
-![img](22)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image22.png?raw=true)
 
 
 

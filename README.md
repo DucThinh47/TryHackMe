@@ -46,7 +46,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Burp Suite: The Basics](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_The_Basics.md)
 
-    - [Burp Suite: Repeater]()
+    - [Burp Suite: Repeater](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Repeater.md)
 
     - [Burp Suite: Intruder]()
 
@@ -56,11 +56,11 @@ Thực hành các bài tập trên TryHackMe.
 
 - [Web Hacking Fundamentals]()
 
-    - [How Websites Work]()
+    - [How Websites Work](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/How_Websites_Work.md)
 
-    - [HTTP in Detail]()
+    - [HTTP in Detail](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/How_The_Web_Works/HTTP_in_Details.md)
 
-    - [Burp Suite: The Basics]()
+    - [Burp Suite: The Basics](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_The_Basics.md)
 
     - [OWASP Top 10 - 2021]()
 
