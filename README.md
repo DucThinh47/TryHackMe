@@ -42,9 +42,9 @@ Thực hành các bài tập trên TryHackMe.
 
     - [SQL Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/SQL_Injection.md)
 
-- [Burp Suite]()
+- [Burp Suite](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/Burp_Suite)
 
-    - [Burp Suite: The Basics]()
+    - [Burp Suite: The Basics](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_The_Basics.md)
 
     - [Burp Suite: Repeater]()
 

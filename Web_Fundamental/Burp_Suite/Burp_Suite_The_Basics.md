@@ -6,7 +6,7 @@
 
 => Nói 1 cách đơn giản, Burp Suite nằm bắt và cho phép thao tác tất cả lưu lượng HTTP/HTTPs giữa trình duyệt và server. Khả năng ***chặn***, ***xem*** và ***sửa đổi*** các request trước khi chúng đến server mục tiêu hoặc thậm chí, thao túng các response trước khi trình duyệt nhận được khiến Burp Suite trở thành 1 tool hữu ích để kiểm tra web application thủ công.
 
-![img](0)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image.png?raw=true)
 
 ***Features of Burp Community***
 
@@ -34,7 +34,7 @@
 
 => ***Intercepting Requests***: Khi requests được thực hiện thông qua Burp Suite, chúng sẽ bị chặn và không thể tiếp cận target server. Các request xuất hiện trong tab Proxy, cho phép thực hiện các hành động khác như forwarding, dropping, editing, hoặc sending đến Burp modules khác:
 
-![img](1)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image1.png?raw=true)
 
 => ***Taking Control***: Khả năng chặn request cho phép giành quyền kiểm soát hoàn toàn lưu lượng truy cập web.
 
@@ -46,11 +46,11 @@
 
 => ***Logs and History***: Các request đã được ghi có thể xem trong các tab phụ HTTP history và WebSockets history, cho phép phân tích lại và gửi request đến các Burp module khác nếu cần.
 
-![img](2)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image2.png?raw=true)
 
 => ***Response Interception***: Theo mặc định, proxy không chặn response của server, trừ khi được yêu cầu rõ ràng trên cơ sở từng request. Checkbox ***“Intercept responses based on the following rules”***, cùng với các rule đã được xác định, cho phép chặn response linh hoạt hơn
 
-![img](3)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image3.png?raw=true)
 
 => ***Match and Replace***: Phần “Match and Replace” trong Proxy settings cho phép sử dụng biểu thức thông thường (regex) để sửa đối request đến và đi. Tính năng này cho phép thực hiện các thay đổi động, ví dụ như sửa đổi tác nhân người dùng hoặc thao tác với cookie
 
@@ -74,13 +74,13 @@ Bằng cách đặt scope cho dự án, ta có thể hạn chế Burp Suite ch�
 
 ***Example Attack***
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image4.png?raw=true)
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image5.png?raw=true)
 
 => Chỉnh sửa request trực tiếp: 
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image6.png?raw=true)
 
 Sau khi chèn đoạn script vào tham số ***email***, bôi đen và ***ctrl + U*** để tự động format phù hợp.
 
