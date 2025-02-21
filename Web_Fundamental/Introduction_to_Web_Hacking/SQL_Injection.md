@@ -6,11 +6,11 @@ Cơ sở dữ liệu là 1 cách lưu trữ điện tử các bộ sưu tập d�
 
 Trong DBMS, có thể có nhiều DB, mỗi DB chứa tập data riêng. Ví dụ, có DB tên là “shop”. Trong DB này, lưu trữ thông tin về các sản phẩm có sẵn để mua, User đã đăng ký cửa hàng trực tuyến và thông tin về các đơn hàng đã nhận được. Lưu thông tin này 1 cách riêng biệt trong DB bằng cách sử dụng ***tables***.
 
-![img](148)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image148.png?raw=true)
 
 ***Tables là gì?***
 
-![img](149)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image149.png?raw=true)
 
 ***Relational Vs Non-Relational Databases:***
 
@@ -66,7 +66,7 @@ Kiểu SQL Injection này sử dụng toán tử SQL UNION cùng với lệnh SE
 
 ***Practical***
 
-![img](150)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image150.png?raw=true)
 
 Thử thay đổi id=1 trong URL thành id=0 và thêm phần sau:  
 
@@ -74,7 +74,7 @@ Thử thay đổi id=1 trong URL thành id=0 và thêm phần sau:
 
 Phương thức ***group_concat()*** lấy column được chỉ định (TH này là ***table_name***) từ nhiều row được trả về và đặt nó vào 1 chuỗi được phân tách bằng dấu ***“,”***. DB ***information_schema***: mọi user đều có quyền truy cập vào DB này, nó chứa thông tin về tất cả DB và table mà user có quyền truy cập.
 
-![img](151)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image151.png?raw=true)
 
 Mục tiêu là mật khẩu của Martin 
 
@@ -92,7 +92,7 @@ Thay đổi truy vấn thành:
 
 Tương tự, sử dụng ***group_concat*** để trả về tất cả row thành dạng 1 string và khiến nó dễ đọc hơn.
 
-![img](152)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image152.png?raw=true)
 
 => Tìm ra mật khẩu của Martin!
 
@@ -138,7 +138,7 @@ Một cuộc tấn công Out-Of-Band được phân loại bằng cách có 2 k�
 
 3. Payload này buộc yêu cầu HTTP quay trở lại máy của attacker chứa dữ liệu từ DB
 
-![img](153)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image153.png?raw=true)
 
 ***Giải pháp***
 

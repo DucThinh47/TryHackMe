@@ -40,7 +40,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Command Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Command_Injection.md)
 
-    - [SQL Injection]()
+    - [SQL Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/SQL_Injection.md)
 
 - [Burp Suite]()
 
