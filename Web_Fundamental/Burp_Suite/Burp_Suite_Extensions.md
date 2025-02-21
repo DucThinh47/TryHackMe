@@ -2,7 +2,7 @@
 
 ***The Extensions Interface***
 
-![img](69)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image69.png?raw=true)
 
 1. Extensions List: Box trên cùng hiển thị extensions list hiện được cài đặt trong Burp Suite cho project hiện tại. Cho phép active hoặc deactivate các extension riêng lẻ.
 
@@ -24,21 +24,21 @@ Trong Burp Suite, BApp Store (Burp App Store) cho phép dễ dàng khám phá v�
 
 Thử cài đặt extension ***Request Timer***, được viết bởi Nick Taylor. Extension Request Timer cho phép ghi lại thời gian cần thiết để mỗi request nhận được response.
 
-![img](70)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image70.png?raw=true)
 
-![img](71)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image71.png?raw=true)
 
 Sau khi cài xong sẽ hiển thị trên thanh menu của Burp SUite: 
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image72.png?raw=true)
 
 ***Jython***
 
 Để sử dụng các module Python trong Burp Suite, cần bao gồm file Jython Interpreter JAR, đây là 1 bản triển khai Java của Python. Jython Interpreter (Trình thông dịch Jython) cho phép chạy extensions dựa trên Python
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image73.png?raw=true)
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image74.png?raw=true)
 
 ***The Burp Suite API***
 
@@ -46,7 +46,7 @@ Trong Burp Suite Extensions module, cung cấp quyền truy cập vào nhiều A
 
 Để xem API endpoints có sẵn, điều hướng đến tab phụ API trong module Extensions. Mỗi mục được liệt kê trong bảng bên trái đại diện cho 1 API endpoint khác nhau có thể được truy cập từ bên trong Extensions:
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image75.png?raw=true)
 
 
 
