@@ -6,11 +6,11 @@
 
 Để truy cập Decoder, điều hướng đến tab Decoder từ menu trên cùng để xem các tùy chọn có sẵn: 
 
-![img](42)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image42.png?raw=true)
 
 Giao diện này đưa ra 1 số tùy chọn: 
 
-![img](43)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image43.png?raw=true)
 
 1. Vùng này đóng vai trò là không gian làm việc để nhập hoặc dán data yêu cầu decoding hoặc encoding.
 
@@ -22,11 +22,11 @@ Giao diện này đưa ra 1 số tùy chọn:
 
 Khi nhập data vào input field, giao diện sẽ tự sao chép để hiển thị output hoạt động. Sau đó, có thể áp dụng các phép biến đổi tiếp theo bằng cách sử dụng các tùy chọn tương tự:
 
-![img](44)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image44.png?raw=true)
 
 ***Decoder: Encoding/ Decoding***
 
-![img](45)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image45.png?raw=true)
 
 - Plain: Đề cập đến văn bản thô trước khi áp dụng bất kỳ chuyển đổi nào. 
 
@@ -34,11 +34,11 @@ Khi nhập data vào input field, giao diện sẽ tự sao chép để hiển t
 
 Ví dụ, mã hóa ký tự gạch chéo (/), có mã ký tự ASCII là 47, sẽ được chuyển thành 2F ở dạng hexadecimal, do đó trở thành %2F trong URL encoding.
 
-![img](46)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image46.png?raw=true)
 
 - HTML: HTML encoding thay thế các ký tự đặc biệt bằng ký hiệu và (&), theo sau là hexadecimal number hoặc tham chiếu đến ký tự being escaped và kết thúc bằng dấu (;). Phương pháp này đảm bảo hiển thị an toàn các ký tự đặc biệt trong HTML, giúp ngăn chặn các tấn công như XSS.
 
-![img](47)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image47.png?raw=true)
 
 - Base64: 1 phương pháp encode thường được sử dụng, chuyển đổi mọi data sang định dạng tương thích với ASCII
 
@@ -48,13 +48,13 @@ Ví dụ, mã hóa ký tự gạch chéo (/), có mã ký tự ASCII là 47, s�
 
 - Gzip: Gzip nén data, giảm kích thước file và page trước khi truyền qua browser. Decoder tạo điều kiện thuận lợi cho việc mã hóa và giải mã thủ công data gzip, mặc dù nó thường không hợp lệ với ASCII / Unicode. Ví dụ: 
 
-![img](48)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image48.png?raw=true)
 
 ***Hex Format***
 
 Mặc dù việc nhập data ở định dạng ASCII là có lợi nhưng đôi khi cần phải chỉnh sửa input data theo từng byte. Đây là lúc “Hex View” tỏ ra hữu ích: 
 
-![img](49)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image49.png?raw=true)
 
 Tính năng này cho phép xem và thay đổi data ở định dạng hexadecimal byte, 1 tool quan trọng khi làm việc với binary file hoặc data không phải ASCII khác.
 
@@ -66,7 +66,7 @@ Cuối cùng, tùy chọn Smart Decode. Tính năng này cố gắng tự độn
 
 được tự động nhận dạng dưới dạng mã hóa HTML và được giải mã tương ứng.
 
-![img](50)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image50.png?raw=true)
 
 Mặc dù không hoàn hảo, tính năng này có thể là giải pháp nhanh chóng để giải mã các khối dữ liệu không xác định.
 
@@ -86,18 +86,18 @@ Hơn nữa, hàm băm được sử dụng để lưu trữ password 1 cách an 
 
 Decoder cho phép ta tạo giá trị băm cho data trực tiếp trong Burp Suite; nó hoạt động tương tự các tùy chọn encoding/decoding.
 
-![img](51)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image51.png?raw=true)
 
-![img](52)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image52.png?raw=true)
 
-![img](53)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image53.png?raw=true)
 
 
 ***Comparer: Overview***
 
 Comparer, như tên của nó, cho phép ta so sánh hai phần dữ liệu, bằng các từ ASCII hoặc bằng byte.
 
-![img](54)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image54.png?raw=true)
 
 1. Các mục cần so sánh. Khi load data vào Comparer, nó sẽ xuất hiện dưới dạng các rows trong các bảng này
 
@@ -105,7 +105,7 @@ Comparer, như tên của nó, cho phép ta so sánh hai phần dữ liệu, b�
 
 3. Cuối cùng, ở phía dưới bên phải, có thể chọn so sánh 2 datasets theo words hoặc bytes
 
-![img](55)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image55.png?raw=true)
 
 1. Dữ liệu được so sánh chiếm phần lớn cửa sổ; nó có thể được xem ở định dạng text hoặc hex
 
@@ -117,25 +117,25 @@ Comparer, như tên của nó, cho phép ta so sánh hai phần dữ liệu, b�
 
 Thử Login và send to repeater: 
 
-![img](56)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image56.png?raw=true)
 
 Chuyển response này sang comparer: 
 
-![img](57)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image57.png?raw=true)
 
 Thử login lại với username và password:
 
-![img](58)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image58.png?raw=true)
 
 Chuyển response thứ 2 sang comparer và so sánh: 
 
-![img](59)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image59.png?raw=true)
 
 ***Sequencer: Overview***
 
 Sequencer cho phép ta đánh giá entropy hoặc tính ngẫu nhiên của tokens. Tokens là các chuỗi được sử dụng để xác định thứ gì đó, lý tưởng nhất là phải được tạo theo cách bảo mật bằng mật mã. Các Tokens này có thể là session cookie hoặc Cross-SIte Request Forgery (CSRF) tokens, được dùng để bảo vệ việc gửi form.
 
-![img](60)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image60.png?raw=true)
 
 Có 2 cách chính để thực hiện phân tích tokens với Sequencer: 
 
@@ -147,23 +147,23 @@ Có 2 cách chính để thực hiện phân tích tokens với Sequencer:
 
 Intercept request đến http://10.10.86.85/admin/login/ và Send to Sequencer: 
 
-![img](61)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image61.png?raw=true)
 
-![img](62)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image62.png?raw=true)
 
 Ở phần Token Location Within Response, chọn form field và chọn loginToken vì ta đang testing loginToken:
 
-![img](63)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image63.png?raw=true)
 
 Click Start: 
 
-![img](64)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image64.png?raw=true)
 
 Cửa sổ mới hiển thị cho biết quá trình, hiển thị số token đã bắt được. Đợi đến khi thu khoảng 10000 tokens thì click pause và analyze now
 
 Sau khi phân tích: 
 
-![img](65)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image65.png?raw=true)
 
 ***Sequencer: Analysis***
 
@@ -179,11 +179,11 @@ Sau khi phân tích:
 
 Organizer module của Burp Suite được thiết kế giúp ta lưu trữ và chú thích các bản sao của HTTP request mà có thể xem lại sau này.
 
-![img](66)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image66.png?raw=true)
 
 Request được lưu trong 1 table, chứa các cột như index number, time mà request được tạo, workflow status, Burp tool mà request được gửi từ đó, HTTP method, server hostname, URL path, URL query string, số lượng tham số trong request, HTTP status code của response, độ dài của response tính bằng byte và bất kỳ ghi chú nào mà ta đã thực hiện.
 
-![img](67)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image67.png?raw=true)
 
 Để xem request và response: 
 
@@ -191,7 +191,7 @@ Request được lưu trong 1 table, chứa các cột như index number, time m
 
 - Request và Response đều là read-only. Ta có thể search từ, cụm từ trong request và response
 
-![img](68)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/images/image68.png?raw=true)
 
 
 

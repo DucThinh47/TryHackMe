@@ -50,7 +50,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Burp Suite: Intruder](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Intruder.md)
 
-    - [Burp Suite: Other Modules]()
+    - [Burp Suite: Other Modules](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Other_Modules.md)
 
     - [Burp Suite: Extensions]()
 
