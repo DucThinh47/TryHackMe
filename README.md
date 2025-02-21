@@ -34,7 +34,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [File Inclusion](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/File_Inclusion.md)
 
-    - [Intro to SSRF]()
+    - [Intro to SSRF](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Intro_to_SSRF.md)
 
     - [Intro to Cross-Site Scripting]()
 

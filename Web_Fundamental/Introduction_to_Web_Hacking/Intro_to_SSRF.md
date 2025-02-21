@@ -6,19 +6,19 @@ Có 2 loại lỗ hổng SSRF; đầu tiên là ***Regular SSRF*** , nơi data �
 
 ***SSRF Examples***
 
-![img](86)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image86.png?raw=true)
 
-![img](87)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image87.png?raw=true)
 
-![img](88)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image88.png?raw=true)
 
-![img](89)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image89.png?raw=true)
 
-![img](90)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image90.png?raw=true)
 
 Ví dụ về 1 tấn công SSRF: 
 
-![img](91)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image91.png?raw=true)
 
 ***Finding an SSRF***
 
@@ -26,19 +26,19 @@ Ví dụ về 1 tấn công SSRF:
 
 1. Khi 1 URL đầy đủ được dùng làm giá trị cho 1 tham số trên thanh URL:
 
-![img](92)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image92.png?raw=true)
 
 2. 1 field ẩn trong form: 
 
-![img](93)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image93.png?raw=true)
 
 3. Một phần URL dưới dạng tham số trong URL, ví dụ như chỉ hostname:
 
-![img](94)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image94.png?raw=true)
 
 4. Có thể chỉ là path của URL dưới dạng 1 tham số:
 
-![img](95)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image95.png?raw=true)
 
 ***Defeating Common SSRF Defenses***
 
@@ -79,19 +79,19 @@ Ví dụ: Một liên kết như https://website.thm/link?url=https://tryhackme.
 
 Truy cập website Acme IT Support: 
 
-![img](96)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image96.png?raw=true)
 
 => Thử chọn 1 Avatar và Inspect: 
 
-![img](97)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image97.png?raw=true)
 
 => Thử thay đổi value thành ***private*** để truy cập endpoint /private:
 
-![img](98)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image98.png?raw=true)
 
 => Sau đó chọn avatar được thay đổi value private này và click chọn Update Avatar:
 
-![img](99)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image99.png?raw=true)
 
 => Nhận được thông báo lỗi ***URL cannot start with private***.
 
@@ -99,21 +99,21 @@ Truy cập website Acme IT Support:
 
 => Thay value thành ***x/../private***:
 
-![img](100)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image100.png?raw=true)
 
 => Click chọn lại avatar này và click Button Update Avatar: 
 
-![img](101)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image101.png?raw=true)
 
 => Thông báo thành công, lúc này Current Avatar đang là không có ảnh gì.
 
 => Thử View source page: 
 
-![img](102)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image102.png?raw=true)
 
 => Giải mã chuỗi base64 này: 
 
-![img](103)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image103.png?raw=true)
 
 
 
