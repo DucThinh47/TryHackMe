@@ -4,7 +4,7 @@ Lỗ hổng này tồn tại do các ứng dụng thường sử dụng function
 
 Trong đoạn code này, ứng dụng lấy data mà User nhập vào field có tên là ***$title*** để tìm kiếm tên bài hát trong directory:
 
-![img](141)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image141.png?raw=true)
 
 1. Ứng dụng lưu trữ MP3 files trong 1 directory trên OS
 
@@ -21,7 +21,7 @@ Hiện nay, loại thông tin này thường được lưu trữ trong Database;
 
 Ví dụ 1 đoạn mã Python: 
 
-![img](142)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image142.png?raw=true)
 
 1. ***“flask”*** package được dùng để thiết lập Web Server.
 
@@ -87,7 +87,7 @@ Trong PHP, nhiều Function tương tác với OS để thực thi lệnh thông
 
 Đoạn mã ví dụ. Tại đây, ứng dụng chỉ chấp nhận và xử lý các số được nhập vào Form. Có nghĩa là bất kỳ lệnh nào như ***whoami*** sẽ không được xử lý.
 
-![img](143)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image143.png?raw=true)
 
 1. Ứng dụng chỉ chấp nhận 1 mẫu ký tự cụ thể (các chữ số 0-9)
 
@@ -101,7 +101,7 @@ Dọn dẹp mọi Input từ User mà ứng dụng sử dụng là 1 cách tốt
 
 Ví dụ, hàm PHP dưới dây kiểm tra xem input có phải số hay không: 
 
-![img](144)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image144.png?raw=true)
 
 ***Bypassing Filters***
 
@@ -109,13 +109,13 @@ Ví dụ, 1 ứng dụng có thể loại bỏ dấu ngoặc kép; thay vào đ�
 
 Khi thực thi, mặc dù data đưa ra sẽ ở định dạng khác với định dạng mong đợi nhưng nó vẫn có thể được diễn giải và cho kết quả tương tự.
 
-![img](145)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image145.png?raw=true)
 
 ***Practical: Command Injection (Deploy)***
 
-![img](146)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image146.png?raw=true)
 
-![img](147)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image147.png?raw=true)
 
 
 

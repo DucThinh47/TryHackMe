@@ -38,7 +38,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [Intro to Cross-Site Scripting](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Intro_to_Cross-site_Scripting.md)
 
-    - [Command Injection]()
+    - [Command Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Command_Injection.md)
 
     - [SQL Injection]()
 
