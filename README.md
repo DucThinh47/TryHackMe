@@ -1,6 +1,6 @@
 # TryHackMe
 
-Thực hành các bài tập trên TryHackMe.
+Lý thuyết và thực hành các bài tập trên TryHackMe.
 
 # Content
 
