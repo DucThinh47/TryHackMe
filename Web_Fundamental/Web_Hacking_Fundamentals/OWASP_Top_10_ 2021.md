@@ -22,7 +22,7 @@
 
 ***1. Broken Access Control***
 
-![img](0)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image.png?raw=true)
 
 Nếu user có thể truy cập tài nguyên dành cho admin thì chức năng kiểm soát truy cập đã bị lỗi. 
 
@@ -42,19 +42,19 @@ VD: trong URL https://example.com/profile?id=123, giá trị ***id=123*** là m�
 
 Giả sử khi đang login vào bank account, sau khi xác thực thành công, được đưa đến URL https://bank.thm/account?id=111111: 
 
-![img](1)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image1.png?raw=true)
 
 Tuy nhiên, có 1 vấn đề rất lớn ở đây, ***bất kỳ ai*** cũng có thể thay đổi thông số ***id*** thành thông số khác như 222222 và nếu website được định cấu hình không chính xác, anh ta sẽ có quyền truy cập vào thông tin bank của user có id là 222222.
 
-![img](2)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image2.png?raw=true)
 
 => Vì ứng dụng web không kiểm tra user đã login có sở hữu account được tham chiếu hay không nên attacker có thể lấy thông tin nhạy cảm từ user khác do lỗ hổng IDOR.
 
 ***Lưu ý***, các tham chiếu đối tượng trực tiếp không phải vấn đề mà là ứng dụng web không xác thực xem ***user đã login có quyền truy cập vào account được request hay không***.
 
-![img](3)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image3.png?raw=true)
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image4.png?raw=true)
 
 ***2. Cryptographic Failures***
 
@@ -135,13 +135,13 @@ Sau khi thu thập thông tin, tìm thấy 1 tập hợp các hàm băm mật kh
 
 sử dụng công cụ trực tuyến: ***Crackstation***, 1 công cụ cực tốt trong việc bẻ khóa password yếu. 
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image5.png?raw=true)
 
 Thử nhập hàm băm password của ***Joy Paulson***: 5f4dcc3b5aa765d61d8327deb882cf99 
 
 Click “Crack Hashes”:
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image6.png?raw=true)
 
 => Tìm được password của user ***Joy Paulson***. 
 
@@ -149,21 +149,21 @@ Click “Crack Hashes”:
 
 Truy cập web application: http://10.10.156.52:81/
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image7.png?raw=true)
 
 Thử truy cập ***/assets***: 
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image8.png?raw=true)
 
 => Tìm được ***flat-file db***, tải xuống. 
 
 Khám phá file: 
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image9.png?raw=true)
 
 => Tìm ra username và password của admin, thử login trên website: 
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image10.png?raw=true)
 
 => Login thành công vào tài khoản admin. 
 
@@ -231,7 +231,7 @@ Họ viết 1 đoạn mã PHP đơn giản để gọi lệnh ***cowsay*** từ 
 
 => Hoàn toàn có thể thao tác với các biến ***$cow*** và ***$mooing*** nên kẻ tấn công có thể chèn các lệnh bổ sung: 
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image11.png?raw=true)
 
 ***Exploiting Command Injection***
 
@@ -239,31 +239,31 @@ Sau khi biết cách ứng dụng hoạt động, vận dụng tính năng ***In
 
 Cú pháp ***$(your_command_here)***. Khi Bash gặp cú pháp này, nó sẽ thực thi lệnh bên trong trước, sau đó sử dụng kết quả làm đầu vào cho lệnh bên ngoài.
 
-![img](12)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image12.png?raw=true)
 
 Quay trở lại Cowsay server, đây là điều sẽ xảy ra nếu  gửi inline command tới ứng dụng web: 
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image13.png?raw=true)
 
 Một số lệnh có thể thử: *whoami, id, ifconfig/ip addr, uname -a, ps -ef,...*.
 
 Truy cập http://10.10.156.52:82/ : 
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image14.png?raw=true)
 
 Thử chèn inline command ***ls***:
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image15.png?raw=true)
 
 => Tìm được file ***drepper.txt***. 
 
 Thử chèn inline command ***cat /etc/passwd***: 
 
-![img](16)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image16.png?raw=true)
 
-![img](17)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image17.png?raw=true)
 
-![img](18)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image18.png?raw=true)
 
 ***4.Insecure Design***
 
@@ -283,7 +283,7 @@ Ví dụ:
 
 1 ví dụ điển hình về lỗ hổng như vậy đã xảy ra trên Instagram. Instagram cho phép user đặt lại password đã quên bằng cách gửi cho họ mã gồm 6 chữ số tới số điện thoại qua SMS để xác thực. Nếu attacker muốn truy cập vào account của nạn nhân, chúng có thể cố gắng tấn công mã gồm 6 chữ số này. Đúng như dự đoán, điều này ko thực hiện được vì Instagram đã giới hạn tỷ lệ để sau 250 lần thử, user sẽ bị chặn thử thêm. 
 
-![img](19)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image19.png?raw=true)
 
 Tuy nhiên, nhận thấy rằng giới hạn này chỉ áp dụng cho những lần thử mã được phát hiện ***từ cùng 1 IP***. Nếu attacker có nhiều IP khác nhau để gửi request, giờ đây attacker có thể thử 250 mã cho mỗi IP. Dù attacker phải thử rất nhiều IP nhưng ***cloude services*** có thể khiến cuộc tấn công trở nên khả thi. 
 
@@ -295,19 +295,19 @@ Truy cập http://10.10.156.52:85/
 
 Nhập username là ***joseph***
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image21.png?raw=true)
 
 => Chọn câu hỏi ***What’s your favourite colour?*** (vì dễ đoán và phải thử ít lần nhất)
 
-![img](22)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image22.png?raw=true)
 
 Thử green: 
 
-![img](23)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image23.png?raw=true)
 
 Truy cập vào account joseph và tìm thấy flag: 
 
-![img](24)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image24.png?raw=true)
 
 ***5.Security Misconfiguration***
 
@@ -355,13 +355,13 @@ Ví dụ thực tế:
 
     - Kẻ tấn công có thể sử dụng bảng điều khiển này để thực thi bất kỳ mã Python nào, dẫn đến việc kiểm soát hệ thống.
 
-![img](25)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image25.png?raw=true)
 
 ***Practical example***
 
 Truy cập http://10.10.156.52:86/
 
-![img](26)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image26.png?raw=true)
 
 Truy cập endpoint ***/console*** và thử lệnh: 
 
@@ -369,13 +369,13 @@ Truy cập endpoint ***/console*** và thử lệnh:
 
 Để thực thi lệnh ***ls -l*** trên server:
 
-![img](27)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image27.png?raw=true)
 
 => Tìm được file ***app.py***. Tiếp tục thử lệnh để đọc nội dung file: 
 
     import os; print(os.open(“cat app.py”).read())
 
-![img](28)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image28.png?raw=true)
 
 ***6.Vulnerable and Outdated Components***
 
@@ -397,11 +397,11 @@ Ví dụ: Một công ty sử dụng ***WordPress*** phiên bản ***4.6***, tro
 
 Xem xét 1 web application mẫu:  ***Nostromo 1.9.6***:
 
-![img](29)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image29.png?raw=true)
 
 Đã có số phiên bản và tên phần mềm, có thể sử dụng ***Exploit-DB*** để thử và tìm cách khai thác cho phiên bản cụ thể này.
 
-![img](30)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image30.png?raw=true)
 
 Kết quả hàng đầu là tập lệnh khai thác từ xa. Tải xuống và thử thực thi mã:
 
@@ -432,7 +432,7 @@ Mở code và xem lỗi ở đâu:
 
 Sửa xong và thực thi lại code: 
 
-![img](31)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image31.png?raw=true)
 
 ***Lưu ý***, hầu hết các tập lệnh sẽ cho biết cần cung cấp những đối số nào.
 
@@ -442,21 +442,21 @@ Truy cập http://10.10.156.52:84/
 
 Thử search tên và phiên bản của website trên ***Exploit-DB***:
 
-![img](32)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image32.png?raw=true)
 
 Tìm cách thực thi file exploit: 
 
-![img](33)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image33.png?raw=true)
 
 => Cần cung cấp URL mục tiêu.
 
 Thực thi script với địa chỉ IP của website:
 
-![img](34)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image34.png?raw=true)
 
-![img](35)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image35.png?raw=true)
 
-![img](36)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image36.png?raw=true)
 
 ***7.Identification and Authentication Failures***
 
@@ -490,31 +490,31 @@ Ví dụ, giả sử 1 user có ***username=admin*** và attacker muốn truy c�
 
 Truy cập vào http://10.10.115.163:8088/
 
-![img](37)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image37.png?raw=true)
 
 Thử đăng ký user mới với ***username=darren***:
 
-![img](38)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image38.png?raw=true)
 
 => Nhận thông báo lỗi: 
 
-![img](39)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image39.png?raw=true)
 
 => Thử đăng ký lại với username là ***“ darren”***:
 
-![img](40)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image40.png?raw=true)
 
 => Đăng ký thành công
 
-![img](41)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image41.png?raw=true)
 
 => Đăng nhập vào darren account: 
 
-![img](42)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image42.png?raw=true)
 
 Làm tương tự với ***username=arthur***
 
-![img](43)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image43.png?raw=true)
 
 ***8.Software and Data Integrity Failures***
 
@@ -542,7 +542,7 @@ Ví dụ: Khi tải xuống một file, cần chắc chắn rằng file đó kh�
 
     - Nếu hai giá trị khớp nhau, file vẫn nguyên vẹn. Nếu không, file có thể đã bị thay đổi hoặc hỏng.
 
-![img](44)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image44.png?raw=true)
 
 Để tính toán các giá trị băm khác nhau trong Linux, có thể dùng: 
 
@@ -571,7 +571,7 @@ Lỗ hổng này phát sinh từ ***code*** hoặc ***cơ sở hạ tầng*** s�
 
 - Ví dụ: Nếu kẻ tấn công xâm nhập vào server chứa thư viện và thay đổi nội dung, mã độc có thể được chèn vào và thực thi trên trình duyệt của người dùng.
 
-![img](45)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image45.png?raw=true)
 
 => Ví dụ về JQuery:
 
@@ -611,7 +611,7 @@ Khi người dùng đăng nhập vào ứng dụng web, họ nhận được m�
 
 => Vấn đề: Nếu cookie chứa thông tin dễ bị giả mạo (ví dụ: username), kẻ tấn công có thể thay đổi giá trị và mạo danh người dùng khác.
 
-![img](46)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image46.png?raw=true)
 
 Ví dụ về lỗ hổng: 
 
@@ -623,7 +623,7 @@ Ví dụ về lỗ hổng:
 
 => Giải pháp: ***JSON Web Tokens (JWT)***:
 
-![img](47)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image47.png?raw=true)
 
 - ***JWT*** là một loại token an toàn, gồm 3 phần:
 
@@ -655,21 +655,21 @@ Ví dụ về lỗ hổng:
 
 - Kết quả: Token giả mạo được chấp nhận mà không cần khóa bí mật.
 
-![img](48)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image48.png?raw=true)
 
 Thử truy cập http://10.10.115.163:8089/
 
-![img](49)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image49.png?raw=true)
 
 account guest: ***guest / guest***
 
 Sau khi login với tư cách guest, phát hiện jwt được lưu trong cookie với ***name=jwt-session***.
 
-![img](50)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image50.png?raw=true)
 
 Thử giải mã token: 
 
-![img](51)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image51.png?raw=true)
 
 => 
 
@@ -687,7 +687,7 @@ Mã hóa lại, tương đương với jwt:
 
 Sửa cookie ***jwt-session** và refresh web: 
 
-![img](52)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image52.png?raw=true)
 
 ***9.Security Logging and Monitoring Failures***
 
@@ -737,7 +737,7 @@ Ví dụ về hoạt động đáng ngờ:
 
 Ví dụ 1 file log: 
 
-![img](53)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image53.png?raw=true)
 
 => IP đáng ngờ : ***49.99.13.16***
 
@@ -763,7 +763,7 @@ Ví dụ 1 file log:
 
 - Kết quả: Kẻ tấn công có thể đánh cắp khóa API và sử dụng dịch vụ SMS miễn phí.
 
-![img](54)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image54.png?raw=true)
 
 => Cách kẻ tấn công khai thác:
 
@@ -801,21 +801,21 @@ Ví dụ 1 file log:
 
 Truy cập http://10.10.115.163:8087/
 
-![img](55)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image55.png?raw=true)
 
 Thử truy cập endpoint ***/admin***: 
 
-![img](56)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image56.png?raw=true)
 
 => Host duy nhất được truy cập admin area là ***localhost***
 
-![img](57)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image57.png?raw=true)
 
 => Tham số server mà nút ***Download Resume*** trỏ tới là ***server=secure-file-storage.com***
 
 Sử dụng ***Netcat*** tạo server lắng nghe: 
 
-![img](58)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image58.png?raw=true)
 
 
 
