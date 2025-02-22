@@ -6,8 +6,6 @@ Thực hành các bài tập trên TryHackMe.
 
 - [Web Fundamental](https://github.com/DucThinh47/TryHackMe#web-fundamental)
 
-- []()
-
 ## Web fundamental
 
 - [How The Web Works?](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/How_The_Web_Works)
@@ -69,4 +67,3 @@ Thực hành các bài tập trên TryHackMe.
     - [Upload Vulnerabilities]()
 
     - [Pickle Rick]()
-## 
