@@ -111,7 +111,7 @@ dễ sử dụng và hiệu quả, đặc biệt với file lớn
 
 ![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image233.png?raw=true)
 
-Thử xác định second ingredients là 1 string, dùng lệnh:
+Thử xác định second ingredients là 1 string do tên file second ingredients chứa khoảng trắng. Nếu không đặt trong dấu nháy, shell sẽ hiểu second và ingredients là hai file riêng biệt, dẫn đến lỗi. Dùng lệnh:
 
     cat /home/rick/’second ingredients’;
 
