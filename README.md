@@ -64,6 +64,6 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [OWASP Juice Shop](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/OWASP_Juice_Shop.md)
 
-    - [Upload Vulnerabilities]()
+    - [Upload Vulnerabilities](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/Upload_Vulnerabilities.md)
 
     - [Pickle Rick]()

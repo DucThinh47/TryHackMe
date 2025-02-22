@@ -22,13 +22,13 @@
 
     - Hosts file giúp truy cập các website này bằng tên miền riêng biệt.
 
-![img](119)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image119.png?raw=true)
 
 => Thêm dòng sau vào cuối file: 
 
 ***10.10.141.199    overwrite.uploadvulns.thm shell.uploadvulns.thm java.uploadvulns.thm annex.uploadvulns.thm magic.uploadvulns.thm jewel.uploadvulns.thm demo.uploadvulns.thm***
 
-![img](120)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image120.png?raw=true)
 
 ***Task 2: Introduction***
 
@@ -106,11 +106,11 @@
 
 => Ví dụ, có 1 trang web với form upload: 
 
-![img](121)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image121.png?raw=true)
 
 => Xem source page: 
 
-![img](122)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image122.png?raw=true)
 
 => Phát hiện đoạn code chịu trách nhiệm hiển thị hình ảnh trên page. Nó có nguồn từ 1 file tên là ***spaniel.jpg***, bên trong thư mục ***images***.
 
@@ -118,27 +118,27 @@
 
 Download 1 hình ảnh khác từ internet và đặt tên là ***spaniel.jpg***. Sau đó upload lên trang web và xem liệu có ghi đè được không.
 
-![img](123)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image123.png?raw=true)
 
-![img](124)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image124.png?raw=true)
 
 => Ghi đè file ***images/spaniel.jpg*** thành công!
 
 => Điều hướng đến http://overwrite.uploadvulns.thm:
 
-![img](125)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image125.png?raw=true)
 
 => Xem source page: 
 
-![img](126)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image126.png?raw=true)
 
 => Tìm được thư mục chứa hình ảnh trên trang web là ***/images***.
 
 => Thử tải lên 1 file img và thay tên thành ***mountains.jpg***:
 
-![img](127)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image127.png?raw=true)
 
-![img](128)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image128.png?raw=true)
 
 => Ghi đè file thành công!
 
@@ -176,21 +176,21 @@ Download 1 hình ảnh khác từ internet và đặt tên là ***spaniel.jpg***
 
 => Giả sử trang web như sau: 
 
-![img](129)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image129.png?raw=true)
 
 => Bắt đầu với việc quét với ***gobuster***:
 
-![img](130)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image130.png?raw=true)
 
 => Tìm được 2 thư mục: ***/uploads*** và ***/assets***. Trong số này, có vẻ mọi file upload lên sẽ đặt trong thư mục ***uploads***. Trước tiên, thử upload hình ảnh hợp pháp:
 
-![img](131)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image131.png?raw=true)
 
-![img](132)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image132.png?raw=true)
 
 => Upload thành công, truy cập thư mục ***/uploads*** kiểm tra xem file có được tải lên đây không: 
 
-![img](133)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image133.png?raw=true)
 
 => Upload thành công file ***spaniel.jpg***. 
 
@@ -226,7 +226,7 @@ Biết được web server sử dụng ngôn ngữ ***PHP***, trong thực tế 
 
 => Lệnh ***whoami*** sẽ được thực thi và kết quả hiển thị trên trang web.
 
-![img](134)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image134.png?raw=true)
 
 
 ***Reverse Shells***
@@ -237,47 +237,47 @@ Quá trình upload ***reverse shell*** gần giống upload ***webshell***. Sử
 
     nc -lvnp 1234
 
-![img](135)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image135.png?raw=true)
 
 => Tiếp theo upload shell và thực thi nó bằng cách điều hướng đến http://demo.uploadvulns.thm/uploads/shell.php
 
-![img](136)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image136.png?raw=true)
 
 => Điều hướng đến http://shell.uploadvulns.thm
 
-![img](137)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image137.png?raw=true)
 
 => Sử dụng tool ***Gobuster*** để tìm thư mục được dùng để lưu file upload: 
 
     gobuster dir -u http://shell.uploadvulns.thm -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 
-![img](138)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image138.png?raw=true)
 
 => Thư mục ***/resources*** có thể được dùng để lưu trữ file tải lên. 
 
 => Tạo file ***shell.php*** với nội dung: 
 
-![img](139)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image139.png?raw=true)
 
 => Thử upload 1 file hình ảnh lên trang: 
 
-![img](140)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image140.png?raw=true)
 
 => Upload thành công. Truy cập thư mục ***/resources*** kiểm tra: 
 
-![img](141)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image141.png?raw=true)
 
 => Tìm được file ***mountains.jpg*** vừa upload.
 
 => Tiếp theo upload file ***shell.php*** vừa tạo:
 
-![img](142)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image142.png?raw=true)
 
 => Upload thành công. 
 
-=> Truy cập ***/resources/shell.php*** để thực thi shell và thêm tham số ***cmd=cd/var/www;ls;cât flag.txt*** để thực thi lệnh hệ thống: 
+=> Truy cập ***/resources/shell.php*** để thực thi shell và thêm tham số ***cmd=cd/var/www;ls;cat flag.txt*** để thực thi lệnh hệ thống: 
 
-![img](143)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image143.png?raw=true)
 
 ***Task 6: Filtering***
 
@@ -307,11 +307,11 @@ Quá trình upload ***reverse shell*** gần giống upload ***webshell***. Sử
 
 - ***MIME Validation***: Kiểm tra MIME (Multipurpose Internet Mail Extension) type trong header (ví dụ: image/jpeg).
 
-![img](144)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image144.png?raw=true)
 
 - ***Magic Number Validation***: Kiểm tra chuỗi byte đầu file để xác định loại file (ví dụ: ***89 50 4E 47*** cho PNG).
 
-![img](145)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image145.png?raw=true)
 
 3. ***File Length Filtering:***
 
@@ -362,11 +362,11 @@ Quá trình upload ***reverse shell*** gần giống upload ***webshell***. Sử
 
 Giả sử, có 1 trang upload: 
 
-![img](146)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image146.png?raw=true)
 
 => Xem source page: 
 
-![img](147)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image147.png?raw=true)
 
 => Phát hiện 1 hàm JS cơ bản kiểm tra loại MIME của file upload. Trong trường hợp này, có thể thấy filter đang sử dụng ***whitelist*** để loại trừ mọi loại MIME không phải là ***images/jpeg***.
 
@@ -374,79 +374,79 @@ Bước tiếp theo, thử upload file, như dự đoán, nếu chọn upload fi
 
 Khởi động Burp Suite và Intercept khi refresh page. Click chuột phải vào ***intercepted data***, cuộn xuống ***“Do Intercept”***, chọn ***“Response to this request”***, để tránh response những request không liên quan:
 
-![img](148)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image148.png?raw=true)
 
 => Forward request và response tương ứng sẽ hiển thị. Lúc này, có thể thao tác với response trước khi request tiếp theo được forward. 
 
-![img](149)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image149.png?raw=true)
 
 => Xóa hàm JS, tiếp tục forward cho đến khi website load xong, bây giờ có thể upload bất cứ file nào lên web. 
 
-![img](150)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image150.png?raw=true)
 
 => Sau khi thành công bypass bộ lọc, tiếp theo thử upload file có extension hợp pháp (ở đây là .jpeg) và MIME type hợp pháp, sau đó Intercept và sửa nội dung upload bằng Burp Suite. 
 
 => Sau khi load lại trang để đặt filter lại vị trí cũ, lấy shell đã tạo từ task trước và đổi tên thành ***“shell.jpg”***. Vì web tự động kiểm tra MIME type (dựa trên file extension) nên Client-Side filter cho phép payload được tải lên mà không có lỗi.
 
-![img](151)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image151.png?raw=true)
 
 => Mở Burpsuite và Intercept Upload request:
 
-![img](152)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image152.png?raw=true)
 
 Quan sát thấy MIME type payload hiện tại là ***image/jpeg***. Thử thay đổi thành ***text/x-php***, và phần file extension từ ***.jpg*** thành ***.php***, sau đó forward request đến server: 
 
-![img](153)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image153.png?raw=true)
 
 => Tiếp theo, điều hướng đến http://demo.uploadvulns.thm/uploads/shell.php sau khi thiết lập kênh lắng nghe bằng ***NetCat***, sẽ nhận được kết nối từ shell: 
 
 => Điều hướng đến java.uploadvulns.thm: 
 
-![img](155)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image155.png?raw=true)
 
 => Xem source page và tìm được file ***Client-side-filter.js***:
 
-![img](156)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image156.png?raw=true)
 
 => Sử dụng ***gobuster*** để tìm kiếm thư mục nào sẽ chứa file upload: 
 
-![img](157)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image157.png?raw=true)
 
 => Thử truy cập thư mục ***/images***:
 
-![img](158)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image158.png?raw=true)
 
 => Là thư mục chứa file upload.
 
 => Upload file ***shell.php*** tạo từ task trước, tạm thời sửa extension file thành ***.png*** và đây là request bắt được khi upload file:
 
-![img](159)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image159.png?raw=true)
 
 => Forward request này và xem response từ server: 
 
-![img](160)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image160.png?raw=true)
 
 => Upload file ***shell.png*** thành công. Bây giờ đổi lại file extension thành ***.php*** và MIME type thành ***text/x-php*** để có thể thực thi shell: 
 
-![img](161)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image161.png?raw=true)
 
 => Forward request:
 
-![img](162)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image162.png?raw=true)
 
 => Forward request: 
 
-![img](163)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image163.png?raw=true)
 
 => Response thông báo upload thành công. Kiểm tra thư mục ***/images***: 
 
-![img](164)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image164.png?raw=true)
 
 => Đã upload thành công file ***shell.php***. 
 
 => Chỉnh sửa url như task trước để xem nội dung file flag.txt:
 
-![img](165)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image165.png?raw=true)
 
 ***Task 8: Bypassing Server-Side Filtering: File Extensions***
 
@@ -483,23 +483,23 @@ Quan sát thấy MIME type payload hiện tại là ***image/jpeg***. Thử thay
 
 Nhưng có vẻ như server đã được định cấu hình để không nhận dạng chúng là tệp PHP, như VD dưới đây:
 
-![img](166)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image166.png?raw=true)
 
-=> Tuy nhiên, extension ***.phar*** có thể bypass filter:
+=> Tuy nhiên, extension ***.phar*** lại có thể bypass filter:
 
-![img](167)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image167.png?raw=true)
 
 1 ví dụ khác, với 1 filter khác. Lần này sẽ làm nó hoàn toàn trong ***blackbox***; tức là không có source code. Một trang upload như sau:
 
-![img](168)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image168.png?raw=true)
 
 => Thử upload 1 file hợp lệ, như file ***spaniel.jpg***:
 
-![img](169)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image169.png?raw=true)
 
 => Server chấp nhận file ***.jpg***. Thử upload 1 file ***shell.php***: 
 
-![img](170)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image170.png?raw=true)
 
 Trong VD trước, code sử dụng hàm ***pathinfo()*** PHP để lấy 1 vài ký tự sau dấu “.”, nhưng điều gì sẽ xảy ra nếu filter input hơi khác 1 chút.
 
@@ -507,43 +507,43 @@ Trong VD trước, code sử dụng hàm ***pathinfo()*** PHP để lấy 1 vài
 
 => Upload file và nhận được thông báo success. Truy cập thư mục ***/uploads*** , xác nhận payload ***shell.jpg.php*** đã được upload thành công:
 
-![img](171)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image171.png?raw=true)
 
 => Thực thi file thành công: 
 
-![img](172)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image172.png?raw=true)
 
 => Điều hướng đến: annex.uploadvulns.thm
 
-![img](173)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image173.png?raw=true)
 
 => Thử dùng gobuster để tìm thư mục chứa file upload:
 
-![img](174)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image174.png?raw=true)
 
 => Thử truy cập thư mục ***/privacy***:
 
-![img](175)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image175.png?raw=true)
 
 => Là thư mục chứa file upload. Thử upload file ***shell.php***: 
 
-![img](176)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image176.png?raw=true)
 
 => Không thành công. Thử đổi tên file thành ***shell.png.php***, mục đích để kiểm tra xem có phải filter lọc tên file chỉ chứa ***.png*** là có thể bypass không? 
 
-![img](177)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image177.png?raw=true)
 
 => Vẫn không upload được. Thử đổi tên file thành ***shell.png.php5*** và upload lại: 
 
-![img](178)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image178.png?raw=true)
 
 => Upload thành công. Truy cập thư mục ***/privacy*** để xác nhận: 
 
-![img](179)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image179.png?raw=true)
 
 => Đã upload payload thành công. Thực thi file như task trước: 
 
-![img](180)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image180.png?raw=true)
 
 ***Task 9: Bypassing Server-Side Filtering: Magic Numbers***
 
@@ -565,7 +565,7 @@ Ví dụ:
 
 Ví dụ 1 trang upload: 
 
-![img](181)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image181.png?raw=true)
 
 Như task trước, trang chỉ nhấp nhận file JPEG và từ chối file PHP. 
 
@@ -573,29 +573,29 @@ Như task trước, trang chỉ nhấp nhận file JPEG và từ chối file PHP
 
 => Sử dụng lệnh ***file*** để kiểm tra type của file shell.php: 
 
-![img](182)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image182.png?raw=true)
 
 Có thể thấy Magic number dài 4 byte, mở file shell và thêm ***AAAA*** vào đầu file: 
 
-![img](183)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image183.png?raw=true)
 
 => Mở file shell.php trong ***hexeditor***, cho phép xem và chỉnh sửa file dưới dạng hex: 
 
-![img](184)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image184.png?raw=true)
 
 => 41 ở đây là hex code cho chữ A, giống như những gì thêm vào đầu file. 
 
 => Đổi thành ***FF D8 FF DB***: 
 
-![img](185)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image185.png?raw=true)
 
 => Lưu lại và dùng lệnh file kiểm tra lại 1 lần nữa: 
 
-![img](186)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image186.png?raw=true)
 
 => File đã chuyển thành kiểu JPEG. Thử upload file: 
 
-![img](187)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image187.png?raw=true)
 
 => Upload thành công payload.
 
@@ -603,47 +603,47 @@ Có thể thấy Magic number dài 4 byte, mở file shell và thêm ***AAAA*** 
 
 => Thử upload file ***.png***:
 
-![img](188)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image188.png?raw=true)
 
 => Thông báo lỗi ***GIFs only please!***.
 
 => Kiểm tra file type của ***shell.php***:
 
-![img](189)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image189.png?raw=true)
 
 => Đang là file .php. Thử thêm ****AAAA*** vào đầu file và xem nội dung dưới dạng hex: 
 
-![img](190)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image190.png?raw=true)
 
 => Đổi 4 byte đầu tiên thành giá trị Magic numbers của JPEG là ****FF D8 FF DB***:
 
-![img](191)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image191.png?raw=true)
 
 => Kiểm tra lại file type: 
 
-![img](192)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image192.png?raw=true)
 
 => Thêm ký tự ASCII đại diện cho file ***gif***: ***GIF87a*** vào đầu file shell.php:
 
-![img](193)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image193.png?raw=true)
 
 => Kiểm tra lại file type:
 
-![img](194)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image194.png?raw=true)
 
 => Upload lại file: 
 
-![img](195)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image195.png?raw=true)
 
 => Upload thành công. 
 
 => Dùng gobuster để xem file được upload lưu trữ ở thư mục nào:
 
-![img](196)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image196.png?raw=true)
 
 => Thử truy cập thư mục ***/graphics*** và thành công thực thi shell: 
 
-![img](197)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image197.png?raw=true)
 
 ***Task 10: Example Methodology***
 
@@ -679,23 +679,23 @@ Có thể thấy Magic number dài 4 byte, mở file shell và thêm ***AAAA*** 
 
 Điều hướng đến jewel.uploadvulns.thm:
 
-![img](198)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image198.png?raw=true)
 
 => Xem source page tìm kiếm clinet-filtering: 
 
-![img](199)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image199.png?raw=true)
 
 => Chưa tìm thấy gì. Xem nội dung file ***upload.js***:
 
-![img](200)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image200.png?raw=true)
 
 => Dùng gobuster tìm kiếm 1 lượt: 
 
-![img](201)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image201.png?raw=true)
 
 => Refresh page và Intercept request trong Burp Suite: 
 
-![img](202)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image202.png?raw=true)
 
 => Header ***X-Powered-By*** có giá trị là ***Express***, suy ra dấu hiệu server sử dụng ***node.js*** để build.
 
@@ -727,31 +727,31 @@ Có thể thấy Magic number dài 4 byte, mở file shell và thêm ***AAAA*** 
 
 => Thay đổi port và IP:
 
-![img](203)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image203.png?raw=true)
 
 => Thử upload file này:
 
-![img](204)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image204.png?raw=true)
 
 => Có thể có client-filter. Intercept request truy cập file ***upload.js*** trong Burp Suite: 
 
-![img](205)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image205.png?raw=true)
 
 => Thử xóa phần này đi và upload lại file:
 
-![img](206)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image206.png?raw=true)
 
-![img](207)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image207.png?raw=true)
 
 => Vẫn không được. Có thể có server-side-filter. 
 
 => Thử thay đổi extension của file từ ***.js*** thành ***.jpg***:
 
-![img](208)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image208.png?raw=true)
 
 => Upload lại file: 
 
-![img](209)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image209.png?raw=true)
 
 => Upload thành công. 
 
@@ -759,21 +759,21 @@ Có thể thấy Magic number dài 4 byte, mở file shell và thêm ***AAAA*** 
 
 Sử dụng gobuster tìm được 5 file .jpg ở thư mục ***/content***: 
 
-![img](210)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image210.png?raw=true)
 
 => Kiểm tra lại sau khi upload file jsshell.jpg
 
-![img](211)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image211.png?raw=true)
 
 => Xuất hiện file .jpg mới: ***LHT.jpg***.
 
 => Truy cập ***/admin***:
 
-![img](212)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image212.png?raw=true)
 
 => Lắng nghe bằng Netcat:
 
-![img](213)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image213.png?raw=true)
 
 
 
