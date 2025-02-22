@@ -62,7 +62,7 @@ Thực hành các bài tập trên TryHackMe.
 
     - [OWASP Top 10 - 2021](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/OWASP_Top_10_%202021.md)
 
-    - [OWASP Juice Shop]()
+    - [OWASP Juice Shop](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/OWASP_Juice_Shop.md)
 
     - [Upload Vulnerabilities]()
 

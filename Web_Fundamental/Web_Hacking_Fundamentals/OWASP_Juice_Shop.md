@@ -16,13 +16,13 @@ Các lỗ hổng sẽ đề cập trong ***Juice Shop***:
 
 Truy cập Juice Shop 10.10.220.50:
 
-![img](59)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image59.png?raw=true)
 
 ***Question 1: What’s the Administrator's email address?***
 
 => Thử click vào Apple Juice và xem phần review:
 
-![img](60)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image60.png?raw=true)
 
 => Email của admin: ***admin@juice-sh.op***
 
@@ -30,19 +30,19 @@ Truy cập Juice Shop 10.10.220.50:
 
 => Thử click Icon tìm kiếm và tìm ***abc***:
 
-![img](61)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image61.png?raw=true)
 
 => Parameter dùng trong searching là ***q***
 
 ***Question 3: What show does Jim reference in his review?***
 
-![img](62)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image62.png?raw=true)
 
 => Jim đề cập đến ***a replicator***.
 
 Nếu search google ***“replicator”***, sẽ nhận được kết quả cho biết đó là từ một show có tên ***Star Trek***.
 
-![img](63)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image63.png?raw=true)
 
 ***Task 3: Inject the juice***
 
@@ -58,25 +58,25 @@ Có nhiều loại tấn công ***Injection***, trong số đó là:
 
 Nhập username và password bất kỳ:
 
-![img](64)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image64.png?raw=true)
 
 Mở Burp Suite và Intercept login request: 
 
-![img](65)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image65.png?raw=true)
 
 => Params trong POST body ở dạng JSON. 
 
 Send request này và nhận được response: 
 
-![img](66)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image66.png?raw=true)
 
 => Thử sử dụng payload SQLi để bypass quá trình login. Thay đổi email thành ***‘ or 1=1–-***:
 
-![img](67)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image67.png?raw=true)
 
 => Send request và nhận được response: 
 
-![img](68)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image68.png?raw=true)
 
 => Bypass thành công.
 
@@ -86,7 +86,7 @@ Send request này và nhận được response:
 
 => Refresh lại page và đã login thành công vào tài khoản admin: 
 
-![img](69)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image69.png?raw=true)
 
 ***Question 2: Log into the Bender account***
 
@@ -94,9 +94,9 @@ Email của Bender sẽ có dạng như sau ***bender@juice-sh.op*** nhưng hi�
 
 Login request trong Burp Suite: 
 
-![img](70)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image70.png?raw=true)
 
-![img](71)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image71.png?raw=true)
 
 Tiếp tục sử dụng SQLi payload, do đã biết email nên không cần mệnh đề ***1=1***, chỉ cần thêm ***--*** để bypass hệ thống login. 
 
@@ -104,15 +104,15 @@ Tiếp tục sử dụng SQLi payload, do đã biết email nên không cần m�
 
 => Thay email thành ***bender@juice-sh.op'--***, password nhập gì cũng được. 
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image72.png?raw=true)
 
 => Send request và xem response: 
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image73.png?raw=true)
 
 => Login thành công, refresh lại page: 
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image74.png?raw=true)
 
 ***Task 4: Who broke my lock?!***
 
@@ -128,49 +128,49 @@ Trong nhiệm vụ này, xem xét việc khai thác ***authentication*** thông 
 
 => Thử ***brute-force attack***, send login request tới Intruder trong Burp:
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image75.png?raw=true)
 
 => Chọn giá trị password là giá trị cần chèn payload. 
 
 Đối với payload, sử dụng ***best1050.txt*** từ ***Seclists*** (có thể cài đặt bằng lệnh ***apt-get install seclists***).
 
-![img](76)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image76.png?raw=true)
 
 => Có thể tìm thấy wordlist ở ***/usr/share/wordlists/seclists/passwords/Common-Credentials/best1050.txt***
 
-![img](77)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image77.png?raw=true)
 
 => Start attack!
 
-![img](78)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image78.png?raw=true)
 
-![img](79)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image79.png?raw=true)
 
 => Tìm ra password admin là ***admin123***
 
 => Login admin:
 
-![img](80)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image80.png?raw=true)
 
 ***Question 2: Reset Jim’s password!***
 
 Cơ chế reset password có thể bị lợi dụng! Khi nhập vào trường email trong trang Forgot Password, câu hỏi bảo mật của Jim được đặt thành ***“Your eldest siblings middle name?”***. Trong phần trên, phát hiện rằng jim có thể liên quan đến ***Star Trek***. Tìm kiếm ***Jim Star Trek*** trên google, cho 1 trang wiki về Jame T.Kirk từ Star Trek:
 
-![img](81)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image81.png?raw=true)
 
 Nhìn qua thông tin gia đình:
 
-![img](82)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image82.png?raw=true)
 
 => Anh trai của Jim có tên đệm là ***Samuel***.
 
 => Nhập vào trang Forgot Password cho phép đổi mật khẩu của Jim.
 
-![img](83)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image83.png?raw=true)
 
 => Đổi pass của jim thành 12345
 
-![img](84)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image84.png?raw=true)
 
 ***Task 5: AH! Don’t look!***
 
@@ -178,25 +178,25 @@ Web application phải lưu trữ và truyền dữ liệu nhạy cảm một c�
 
 ***Question 1: Access the Confidential Document!***
 
-![img](85)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image85.png?raw=true)
 
 => Điều hướng đến ***About us*** và di chuột qua phần ***"Check out our terms of use"***.
 
-![img](86)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image86.png?raw=true)
 
 => Thấy nó liên kết đến http://10.10.220.50/ftp/legal.md. 
 
-![img](87)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image87.png?raw=true)
 
 => Thử điều hướng đến thư mục ***ftp*** và thấy nó được public: 
 
-!{img}(88)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image88.png?raw=true)
 
 => Download file ***acacquis.md*** và lưu. Có vẻ như còn nhiều file khác nhưng chưa cần quan tâm. 
 
 => Về trang chủ.
 
-![img](89)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image89.png?raw=true)
 
 ***Question 2: Log into MC SafeSearch’s account!***
 
@@ -208,13 +208,13 @@ Xem qua video: https://youtu.be/v59CX2DiX0Y
 
 => Login vào account: 
 
-![img](90)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image90.png?raw=true)
 
 ***Question 3: Download the Backup File!***
 
 => Trở lại http://10.10.220.50/ftp/ và tải xuống ***pack.json.bak***.
 
-![img](91)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image91.png?raw=true)
 
 => Gặp lỗi 403 vì chỉ cho phép tải tệp .md và .pdf
 
@@ -240,11 +240,11 @@ Ví dụ:
 
 - Phần ***.md*** bị bỏ qua, giúp truy cập tệp mà không bị chặn bởi lỗi 403. Thêm ***.md*** để phòng khi server có filter, chỉ nhận request có chứa ***.md***.
 
-![img](92)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image92.png?raw=true)
 
 ***Task 6: Who’s flying this thing?***
 
-![img](93)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image93.png?raw=true)
 
 - ***Broken Access Control*** là lỗ hổng cho phép người dùng truy cập trái phép vào các phần của hệ thống mà họ không có quyền.
 
@@ -270,23 +270,23 @@ Ví dụ:
 
 Sau đó refresh trang và tìm tệp JS ***main-es2015.js***. Truy cập file http://10.10.220.50/main-es2015.js:
 
-![img](94)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image94.png?raw=true)
 
 => Tìm kiếm cụm từ ***admin***:
 
-![img](95)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image95.png?raw=true)
 
 => Ra 10 kết quả. Chú ý đến ***path:administration***. Đây có thể là endpoint của admin ***/administration***. 
 
-![img](96)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image96.png?raw=true)
 
 => Thử truy cập ***/administration***: 
 
-![img](97)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image97.png?raw=true)
 
 => Lỗi 403 là do chưa login. Login vào account admin và truy cập lại ***/#/administration***: 
 
-![img](98)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image98.png?raw=true)
 
 ***Question 2: View another user’s shopping basket!***
 
@@ -294,35 +294,35 @@ Sau đó refresh trang và tìm tệp JS ***main-es2015.js***. Truy cập file h
 
 Trước khi click, mở Burp Suite và Intercept request này: 
 
-![img](99)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image99.png?raw=true)
 
 => Send request và xem response: 
 
-![img](100)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image100.png?raw=true)
 
 => Nhận thấy trong GET request ***/rest/basket/1***, 1 có vẻ như là ID của ***user***. Thử thay 1 thành 2: 
 
-![img](101)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image101.png?raw=true)
 
 => Send request và xem response: 
 
-![img](102)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image102.png?raw=true)
 
 => Có thể xem được giỏ hàng của user có ID là 2. 
 
 => Về trang chủ
 
-![img](103)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image103.png?raw=true)
 
 ***Question 3: Remove all 5-star reviews!***
 
 => Điều hướng đến http://10.10.250.50/#/administration và click vào icon thùng rác với mỗi review 5-star:
 
-![img](104)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image104.png?raw=true)
 
 => Về trang chủ: 
 
-![img](105)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image105.png?raw=true)
 
 ***Task 7: Where did that come from?***
 
@@ -366,7 +366,7 @@ Trước khi click, mở Burp Suite và Intercept request này:
 
 Việc chèn payload này vào thanh tìm kiếm sẽ kích hoạt hàm alert(): 
 
-![img](106)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image106.png?raw=true)
 
 Loại XSS này được gọi là ***XFS (Cross-Frame Scripting)***, 1 trong những hình thức phát hiện XSS phổ biến nhất trong ứng dụng web. Các website cho phép user sửa đổi frame hoặc các thành phần DOM khác rất có thể dễ bị XSS tấn công.
 
@@ -376,7 +376,7 @@ Thông thường, thanh tìm kiếm sẽ gửi request đến server, sau đó n
 
 => Về trang chủ: 
 
-![img](107)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image107.png?raw=true)
 
 ***Question 2: Perform a persistent XSS!***
 
@@ -386,23 +386,23 @@ Lần này quan tâm đến ***địa chỉ IP cuối cùng đăng nhập trang*
 
 Mở Burp Suite và Intercept logout request: 
 
-![img](108)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image108.png?raw=true)
 
 => Thêm request header ***True-Client-IP*** với value là 1 XSS payload: 
 
-![img](109)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image109.png?raw=true)
 
 => Request lúc này: 
 
-![img](110)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image110.png?raw=true)
 
 => Send request và xem response: 
 
-![img](111)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image111.png?raw=true)
 
 Khi Login lại admin account và điều hướng đến trang ***last login ip*** sẽ có thông báo: 
 
-![img](112)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image112.png?raw=true)
 
 => Tại sao lại hoạt động? 
 
@@ -412,7 +412,7 @@ Nếu server không kiểm tra hoặc làm sạch giá trị request header, nó
 
 => Về trang chủ: 
 
-![img](113)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image113.png?raw=true)
 
 ***Question 3: Perform a reflected XSS!***
 
@@ -420,25 +420,25 @@ Nếu server không kiểm tra hoặc làm sạch giá trị request header, nó
 
 => Login tài khoản admin và điều hướng đến trang ***Order History***:
 
-![img](114)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image114.png?raw=true)
 
 Có một icon hình xe tải, nhấp vào sẽ được chuyển tiếp đến trang ***track-result***. Phát hiện 1 id được ghép nối với order: 
 
-![img](115)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image115.png?raw=true)
 
 Thử thay id này thành:
 
     <iframe src="javascript:alert(`xss`)">
 
-![img](116)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image116.png?raw=true)
 
 => Refresh trang: 
 
-![img](117)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image117.png?raw=true)
 
 => Về trang chủ: 
 
-![img](118)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/images/image118.png?raw=true)
 
 
 
