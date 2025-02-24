@@ -6,6 +6,8 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
 - [Web Fundamental](https://github.com/DucThinh47/TryHackMe#web-fundamental)
 
+- [Jr Penetration Tester]()
+
 ## Web fundamental
 
 - [How The Web Works?](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/How_The_Web_Works)
@@ -67,3 +69,9 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
     - [Upload Vulnerabilities](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/Upload_Vulnerabilities.md)
 
     - [Pickle Rick](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Web_Hacking_Fundamentals/Pickle_Rick.md)
+
+## Jr Penetration Tester 
+
+- [Introduction to Cyber Security]()
+
+    - [Offensive Security Intro]()
