@@ -85,4 +85,4 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Pentesting_Fundamentals](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Pentesting/Pentesting_Fundamentals.md)
 
-    - [Principles of Security]()
+    - [Principles of Security](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Pentesting/Principles_of_Security.md)
