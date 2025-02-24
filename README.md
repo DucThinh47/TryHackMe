@@ -86,3 +86,37 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
     - [Pentesting_Fundamentals](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Pentesting/Pentesting_Fundamentals.md)
 
     - [Principles of Security](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Pentesting/Principles_of_Security.md)
+
+- [Introduction to Web Hacking](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/Introduction_to_Web_Hacking)
+
+    - [Walking An Application](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Walking_An_Application.md)
+
+    - [Content Discovery](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Content_Discovery.md)
+
+    - [Subdomain Enumeration](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Subdomain_Enumeration.md)
+
+    - [Authentication Bypass](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Authentication_Bypass.md)
+
+    - [IDOR](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/IDOR.md)
+
+    - [File Inclusion](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/File_Inclusion.md)
+
+    - [Intro to SSRF](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Intro_to_SSRF.md)
+
+    - [Intro to Cross-site Scripting](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Intro_to_Cross-site_Scripting.md)
+
+    - [Command Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/Command_Injection.md)
+
+    - [SQL Injection](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Introduction_to_Web_Hacking/SQL_Injection.md)
+
+- [Burp Suite](https://github.com/DucThinh47/TryHackMe/tree/main/Web_Fundamental/Burp_Suite)
+
+    - [Burp Suite: The Basics](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_The_Basics.md)
+
+    - [Burp Suite: Repeater](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Repeater.md)
+
+    - [Burp Suite: Intruder](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Intruder.md)
+
+    - [Burp Suite: Other Modules](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Other_Modules.md)
+
+    - [Burp Suite: Extensions](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Extensions.md)
