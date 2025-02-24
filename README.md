@@ -83,4 +83,6 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
 - [Introduction to Pentesting](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Introduction_to_Pentesting)
 
-    - [Pentesting_Fundamentals]()
+    - [Pentesting_Fundamentals](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Pentesting/Pentesting_Fundamentals.md)
+
+    
