@@ -75,3 +75,8 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 - [Introduction to Cyber Security]()
 
     - [Offensive Security Intro]()
+
+
+- [Introduction to Pentesting]()
+
+    - [Pentesting_Fundamentals]()
