@@ -72,11 +72,11 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
 ## Jr Penetration Tester 
 
-- [Introduction to Cyber Security]()
+- [Introduction to Cyber Security](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Introduction_to_Cyber_Security)
 
-    - [Offensive Security Intro]()
+    - [Offensive Security Intro](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Cyber_Security/Offensive_Security_Intro.md)
 
 
-- [Introduction to Pentesting]()
+- [Introduction to Pentesting](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Introduction_to_Pentesting)
 
     - [Pentesting_Fundamentals]()
