@@ -78,6 +78,8 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Defensive Security Intro](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Introduction_to_Cyber_Security/Defensive_Security_Intro.md)
 
+    - [Careers in Cyber]()
+
 
 - [Introduction to Pentesting](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Introduction_to_Pentesting)
 
