@@ -6,7 +6,7 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
 - [Web Fundamental](https://github.com/DucThinh47/TryHackMe#web-fundamental)
 
-- [Jr Penetration Tester]()
+- [Jr Penetration Tester](https://github.com/DucThinh47/TryHackMe/tree/main#jr-penetration-tester)
 
 ## Web fundamental
 
