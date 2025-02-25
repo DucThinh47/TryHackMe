@@ -127,4 +127,4 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Active Reconnaissance](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Active_Reconnaissance.md)
 
-    
+    - [Nmap Live Host Discovery]()
