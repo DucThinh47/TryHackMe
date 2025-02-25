@@ -57,7 +57,7 @@
 
 - Trong hình bên dưới, nắm bắt được lưu lượng truy cập do Telnet tạo ra và việc tìm ra password rất dễ dàng.
 
-![img](62)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image62.png)
 
 - Telnet không còn được coi là một lựa chọn an toàn nữa, đặc biệt là bất kỳ ai nắm bắt được lưu lượng truy cập mạng sẽ có thể khám phá username và password, điều này sẽ cấp cho họ quyền truy cập vào hệ thống từ xa. Giải pháp thay thế an toàn là SSH.
 
@@ -65,7 +65,7 @@
 
 - Hypertext Transfer Protocol - Giao thức truyền siêu văn bản (HTTP) là giao thức được sử dụng để truyền các trang web.
 
-![img](63)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image63.png)
 
 - HTTP gửi và nhận dữ liệu dưới dạng văn bản rõ ràng (không được mã hóa)
 
@@ -77,7 +77,7 @@
 
 3. Cuối cùng, cần cung cấp một số giá trị cho host như host: telnet và nhấn phím Enter/Return hai lần.
 
-![img](64)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image64.png)
 
 => người dùng chỉ cần nhập một vài lệnh để có được trang họ cần
 
@@ -103,13 +103,13 @@
 
 - Lệnh TYPE A chuyển chế độ file transfer sang ASCII, trong khi TYPE I chuyển chế độ file transfer sang binary. Tuy nhiên, không thể transfer file bằng client đơn giản như Telnet vì FTP tạo một kết nối riêng để transfer file.
 
-![img](65)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image65.png)
 
-![img](66)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image66.png)
 
 =>  sử dụng FTP client thực tế để tải xuống tệp văn bản: 
 
-![img](67)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image67.png)
 
 **Task 5: Simple Mail Transfer Protocol (SMTP)**
 
@@ -123,7 +123,7 @@
 
     - Mail User Agent - Tác nhân người dùng thư (MUA)
 
-![img](68)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image68.png)
 
 - Theo cách tương tự, cần tuân theo một protocol để liên lạc với HTTP server và cần dựa vào các email protocol để giao tiếp với MTA và MDA. Các giao thức là:
 
@@ -135,7 +135,7 @@
 
 - SMTP server lắng nghe trên port 25 theo mặc định.
 
-![img](69)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image69.png)
 
 **Task 6: Post Office Protocol 3 (POP3)**
 
@@ -143,7 +143,9 @@
 
 - Email client kết nối với POP3 server, xác thực, tải xuống các thư email mới trước khi (tùy chọn) xóa chúng.
 
-![img](70)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image70.png)
+
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image71.png)
 
 - Mặc định chạy trên cổng 110 
 
@@ -159,7 +161,7 @@
 
 - Mặc định chạy trên cổng 143. 
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image72.png)
 
 => Rõ ràng là IMAP gửi thông tin đăng nhập ở dạng văn bản rõ ràng, có thể thấy trong lệnh LOGIN frank D2xc9CgD. Bất cứ ai theo dõi lưu lượng mạng đều có thể biết username và password của Frank.
 
