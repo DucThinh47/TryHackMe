@@ -125,4 +125,6 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Passive Reconnaissance](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Passive_Reconnaissance.md)
 
-    - [Active Reconnaissance]()
+    - [Active Reconnaissance](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Active_Reconnaissance.md)
+
+    

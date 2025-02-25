@@ -29,11 +29,11 @@
 - Cú pháp ***ping + MACHINE_IP*** hoặc ***ping + HOSTNAME***. Để chỉ định số packet sẽ gửi sử dụng tùy chọn ***-c + NUM_OF_PACKETS***, ví dụ:
 ***ping -c 10 MACHINE_IP*** (Linux) hoặc ***ping -n 10 MACHINE_IP*** (Windows).
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image9.png)
 
 - Nếu hệ thống từ xa không trực tuyến: 
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image10.png)
 
 - Tùy chọn sử dụng để set size của data khi ping là ***-s***.
 
@@ -53,13 +53,13 @@
 
 - Khi một router nhận được một gói tin, nó sẽ giảm TTL đi một trước khi chuyển nó sang router tiếp theo. 
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image11.png)
 
 => Mỗi lần gói tin đi qua router, giá trị TTL của nó sẽ giảm đi 1. Ban đầu, nó rời khỏi hệ thống với giá trị TTL là 64; nó đến hệ thống đích với giá trị TTL là 60 sau khi đi qua 4 routers.
 
 - Tuy nhiên, nếu TTL đạt đến 0, nó sẽ bị dropped. 
 
-![img](12)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image12.png)
 
 => Hệ thống đặt TTL thành 1 trước khi gửi nó đến router. Router đầu tiên trên đường dẫn giảm TTL đi 1, dẫn đến TTL bằng 0. Do đó, Router này sẽ loại bỏ packet và gửi thông báo lỗi vượt quá thời gian truyền ICMP.
 
@@ -100,7 +100,7 @@
 
 - Cú pháp ***telnet 10.10.27.158 PORT***. 
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image13.png)
 
 => Điều đặc biệt quan tâm là khám phá ra loại và phiên bản của web server đã cài đặt, Server: Apache/2.4.61 (Debian). 
 
@@ -110,7 +110,7 @@
 
 - Cú pháp ***nc 10.10.27.158 PORT***: 
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image14.png)
 
 => Trong terminal ở trên, sử dụng netcat để kết nối với 10.10.27.158 cổng 80 bằng ***nc 10.10.27.158 80***. Tiếp theo, yêu cầu GET cho default page bằng ***GET / HTTP/1.1***; chỉ định cho server mục tiêu rằng client hỗ trợ HTTP phiên bản 1.1. Cuối cùng, cần đặt tên cho host, vì vậy thêm vào một dòng mới, ***host: netcat***.
 
