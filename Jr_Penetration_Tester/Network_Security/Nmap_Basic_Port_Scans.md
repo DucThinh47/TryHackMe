@@ -46,7 +46,7 @@ Kiểm tra ports nào đang mở và đang lắng nghe cũng như ports nào đ�
 
 5. ***SYN: Synchronize flag*** - Cờ đồng bộ hóa được sử dụng để bắt đầu bắt tay 3 bước TCP và đồng bộ hóa sequence number với hosts khác. Sequence number phải được đặt ngẫu nhiên trong quá trình thiết lập kết nối TCP.
 
-6. ***FIN flag*** -  Người gửi không còn dữ liệu để gửi.
+6. ***FIN flag*** - Người gửi không còn dữ liệu để gửi.
 
 **Task 4: TCP Connect Scan**
 
