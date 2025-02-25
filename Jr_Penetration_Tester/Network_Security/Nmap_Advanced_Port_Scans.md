@@ -36,13 +36,13 @@
 
 - Theo quan điểm của Nmap, việc thiếu response trong quá trình Null scan cho thấy rằng cổng đang mở hoặc firewall đang chặn gói tin.
 
-![img](36)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image36.png)
 
 - Lí tưởng nhất là mục tiêu phản hồi bằng gói tin với RST flag nếu cổng đóng. 
 
-![img](37)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image37.png)
 
-![img](38)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image38.png)
 
 **FIN Scan**
 
@@ -52,13 +52,13 @@
 
 - Giống như Null scan, không có phản hồi nào nếu cổng TCP mở. Nmap không thể chắc chắn cổng mở hay bị firewall chặn. 
 
-![img](39)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image39.png)
 
 - Hệ thống mục tiêu sẽ phản hồi bằng gói tin với RST flag nếu cổng đóng.
 
-![img](40)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image40.png)
 
-![img](41)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image41.png)
 
 **Xmas Scan**
 
@@ -68,9 +68,9 @@
 
 - Tương tự, cổng đóng sẽ phản hồi gói tin với RST flag và không có phản hồi nếu cổng mở. 
 
-![img](42)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image42.png)
 
-![img](43)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image43.png)
 
 - Sử dụng Xmas scan có thể hiệu quả khi quét mục tiêu phía sau ***firewall stateless***. Firewall stateless sẽ kiểm tra xem gói tin đến có set SYN flag hay không, để phát hiện nỗ lực kết nối => việc sử dụng tổ hợp flag không khớp với gói tin SYN có thể đánh lừa loại firewall này. 
 
@@ -84,7 +84,7 @@
 
 - Sử dụng tùy chọn ***-sM***. Hầu hết các hệ thống mục tiêu đều phản hồi bằng RST packet bất kể cổng TCP có mở hay không.
 
-![img](45)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image45.png)
 
 => Không thể phát hiện vì cổng mở và cổng đóng đều được phản hồi giống nhau. 
 
@@ -100,17 +100,17 @@
 
 => quá trình quét này sẽ không cho biết liệu cổng mục tiêu có mở trong một thiết lập đơn giản hay không.
 
-![img](46)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image46.png)
 
 => Scan khi chưa thiết lập firewall: 
 
-![img](47)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image47.png)
 
 - Kiểu quét này sẽ hữu ích nếu có firewall phía trước mục tiêu. Do đó, dựa trên việc gói tin ACK  nào có phản hồi, có thể biết được cổng nào không bị firewall chặn. Nói cách khác, kiểu quét này phù hợp hơn để khám phá các bộ quy tắc và cấu hình firewall.
 
 => Scan sau khi thiết lập firewall: 
 
-![img](48)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image48.png)
 
 => 3 cổng không bị firewall chặn, còn lại bị chặn. 
 
@@ -120,15 +120,15 @@
 
 - Sử dụng tùy chọn ***-sW***. 
 
-![img](49)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image49.png)
 
 => Scan khi chưa thiết lập firewall: 
 
-![img](50)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image50.png)
 
 => Scan khi thiết lập firewall phía trước mục tiêu: 
 
-![img](51)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image51.png)
 
 **Custom Scan**
 
@@ -136,13 +136,13 @@
 
 - Ví dụ, nếu muốn set đồng thời SYN, RST và FIN flag, cú pháp sẽ là ***--scanflags RSTSYNFIN***. 
 
-![img](52)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image52.png)
 
 **Task 5: Spoofing and Decoys**
 
 - Có thể quét hệ thống mục tiêu bằng địa chỉ IP giả mạo và thậm chí cả địa chỉ MAC giả mạo. Việc quét như vậy chỉ có lợi trong trường hợp có thể đảm bảo nắm bắt được phản hồi. 
 
-![img](53)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image53.png)
 
 => kẻ tấn công khởi chạy lệnh ***nmap -S SPOOFED_IP 10.10.173.49***. Do đó, Nmap sẽ tạo tất cả gói tin bằng địa chỉ IP nguồn được cung cấp SPOOFED_IP. Máy mục tiêu sẽ phản hồi các gói tin đến và gửi phản hồi đến địa chỉ IP đích SPOOFED_IP. Để quá trình quét này hoạt động và cho kết quả chính xác, kẻ tấn công cần theo dõi lưu lượng mạng để phân tích phân tích.
 
@@ -164,7 +164,7 @@
 
 - Làm cho quá trình quét dường như đến từ nhiều địa chỉ IP để địa chỉ IP của kẻ tấn công sẽ bị mất trong số đó. 
 
-![img](54)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image54.png)
 
 => Cú pháp, sử dụng tùy chọn ***-D***. Ví dụ: ***nmap -D 10.10.0.1,10.10.0.2,ME 10.10.173.49***, trong đó ***10.10.173.49*** là địa chỉ IP mục tiêu. 
 
@@ -220,15 +220,15 @@
 
 => Setup:
 
-![img](55)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image55.png)
 
 => Trường hợp cổng đóng:
 
-![img](56)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image56.png)
 
 => Trường hợp cổng mở: (IP ID của máy zombie tăng lên)
 
-![img](57)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/imag57.png)
 
 => Trong trường hợp thứ ba, máy mục tiêu hoàn toàn không phản hồi do các quy tắc tường lửa. Việc thiếu phản hồi này sẽ dẫn đến kết quả tương tự như với cổng đóng; idle host sẽ không tăng IP ID.
 

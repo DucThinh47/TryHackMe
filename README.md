@@ -131,4 +131,4 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Nmap Basic Port Scans](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Nmap_Basic_Port_Scans.md)
 
-    - [Nmap Advanced Port Scans]()
+    - [Nmap Advanced Port Scans](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Nmap_Advanced_Port_Scans.md)
