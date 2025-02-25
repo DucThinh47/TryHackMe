@@ -34,7 +34,7 @@
 
 - Bằng cách sử dụng AttackBox (hoặc máy Linux cục bộ, ví dụ như Parrot hoặc Kali), có thể dễ dàng truy cập whois client trên thiết bị đầu cuối. Cú pháp là whois DOMAIN_NAME, trong đó DOMAIN_NAME là miền đang cố gắng lấy thêm thông tin
 
-![img](0)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image.png)
 
 **Task 4: nslookup and dig**
 
@@ -46,21 +46,21 @@
 
 - Ví dụ: ***nslookup -type=A tryhackme.com 1.1.1.1*** (hoặc nslookup -type=a tryhackme.com 1.1.1.1 vì nó không phân biệt chữ hoa chữ thường) có thể được sử dụng để trả về tất cả các địa chỉ IPv4 được tryhackme.com sử dụng.
 
-![img](1)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image1.png)
 
 - Giả sử muốn tìm hiểu về mail servers và cấu hình của một tên miền cụ thể. Có thể dùng lệnh ***nslookup -type=MX tryhackme.com***.
 
-![img](2)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image2.png)
 
 - Để có các truy vấn DNS nâng cao hơn và chức năng bổ sung, có thể sử dụng ***dig***, từ viết tắt của "Domain Information Groper".  Cú pháp dig + DOMAIN_NAME + TYPE.
 
-![img](3)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image3.png)
 
 => So sánh nhanh giữa đầu ra của nslookup và dig cho thấy dig trả về nhiều thông tin hơn, chẳng hạn như TTL (Time To Live) theo mặc định. 
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image4.png)
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image5.png)
 
 **Task 5: DNSDumpster**
 
@@ -68,11 +68,11 @@
 
 - Có thể sử dụng dịch vụ trực tuyến cung cấp câu trả lời chi tiết cho các truy vấn DNS, chẳng hạn như DNSDumpster.
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image6.png)
 
 - DNSDumpster cũng sẽ thể hiện thông tin được thu thập bằng đồ họa. DNSDumpster hiển thị dữ liệu từ bảng trước đó dưới dạng biểu đồ.
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image7.png)
 
 **Task 6: Shodan.io**
 
@@ -80,7 +80,7 @@
 
 - Shodan.io cố gắng kết nối với mọi thiết bị có thể truy cập trực tuyến để xây dựng một công cụ tìm kiếm các "thứ" được kết nối trái ngược với công cụ tìm kiếm cho các trang web. Sau khi nhận được phản hồi, nó sẽ thu thập tất cả thông tin liên quan đến dịch vụ và lưu vào cơ sở dữ liệu để có thể tìm kiếm được.
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image8.png)
 
 **Task 7: Summary**
 

@@ -121,8 +121,8 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Burp Suite: Extensions](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Extensions.md)
 
-- [Network Security]()
+- [Network Security](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Network_Security)
 
-    - [Passive Reconnaissance]()
+    - [Passive Reconnaissance](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Passive_Reconnaissance.md)
 
     - 
