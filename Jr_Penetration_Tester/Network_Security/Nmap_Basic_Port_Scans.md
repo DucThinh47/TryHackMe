@@ -56,7 +56,7 @@ Kiểm tra ports nào đang mở và đang lắng nghe cũng như ports nào đ�
 
 - Nmap TCP connect scan: ***nmap -sT TARGET***, lệnh sẽ yêu cầu Nmap thực hiện quét cổng bằng cách thiết lập kết nối TCP đầy đủ. 
 
-![img](25)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image25.png)
 
 - Sử dụng TCP connect scan để khám phá các cổng TCP đang mở khi không phải người dùng đặc quyền.
 
@@ -64,17 +64,17 @@ Kiểm tra ports nào đang mở và đang lắng nghe cũng như ports nào đ�
 
 - Với cổng TCP đóng, nó sẽ phản hồi request với gói SYN được set RST/ACK flag. 
 
-![img](26)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image26.png)
 
 => cổng 143 đang mở nên cổng đã phản hồi bằng gói SYN được set SYN/ACK flag và Nmap hoàn thành quá trình bắt tay 3 bước bằng cách gửi lại gói tin được set ACK flag. 
 
-![img](27)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image27.png)
 
 - Nếu muốn quét nhanh hơn, thêm tùy chọn ***-F***, sẽ giảm số lượng cổng được quét từ 1000 xuống 100 cổng phổ biến nhất.
 
 - Tùy chọn ***-r*** cũng có thể được thêm vào để quét ports theo thứ tự liên tiếp thay vì thứ tự ngẫu nhiên. Tùy chọn này hữu ích khi kiểm tra xem ports có mở một cách nhất quán hay không
 
-![img](28)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image28.png)
 
 **Task 5: TCP SYN Scan**
 
@@ -84,21 +84,21 @@ Kiểm tra ports nào đang mở và đang lắng nghe cũng như ports nào đ�
 
 - Sử dụng tùy chọn ***-sS***. 
 
-![img](29)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image29.png)
 
 - So sánh trong Wireshark giữa TCP connect scan và TCP SYN scan: 
 
 => *TCP connect scan*:
 
-![img](30)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image30.png)
 
 => *TCP SYN scan*:
 
-![img](31)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image31.png)
 
 - TCP SYN scan là chế độ quét mặc định khi chạy Nmap với tư cách người dùng đặc quyền, chạy bằng root hoặc sử dụng sudo và đây là một lựa chọn rất đáng tin cậy.
 
-![img](32)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image32.png)
 
 **Task 6: UDP Scan**
 
@@ -110,13 +110,13 @@ Kiểm tra ports nào đang mở và đang lắng nghe cũng như ports nào đ�
 
 - Việc gửi gói tin UDP tới một cổng mở sẽ không phản hồi bất cứ điều gì.
 
-![img](33)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image33.png)
 
-![img](34)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image34.png)
 
 => Cổng 111 đang mở, cổng 68 không xác định được đang mở hay được lọc. 
 
-![img](35)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image35.png)
 
 **Task 7: Fine-Tuning Scope and Performance**
 
