@@ -120,3 +120,9 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
     - [Burp Suite: Other Modules](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Other_Modules.md)
 
     - [Burp Suite: Extensions](https://github.com/DucThinh47/TryHackMe/blob/main/Web_Fundamental/Burp_Suite/Burp_Suite_Extensions.md)
+
+- [Network Security]()
+
+    - [Passive Reconnaissance]()
+
+    - 
