@@ -20,7 +20,7 @@
 
 - Việc sử dụng -sV sẽ buộc Nmap tiến hành TCP 3-way handshake và thiết lập kết nối => Không thể sử dụng cùng với -sS. 
 
-![img](58)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image58.png)
 
 **Task 3: OS Detection and Traceroute**
 
@@ -57,7 +57,7 @@
 
 - Nếu muốn Nmap tìm các routers giữa hệ thống nguồn và hệ thống đích, thêm tùy chọn ***--traceroute***. 
 
-![img](59)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image59.png)
 
 => Không có router/hops nào giữa hai thiết bị vì chúng được kết nối trực tiếp. 
 
@@ -113,7 +113,7 @@
 
 - Ví dụ ***--script "http-date"*** sẽ truy xuất ngày và giờ của máy chủ http : 
 
-![img](60)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image60.png)
 
 **Task 5: Saving the Output**
 
@@ -123,7 +123,7 @@
 
 => normal format nó dạng như sau:
 
-![img](61)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image61.png)
 
 **Grepable**
 
