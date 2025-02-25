@@ -22,7 +22,7 @@
 
 - Phân đoạn mạng đề cập đến kết nối vật lý, trong khi mạng con đề cập đến kết nối logic. 
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image15.png)
 
 => Trong sơ đồ mạng trên, có 4 phân đoạn mạng, cũng như mạng con. Nói chung, hệ thống sẽ được kết nối với một trong các phân đoạn mạng / mạng con này.
 
@@ -36,13 +36,13 @@
 
 - ARP là giao thức thuộc link-layer và các ARP packets được liên kết với subnet của chúng.
 
-![img](16)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image16.png)
 
 - Computer1 => Computer1 (broadcast). Packet type là ARP request. Data là Computer6 (vì đang yêu cầu địa tìm địa chỉ MAC của Computer6 bằng ARP request).
 
 => 4 thiết bị có thể nhận ARP request là computer1, computer2, computer3 và router. Computer6 không thể nhận vì không nằm trong cùng subnet với computer1. 
 
-![img](17)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image17.png)
 
 - Từ computer4 => computer4 (broadcast). Packet type là ARP request. Data là computer6 (vì đang yêu cầu tìm địa chỉ MAC của computer6 bằng ARP request).
 
@@ -64,7 +64,7 @@
 
 - Nmap sẽ phân giải DNS ngược trên tất cả các mục tiêu để lấy tên. Những cái tên có thể tiết lộ nhiều thông tin khác nhau cho pentester. (Nếu không muốn Nmap vào DNS server, thêm tùy chọn ***-n***.)
 
-![img](18)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image18.png)
 
 **Task 4: Discovering Live Hosts**
 
@@ -160,13 +160,13 @@
 
 -  Lặp lại quá trình quét ở trên; tuy nhiên, lần này, quét từ hệ thống thuộc subnet khác. Kết quả tương tự nhưng không có địa chỉ MAC:
 
-![img](19)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image19.png)
 
 - Sử dụng ICMP echo request thường có xu hướng bị chặn bởi firewall => có thể dùng ICMP Timestamp requests hoặc ICMP Address Mask requests để khám phá live hosts. 
 
 - Nmap sử dụng Timestamp request (ICMP Type 13) và kiểm tra xem nó có nhận được Timestamp reply hay không (ICMP Type 14). Sử dụng tùy chọn ***-PP*** sẽ yêu cầu Nmap sử dụng ICMP Timestamp requests.
 
-![img](20)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image20.png)
 
 - Tương tự, Nmap sử dụng truy vấn Address Mask (ICMP Type 17) và kiểm tra xem nó có nhận được Address Mask Reply hay không (ICMP Type 18). Quá trình quét này có thể được kích hoạt bằng tùy chọn ***-PM***.
 
@@ -189,7 +189,7 @@
 
 - Người dùng đặc quyền (root và sudoers) có thể gửi TCP SYN packets và không cần hoàn thành bắt tay 3 bước TCP ngay cả khi cổng mở. 
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image21.png)
 
 => Vì không chỉ định số cổng, theo mặc định, Nmap sử dụng cổng TCP 80, bất kỳ dịch vụ nào đang hoạt động trên cổng 80 đều sẽ reply. 
 
@@ -201,7 +201,7 @@
 
 - Bất kỳ TCP packet nào có ACK flag sẽ nhận lại TCP packet có RST flag được đặt.
 
-![img](22)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image22.png)
 
 **UDP Ping**
 
@@ -209,7 +209,7 @@
 
 - Cú pháp, thêm tùy chọn ***-PU***
 
-![img](23)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image23.png)
 
 **Masscan**
 
@@ -227,7 +227,7 @@
 
 - Theo mặc định, Nmap sẽ khám phá online hosts; tuy nhiên, có thể sử dụng tùy chọn ***-R*** để truy vấn DNS server ngay cả đối với offline hosts.
 
-![img](24)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image24.png)
 
 **Task 9: Summary**
 
