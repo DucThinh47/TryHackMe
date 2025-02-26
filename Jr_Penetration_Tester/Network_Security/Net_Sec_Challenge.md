@@ -154,7 +154,7 @@ Phân tích các tùy chọn port scan trong Nmap:
 
 Question 1: What is the highest port number being open less than 10,000?
 
-![img](82)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image82.png)
 
 => cổng 8080
 
@@ -174,7 +174,7 @@ Cú pháp lệnh:
 
 - Thêm tùy chọn --open để chỉ hiển thị open port
 
-![img](83)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image83.png)
 
 Question 3: How many TCP ports are open? 
 
@@ -182,7 +182,7 @@ Question 3: How many TCP ports are open?
 
 ***sudo nmap -sS -p- --open 10.10.236.245***
 
-![img](84)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image84.png)
 
 => 6 cổng
 
@@ -190,19 +190,19 @@ Question 4: What is the flag hidden in the HTTP server header?
 
 => Kết nối đến HTTP server trên cổng 80
 
-![img](85)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image85.png)
 
 Question 5: WHat is the flag hidden in the SSH server header?
 
 => Kết nối đến ssh server qua cổng 22:
 
-![img](86)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image86.png)
 
 Question 6: We have an FTP server listening on a nonstandard port. What is the version of the FTP server?
 
 => Thử kết nối đến cổng 21, mặc định của FTP server: 
 
-![img](87)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image87.png)
 
 => Bị chặn kết nối trên cổng 21. 
 
@@ -210,7 +210,7 @@ Thử dùng nmap:
 
 ***sudo nmap -sV -p- -T4 --min-rate 1000 -max-retries 2 --open 10.10.139.39***
 
-![img](88)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image88.png)
 
 => FTP server chạy trên port 10021 và có version là vsftpd 3.0.5
 
@@ -219,7 +219,7 @@ Question 7: We learned two usernames using social engineering: eddie and quinn. 
 => Dùng lệnh ***hydra -l eddie -P /usr/share/wordlists/rockyou.txt ftp://10.10.139.39:10021/***
 để tìm password cho user eddie:
 
-![img](89)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image89.png)
 
 => password của eddit là jordan
 
@@ -227,22 +227,22 @@ Tiếp tục tìm của quinn:
 
 ***hydra -l quinn -P /usr/share/wordlists/rockyou.txt ftp://10.10.139.39:10021/***:
 
-![img](90)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image90.png)
 
 => password của quinn là andrea
 
 => Kết nối ftp: 
 
-![img](91)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image91.png)
 
 Question 8: Browsing to http://10.10.42.251:8080 displays a small challenge that will give you a flag once you solve it. What is the flag? 
 
 Nhận thấy ở mô tả ghi nmap có thể bị phát hiện bởi IDS
 
-![img](92)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image92.png)
 
 => SỬ dụng thử Null scan để vượt qua firewall/IDS:
 
-![img](93)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image93.png)
 
 
