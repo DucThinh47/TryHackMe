@@ -69,13 +69,13 @@ Trong đó:
 
 => Cũng có thể sử dụng Wireshark để đạt kết quả tương tự.  
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image73.png)
 
 => Yêu cầu duy nhất để cuộc tấn công bắt gói mạng thành công này là **có quyền truy cập vào giữa hai hệ thống đang liên lạc**.
 
 **Task 2: Man-in-the-Middle (MITM) Attack**
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image74.png)
 
 - Cuộc tấn công xảy ra khi hai bên không xác nhận tính xác thực và tính toàn vẹn của từng tin nhắn.
 
@@ -91,7 +91,7 @@ Trong đó:
 
 - Có thể thêm mã hóa vào các giao thức thông qua Presentation layer, dữ liệu sẽ được trình bày ở định dạng được mã hóa thay vì dạng ban đầu. 
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image75.png)
 
 - Do mối quan hệ chặt chẽ giữa SSL và TLS, nên cái này có thể được sử dụng thay cho cái kia. Tuy nhiên, TLS an toàn hơn SSL và trên thực tế nó đã thay thế SSL. 
 
@@ -119,7 +119,7 @@ Trong đó:
 
 => HTTPS yêu cầu một bước bổ sung để mã hóa lưu lượng. Bước mới diễn ra sau khi thiết lập kết nối TCP và trước khi gửi yêu cầu HTTP
 
-![img](776)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image76.png)
 
 - Sau khi bắt tay SSL/TLS đã được thiết lập, bất kỳ ai đang xem kênh liên lạc sẽ không thể truy cập được các HTTP requests và dữ liệu trao đổi.
 
@@ -141,11 +141,11 @@ Trong đó:
 
 - Cú pháp ***ssh username@10.10.125.30***:
 
-![img](77)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image77.png)
 
 - username và password được mã hóa khi gửi, tất cả các lệnh thực thi trên hệ thống từ xa sẽ được gửi qua kênh được mã hóa.
 
-![img](78)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image78.png)
 
 - có thể sử dụng SSH để truyền file bằng SCP (Secure Copy Protocol) dựa trên giao thức SSH. Cú pháp ***scp mark@10.10.125.30:/home/mark/archive.tar.gz ~***, lệnh này sẽ sao chép file archive.tar.gz từ hệ thống từ xa nằm trong thư mục /home/mark sang thư mục ~, thư mục gốc của user hiện tại đang truy nhập hệ thống từ xa
 
@@ -157,11 +157,11 @@ Trong đó:
 
 - FTP có thể được bảo mật bằng SSL/TLS bằng giao thức FTPS sử dụng port 990. Đồng thời, FTP cũng có thể được bảo mật bằng giao thức SSH là giao thức SFTP.
 
-![img](79)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image79.png)
 
 **Task 6: Password Attack**
 
-![img](80)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image80.png)
 
 - Việc xác minh danh tính có thể sử dụng một trong những cách sau, hoặc kết hợp các cách: 
 
@@ -225,7 +225,7 @@ Ví dụ:
 
     - Có nhiều cách tiếp cận khác phức tạp hơn hoặc có thể yêu cầu một số kiến ​​thức đã được thiết lập về người dùng, chẳng hạn như định vị địa lý dựa trên IP
 
-![img](81)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/images/image81.png)
 
 **Task 7: Summary**
 
