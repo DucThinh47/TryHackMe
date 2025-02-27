@@ -153,6 +153,6 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Metasploit: Introduction](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/Metasploit_Introduction.md)
 
-    - [Metasploit: Exploitation]()
+    - [Metasploit: Exploitation](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/Metasploit_Exploitation.md)
 
 
