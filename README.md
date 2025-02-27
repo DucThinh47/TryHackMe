@@ -157,7 +157,6 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Metasploit: Meterpreter](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/Metasploit_Meterpreter.md)
 
-- [Privilege Escalation]()
+- [Privilege Escalation](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Privilege-Escalation)
 
-    - [What the Shell?]()
-    
+    - [What the Shell?](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/What_the_Shell.md)
