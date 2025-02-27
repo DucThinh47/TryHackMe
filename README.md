@@ -145,5 +145,7 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Vulnerabilities 101](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Vulnerability-Research/Vulnerabilities_101.md)
 
-    - [Exploit Vulnerabilities]()
+    - [Exploit Vulnerabilities](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Vulnerability-Research/Exploit_Vulnerabilities.md)
+
+    
 
