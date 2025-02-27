@@ -20,15 +20,16 @@
 
 - Meterpreter đang chạy với ID tiến trình (PID) là 1304
 
-![img](70)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image70.png?raw=true)
 
 - Nếu liệt kê các tiến trình đang chạy trên hệ thống đích bằng lệnh ***ps***, sẽ thấy PID 1304 là ***spoolsv.exe*** chứ không phải ***Meterpreter.exe***. 
 
-![img](71)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image71.png?raw=true)
 
-- tiến thêm một bước và xem xét các DLL (Dynamic-Link Libraries - Thư viện liên kết động) được sử dụng bởi quy trình Meterpreter (PID 1304 trong trường hợp này), vẫn không tìm thấy bất cứ điều gì (ví dụ: không có Meterpreter.dll)
+- tiến thêm một bước và xem xét các DLL (Dynamic-Link Libraries 
+- Thư viện liên kết động) được sử dụng bởi quy trình Meterpreter (PID 1304 trong trường hợp này), vẫn không tìm thấy bất cứ điều gì (ví dụ: không có Meterpreter.dll)
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image72.png?raw=true)
 
 => Meterpreter sẽ thiết lập kênh liên lạc được mã hóa (TLS) với hệ thống của kẻ tấn công.
 
@@ -51,7 +52,7 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - xem danh sách các phiên bản Meterpreter có sẵn, có thể sử dụng lệnh ***msfvenom --list payloads | grep meterpreter***. Lệnh này sẽ liệt kê tất cả các payload liên quan đến Meterpreter.
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image73.png?raw=true)
 
 => Danh sách sẽ hiển thị các phiên bản Meterpreter có sẵn cho các nền tảng sau;
 
@@ -74,17 +75,17 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - một số khai thác sẽ có payload Meterpreter mặc định, có thể thấy trong ví dụ bên dưới với khai thác ***ms17_010_eternalblue***:
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image74.png?raw=true)
 
 -  cũng có thể liệt kê payload có sẵn khác bằng lệnh ***show payloads*** với bất kỳ mô-đun nào.
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image75.png?raw=true)
 
 ***Task 3: Meterpreter Commands***
 
 - Lệnh ***help*** trên bất kỳ phiên Meterpreter nào sẽ liệt kê tất cả lệnh có sẵn.
 
-![img](76)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image76.png?raw=true)
 
 - Meterpreter sẽ cung cấp ba loại công cụ chính:
 
@@ -178,17 +179,17 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - Lệnh này sẽ cung cấp danh sách tất cả các lệnh có sẵn trong Meterpreter
 
-![img](77)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image77.png?raw=true)
 
 **Meterpreter commands**
 
 - Lệnh ***getuid*** sẽ hiển thị cho người dùng xem Meterpreter hiện đang chạy. Điều này sẽ cho ý tưởng về cấp độ đặc quyền có thể có trên hệ thống đích
 
-![img](78)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image78.png?raw=true)
 
 - Lệnh ***ps*** sẽ liệt kê các tiến trình đang chạy. Cột PID cũng sẽ cung cấp cho thông tin PID mà cần để di chuyển Meterpreter sang một quy trình khác.
 
-![img](79)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image79.png?raw=true)
 
 **Migrate**
 
@@ -198,7 +199,7 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - Để di chuyển sang một tiến trình cụ thể, sử dụng lệnh ***migrate*** kèm theo PID (Process ID) của tiến trình mục tiêu
 
-![img](80)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image80.png?raw=true)
 
 => có thể mất đặc quyền người dùng nếu bạn di chuyển từ người dùng có đặc quyền cao hơn (ví dụ: HỆ THỐNG) sang một quy trình được bắt đầu bởi người dùng có đặc quyền thấp hơn (ví dụ: máy chủ web)
 
@@ -206,19 +207,19 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - Lệnh ***hashdump*** sẽ liệt kê nội dung của cơ sở dữ liệu SAM. Cơ sở dữ liệu SAM (Security Account Manager) lưu trữ mật khẩu của người dùng trên hệ thống Windows. Các mật khẩu này được lưu trữ ở định dạng NTLM (New Technology LAN Manager).
 
-![img](81)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image81.png?raw=true)
 
 **Search**
 
 - Lệnh ***search*** rất hữu ích để định vị các tệp có thông tin hấp dẫn. Trong ngữ cảnh CTF, điều này có thể được sử dụng để nhanh chóng tìm thấy cờ hoặc tệp bằng chứng. 
 
-![img](82)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image82.png?raw=true)
 
 **Shell**
 
 - Lệnh ***shell*** sẽ khởi chạy shell dòng lệnh thông thường trên hệ thống đích. Nhấn CTRL+Z sẽ giúp quay lại Meterpreter.
 
-![img](83)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image83.png?raw=true)
 
 **Task 5: Post-Exploitation Challenge**
 
@@ -226,36 +227,36 @@ Cách tiếp cận này giúp giảm kích thước ban đầu của payload.
 
 - Có thể sử dụng lệnh ***load*** để tận dụng các công cụ bổ sung như Kiwi hoặc thậm chí toàn bộ ngôn ngữ Python.
 
-![img](84)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image84.png?raw=true)
 
 - Khi bất kỳ công cụ bổ sung nào được tải bằng lệnh ***load***,sẽ thấy các tùy chọn mới trên menu trợ giúp. Ví dụ bên dưới hiển thị các lệnh được thêm vào mô-đun Kiwi:
 
-![img](85)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image85.png?raw=true)
 
 - Điều này sẽ thay đổi theo menu được tải, việc sử dụng lệnh ***help*** là cần thiết.
 
-![img](86)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image86.png?raw=true)
 
 => Mô phỏng hành vi xâm phạm ban đầu đối với SMB (Khối tin nhắn máy chủ) (sử dụng module ***exploit/windows/smb/psexec***): 
 
     Username: ballen
     Password: Password1
 
-![img](87)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image87.png?raw=true)
 
-![img](88)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image88.png?raw=true)
 
-![img](89)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image89.png?raw=true)
 
-![img](90)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image90.png?raw=true)
 
-![img](91)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image91.png?raw=true)
 
-![img](92)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image92.png?raw=true)
 
-![img](93)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image93.png?raw=true)
 
-![img](94)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image94.png?raw=true)
 
 
 
