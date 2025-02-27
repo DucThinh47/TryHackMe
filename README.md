@@ -161,6 +161,8 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [What the Shell?](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/What_the_Shell.md)
 
-    - [Linux Privilege Escalation]()
+    - [Linux Privilege Escalation](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/Linux_Privilege_Escalation.md)
 
-    
+    - [Windows Privilege Escalation]()
+
+

