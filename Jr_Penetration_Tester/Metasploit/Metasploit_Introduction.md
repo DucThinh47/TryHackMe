@@ -197,21 +197,21 @@
 
 **Task 3: Msfconsole**
 
-![img](0)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image.png)
 
-![img](1)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image1.png)
 
 => hỗ trợ hầu hết các lệnh Linux, bao gồm cả lệnh clear (để xóa màn hình đầu cuối), nhưng sẽ không cho phép sử dụng một số tính năng của dòng lệnh thông thường (ví dụ: không hỗ trợ chuyển hướng đầu ra), như được thấy bên dưới:
 
-![img](2)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image2.png)
 
 => Lệnh help:
 
-![img](3)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image3.png)
 
 - Có thể sử dụng lệnh history để xem các lệnh đã gõ trước đó.
 
-![img](4)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image4.png)
 
 - Msfconsole hoạt động theo ngữ cảnh, nghĩa là các thiết lập tham số chỉ áp dụng trong phạm vi mô-đun hiện tại. Nếu chuyển sang mô-đun khác, các tham số đã đặt (ví dụ: RHOSTS) sẽ bị mất và cần được thiết lập lại.
 
@@ -223,21 +223,21 @@ Ví dụ:
 
 - Dấu nhắc lệnh sẽ thay đổi từ msf6 thành msf6 exploit(windows/smb/ms17_010_eternalblue), cho thấy đang ở trong ngữ cảnh của exploit này.
 
-![img](5)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image5.png)
 
 - EternalBlue là một exploit được cho là do Cơ quan An ninh Quốc gia Hoa Kỳ (NSA) phát triển, khai thác lỗ hổng trong giao thức SMBv1 trên các hệ thống Windows. SMB (Server Message Block) là giao thức dùng để chia sẻ file và in ấn trong mạng Windows.
 
 - Mặc dù lời nhắc đã thay đổi, nhận thấy vẫn có thể chạy các lệnh đã đề cập trước đó
 
-![img](6)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image6.png)
 
 - Sử dụng lệnh ***show options*** để xem rõ hơn bối cảnh làm việc: 
 
-![img](7)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image7.png)
 
 - Lệnh show options hiển thị các tùy chọn cần thiết cho mô-đun đang được sử dụng. Đầu ra của lệnh này thay đổi tùy theo ngữ cảnh. Ví dụ, với exploit ms17_010_eternalblue, cần đặt các biến như RHOSTS và RPORT. Trong khi đó, với mô-đun post-exploitation, chỉ cần đặt SESSION ID (một kết nối hiện có với hệ thống đích mà mô-đun sẽ sử dụng).
 
-![img](8)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image8.png)
 
 - Lệnh show có thể được dùng trong bất kỳ ngữ cảnh nào, theo sau là loại mô-đun (như auxiliary, payload, exploit, v.v.) để liệt kê các mô-đun có sẵn. Ví dụ, lệnh show payloads liệt kê các payload tương thích với exploit ms17-010 Eternalblue.
 
@@ -259,7 +259,7 @@ Ví dụ:
 
 - có thể rời khỏi bối cảnh bằng lệnh back.
 
-![img](9)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image9.png)
 
 - có thể lấy thêm thông tin về bất kỳ mô-đun nào bằng cách gõ lệnh info trong ngữ cảnh của nó:
 
@@ -343,7 +343,7 @@ Ví dụ:
 
 - Một trong những lệnh hữu ích nhất trong msfconsole là search. Lệnh này giúp tìm kiếm trong cơ sở dữ liệu của Metasploit Framework để tìm các mô-đun liên quan đến từ khóa hoặc tham số tìm kiếm. Có thể tìm kiếm bằng số CVE, tên exploit (ví dụ: eternalblue, heartbleed), hoặc hệ thống mục tiêu.
 
-![img](10)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image10.png)
 
 - Kết quả từ lệnh search cung cấp một cái nhìn tổng quan về các mô-đun được tìm thấy. Cột "Name" không chỉ hiển thị tên mô-đun mà còn cho biết loại mô-đun (ví dụ: auxiliary, exploit) và danh mục của nó (ví dụ: scanner, admin, windows, Unix). Có thể sử dụng bất kỳ mô-đun nào trong kết quả tìm kiếm bằng cách dùng lệnh use kèm theo số thứ tự của mô-đun (ví dụ: use 2 thay vì use auxiliary/admin/smb/ms17_010_command).
 
@@ -365,39 +365,39 @@ Ví dụ:
 
 - có thể tùy chỉnh chức năng search bằng cách sử dụng các từ khóa như type và platform. Ví dụ, nếu muốn kết quả tìm kiếm chỉ bao gồm các mô-đun auxiliary, có thể thêm điều kiện type:auxiliary. Dưới đây là ví dụ về lệnh search type:auxiliary telnet, kết quả sẽ chỉ hiển thị các mô-đun auxiliary liên quan đến "telnet":
 
-![img](11)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image11.png)
 
 **Task 4: Working with modules**
 
 - The regular command prompt: không thể sử dụng lệnh Metasploit ở đây.
 
-![img](12)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image12.png)
 
 - The msfconsole prompt: msf6 (hoặc msf5 tùy thuộc vào phiên bản đã cài đặt) là lời nhắc msfconsole. Như có thể thấy, không có ngữ cảnh nào được đặt ở đây, vì vậy các lệnh theo ngữ cảnh cụ thể để đặt tham số và chạy mô-đun không thể được sử dụng ở đây.
 
-![img](13)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image13.png)
 
 - A context prompt: Khi đã quyết định sử dụng một mô-đun và sử dụng lệnh set để chọn nó, msfconsole sẽ hiển thị ngữ cảnh. Có thể sử dụng các lệnh theo ngữ cảnh cụ thể (ví dụ: đặt RHOSTS 10.10.x.x) tại đây.
 
-![img](14)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image14.png)
 
 - The Meterpreter prompt: Meterpreter là một payload quan trọng. Điều này có nghĩa là tác nhân Meterpreter đã được tải vào hệ thống đích và kết nối lại. Có thể sử dụng các lệnh cụ thể của Meterpreter tại đây.
 
-![img](15)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image15.png)
 
 - A shell on the target system: Sau khi quá trình khai thác hoàn tất, có thể có quyền truy cập vào shell lệnh trên hệ thống đích. Đây là một dòng lệnh thông thường và tất cả các lệnh được gõ ở đây đều chạy trên hệ thống đích.
 
 => lệnh show options sẽ liệt kê tất cả các tham số có sẵn.
 
-![img](16)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image16.png)
 
-![img](17)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image17.png)
 
 - Các thông số thường dùng trong Metasploit bao gồm:
 
 1. RHOSTS: "Remote Host" – Địa chỉ IP của hệ thống mục tiêu. Có thể nhập một địa chỉ IP duy nhất, một phạm vi mạng (sử dụng ký hiệu CIDR như /24, /16) hoặc một dải IP (ví dụ: 10.10.10.x – 10.10.10.y). Cũng có thể sử dụng một tệp chứa danh sách các mục tiêu, mỗi dòng một địa chỉ IP, bằng cách dùng file:/path/to/target_file.txt:
 
-![img](18)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image18.png)
 
 2. RPORT: "Remote Port" – Cổng trên hệ thống mục tiêu mà dịch vụ dễ bị tấn công đang chạy.
 
@@ -411,7 +411,7 @@ Ví dụ:
 
 => có thể thay đổi giá trị của bất kỳ tham số nào bằng lệnh set với giá trị mới. Để xóa giá trị của một tham số, sử dụng lệnh unset. Nếu muốn xóa tất cả các tham số đã đặt, dùng lệnh unset all.
 
-![img](19)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image19.png)
 
 - có thể sử dụng lệnh setg để đặt các giá trị sẽ được sử dụng cho tất cả các mô-đun. 
 
@@ -431,7 +431,7 @@ Ví dụ:
 
 5. Lệnh show options hiển thị tham số RHOSTS đã được điền địa chỉ IP của hệ thống đích.
 
-![img](20)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image20.png)
 
 **Using modules**
 
@@ -441,7 +441,7 @@ Ví dụ:
 
 - Lệnh exploit có thể được sử dụng mà không cần bất kỳ tham số nào hoặc sử dụng tham số "-z". Lệnh exploit -z sẽ chạy exploit và chạy background session ngay khi nó mở.
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image21.png)
 
 **Sessions**
 
@@ -451,9 +451,9 @@ Ví dụ:
 
 - sử dụng lệnh background để làm background cho lời nhắc session và quay lại lời nhắc msfconsole.
 
-![img](22)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image22.png)
 
-![img](23)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/images/image23.png)
 
 - Để tương tác với bất kỳ phiên nào, có thể sử dụng lệnh session -i theo sau là số session mong muốn.
 

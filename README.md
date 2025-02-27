@@ -149,9 +149,9 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Vulnerability Capstone](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Vulnerability-Research/Vulnerability_Capstone.md)
 
-- [Metasploit]()
+- [Metasploit](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Metasploit)
 
-    - [Metasploit: Introduction]()
+    - [Metasploit: Introduction](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Metasploit/Metasploit_Introduction.md)
 
 
 
