@@ -141,7 +141,7 @@ Lý thuyết và thực hành các bài tập trên TryHackMe.
 
     - [Net Sec Challenge](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Network_Security/Net_Sec_Challenge.md)
 
-- [Vulnerability Research]()
+- [Vulnerability Research](https://github.com/DucThinh47/TryHackMe/tree/main/Jr_Penetration_Tester/Vulnerability-Research)
 
-    - [Vulnerabilities 101]()
+    - [Vulnerabilities 101](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Vulnerability-Research/Vulnerabilities_101.md)
 
